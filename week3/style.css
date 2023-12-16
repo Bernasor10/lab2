@@ -1,0 +1,152 @@
+body {
+    background-color: #081b29; /* Ocean Blue */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 130px; /* Added padding to account for the fixed navbar */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed; /* Changed to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3px 13px;
+    background: #081b29; /* Consistent with the body background */
+    overflow: hidden; /* Clear floats */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.navbar a { /* Upper right navigation */
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 23px;
+    line-height: 25px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px;
+}
+
+.navbar a:hover { /* Upper right navigation bar when hovering */
+    color: #18517b;
+}
+
+.navbar .logo { /* Upper left navigation (Ronaldo) */
+    position: absolute;
+    left: 70px; /* Position from the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact centering */
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+section {
+    height: 100vh; /* Set the height of each section to be 100% of the viewport height */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+}
+
+.main-content {
+    display: flex;
+    justify-content: left; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    height: 100vh; /* Full viewport height */
+    text-align: left;
+}
+
+.main-content > div {
+    padding-left: 95px; /* Align content with the logo */
+    /* Add max-width if the content stretches too wide */
+    max-width: 800px; /* Adjust this as needed */
+}
+
+.header {
+    font-size: 48px; /* Increased font size */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.subheader {
+    font-size: 32px; /* Increased font size */
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px 15px 15px 0;
+    background-color: transparent;
+    border: 2px solid #4198d9; /* Updated border color */
+    color: #4198d9; /* Updated text color */
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #fff; /* Color change on hover */
+    color: #081b29; /* Text color change on hover */
+    border: 2px solid #fff;
+}
+
+.social-links a {
+    font-size: 24px; /* Size of the social icons */
+    margin: 0 10px;
+    border: 2px solid #4198d9; /* Border around the icon */
+    border-radius: 50%; /* Makes the border circular */
+    display: inline-flex; /* Aligns the icon in the center */
+    align-items: center; /* Centers the icon vertically */
+    justify-content: center; /* Centers the icon horizontally */
+    width: 50px; /* Width of the circular button */
+    height: 50px; /* Height of the circular button */
+    text-decoration: none; /* Removes underline from the icon */
+    color: #4198d9; /* Icon color */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.social-links a:hover {
+    background-color: #fff; /* Background color on hover */
+    color: #081b29; /* Icon color on hover */
+    border: 2px solid #fff;
+}
+
+footer {
+    text-align: center; /* Center text horizontally */
+    position: fixed; /* Fixed position to keep it at the bottom */
+    left: 0; /* Align to the left edge */
+    bottom: 0; /* Position at the bottom */
+    width: 100%; /* Full width to stretch across the screen */
+    background-color: #081b29; /* Background color, can be adjusted */
+    color: white; /* Text color */
+    padding: 10px 0; /* Padding for spacing */
+    font-size: 12px; /* Smaller font size */
+}
+
+.section-title {
+    font-size: 40px; /* Increase the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    margin-top: 40px; /* Existing top margin */
+    margin-bottom: 20px;
+    padding-left: 95px; /* Align content with the logo */
+}
+
+.section-content {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+    padding-left: 95px; /* Align content with the logo */
+}
