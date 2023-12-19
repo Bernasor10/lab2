@@ -3,7 +3,7 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 130px; /* Added padding to account for the fixed navbar */
+    padding: 0;
 }
 
 html {
@@ -11,27 +11,27 @@ html {
 }
 
 .navbar {
-    position: fixed; /* Changed to fixed */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3px 13px;
-    background: #081b29; /* Consistent with the body background */
-    overflow: hidden; /* Clear floats */
+    padding: 10px 1px;
+    background: #081b29;
+    overflow: hidden;
     z-index: 1000; /* Ensure it's above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
 }
 
 .navbar a { /* Upper right navigation */
     float: right;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 10px 15px; /* Reduced padding for smaller navbar */
     text-decoration: none;
-    font-size: 23px;
-    line-height: 25px;
+    font-size: 21px; /* Reduced font size */
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
-    margin: 5px;
+    margin: 2px; /* Reduced margin */
 }
 
 .navbar a:hover { /* Upper right navigation bar when hovering */
@@ -40,22 +40,15 @@ html {
 
 .navbar .logo { /* Upper left navigation (Ronaldo) */
     position: absolute;
-    left: 70px; /* Position from the left */
+    left: 20px; /* Reduced space from the left */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust for exact centering */
-    font-size: 30px;
+    font-size: 30px; /* Reduced font size */
     font-weight: bold;
     color: white;
     text-decoration: none;
-    cursor: pointer; /* Indicates it's clickable */
-}
-
-section {
-    height: 100vh; /* Set the height of each section to be 100% of the viewport height */
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    text-align: left;
+    cursor: pointer;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
 .main-content {
@@ -64,6 +57,21 @@ section {
     align-items: center; /* Vertically center the content */
     height: 100vh; /* Full viewport height */
     text-align: left;
+    background-image: url('images/image.jpg'); /* Path to the background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    margin-top: -10px; /* Adjusted to remove any gap */
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    padding: 50px 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in the height calculation */
 }
 
 .main-content > div {
@@ -88,10 +96,11 @@ section {
     display: inline-block;
     padding: 10px 20px;
     margin: 15px 15px 15px 0;
-    background-color: transparent;
-    border: 2px solid #4198d9; /* Updated border color */
-    color: #4198d9; /* Updated text color */
+    background-color: #13200e;
+    border: 2px solid #13200e; /* Updated border color */
+    color: #fff; /* Updated text color */
     text-decoration: none;
+    border-radius: 15px;
     font-size: 20px;
     transition: background-color 0.3s, color 0.3s;
 }

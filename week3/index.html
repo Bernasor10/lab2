@@ -23,8 +23,7 @@
     <div>
         <div class="header">Hi, I'm Ronaldo Bernasor II</div>
         <div class="subheader">Potato Lover</div>
-        <a href="#" class="button">Hire Me</a>
-        <a href="#" class="button">Let's Talk</a>
+        <a href="#" class="button">Learn More</a>
     </div>
 </div>
 
@@ -33,7 +32,7 @@
     <div>
         <div class="section-title">About Me</div>
         <div class="section-content">
-            <p>Here is where you'll write a bit about yourself...</p>
+            <p>About Me</p>
         </div>
     </div>
 
@@ -77,6 +76,23 @@
         &copy; 2023 Ronaldo Bernasor II | WEBPROG Portfolio | All Rights Reserved.
     </div>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const footer = document.querySelector('footer');
+        const contactMeSection = document.getElementById('contact');
+        
+        function toggleFooterVisibility() {
+            const sectionPos = contactMeSection.getBoundingClientRect();
+            const footerVisible = sectionPos.top < window.innerHeight && sectionPos.bottom >= 0;
+            
+            footer.style.display = footerVisible ? 'block' : 'none';
+        }
+    
+        window.addEventListener('scroll', toggleFooterVisibility);
+        toggleFooterVisibility(); // Run on load in case the contact section is initially visible
+    });
+    </script>
+    
 
 </body>
 </html>
