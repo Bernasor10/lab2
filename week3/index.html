@@ -7,92 +7,116 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css"/>
     <title>Ronaldo Bernasor II's Profile</title>
+    <style>
+        /* Add your CSS here */
+    </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="#home" class="logo">Ronaldo</a>
+        <a href="javascript:void(0);" class="logo" onclick="window.location.reload(true);">Ronaldo</a>
         <a href="#contact">Contact Me</a>
         <a href="#playlist">Playlist</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
         <a href="#home">Home</a>
     </div>
 
-<div class="main-content" id="home">
-    <div>
-        <div class="header">Hi, I'm Ronaldo Bernasor II</div>
-        <div class="subheader">Potato Lover</div>
-        <a href="#" class="button">Learn More</a>
-    </div>
-</div>
-
-<!-- About Section -->
-<section id="about">
-    <div>
-        <div class="section-title">About Me</div>
-        <div class="section-content">
-            <p>About Me</p>
+    <!-- Main Content / Home Section -->
+    <div class="main-content" id="home">
+        <div>
+            <div class="header">Hi, I'm Ronaldo Bernasor II</div>
+            <div class="subheader">Potato Lover</div>
+            <a href="#about" class="button">Learn More</a>
         </div>
     </div>
 
-    
-</section>
-
-<!-- Playlist Section -->
-<section id="playlist">
-    <div>
-        <div class="section-title">My Playlists</div>
-        <div class="section-content">
-            <ul>
-                <li><a href="https://music.youtube.com/playlist?list=PLHPgKC5F2XhbkLaCuZ3al-9S4L0RMgUGb&si=8klSv9JZj52KKVfT" target="_blank">Playlist 1</a></li>
-                <li><a href="https://music.youtube.com/playlist?list=PLHPgKC5F2XhYpHSn-dhmV4M79Vlolq5ED&si=UGklvdv5Nl8a1wSc" target="_blank">Playlist 2</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-<!-- Contact Me Section -->
-<section id="contact">
-    <div>
-        <div class="section-title">Contact Me</div>
-        <div class="section-content">
-            <p>Looking Forward to New Opportunities<br></p>
-            <p>rsbernasor2@student.apc.edu.ph<br></p>
-            <!-- Social Links -->
-            <div class="social-links">
-                <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><i class='bx bxl-instagram'></i></a>
+    <!-- About Section -->
+    <section id="about">
+        <div>
+            <div class="section-title">About Me</div>
+            <div class="section-content">
+                <p>About Me</p>
             </div>
         </div>
-    </div>
-</section>
-</section>
+    </section>
 
-<footer>
-    <div class="copyright">
-        &copy; 2023 Ronaldo Bernasor II | WEBPROG Portfolio | All Rights Reserved.
-    </div>
-</footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const footer = document.querySelector('footer');
-        const contactMeSection = document.getElementById('contact');
-        
-        function toggleFooterVisibility() {
-            const sectionPos = contactMeSection.getBoundingClientRect();
-            const footerVisible = sectionPos.top < window.innerHeight && sectionPos.bottom >= 0;
-            
-            footer.style.display = footerVisible ? 'block' : 'none';
-        }
-    
-        window.addEventListener('scroll', toggleFooterVisibility);
-        toggleFooterVisibility(); // Run on load in case the contact section is initially visible
-    });
+    <!-- Playlist Section -->
+    <section id="playlist">
+        <div>
+            <div class="section-title">My Playlists</div>
+            <div class="section-content">
+                <ul>
+                    <li><a href="https://music.youtube.com/playlist?list=PLHPgKC5F2XhbkLaCuZ3al-9S4L0RMgUGb&si=8klSv9JZj52KKVfT" target="_blank">Playlist 1</a></li>
+                    <li><a href="https://music.youtube.com/playlist?list=PLHPgKC5F2XhYpHSn-dhmV4M79Vlolq5ED&si=UGklvdv5Nl8a1wSc" target="_blank">Playlist 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact">
+        <div>
+            <div class="section-title">Contact Me</div>
+            <div class="section-content">
+                <p>Looking Forward to New Opportunities<br></p>
+                <p>rsbernasor2@student.apc.edu.ph<br></p>
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2023 Ronaldo Bernasor II | WEBPROG Portfolio | All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Active Navigation Highlighting -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.navbar a:not(.logo)');
+            const sections = document.querySelectorAll('section');
+            let currentActive = '';
+
+            // Function to remove 'active' class from all navigation links
+            const clearActive = () => {
+                navLinks.forEach(link => link.classList.remove('active'));
+            };
+
+            // Function to set 'active' class on the current section link
+            const setActive = (id) => {
+                clearActive();
+                const activeLink = document.querySelector(`.navbar a[href="#${id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+                currentActive = id;
+            };
+
+            setActive('home');
+
+            window.addEventListener('scroll', () => {
+                let currentSection = 'home';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Adjust as needed
+                    if (window.scrollY >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                if (currentActive !== currentSection) {
+                    setActive(currentSection);
+                }
+            });
+        });
     </script>
     
-
 </body>
 </html>

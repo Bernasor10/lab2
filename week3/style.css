@@ -1,5 +1,5 @@
 body {
-    background-color: #081b29; /* Ocean Blue */
+    background-color: #081F2C; /* Ocean Blue */
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,9 +16,9 @@ html {
     left: 0;
     width: 100%;
     padding: 10px 1px;
-    background: #081b29;
+    background: #05131b;
     overflow: hidden;
-    z-index: 1000; /* Ensure it's above other elements */
+    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
 }
 
@@ -26,15 +26,26 @@ html {
     float: right;
     color: white;
     text-align: center;
-    padding: 10px 15px; /* Reduced padding for smaller navbar */
+    padding: 10px 15px;
     text-decoration: none;
     font-size: 21px; /* Reduced font size */
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
-    margin: 2px; /* Reduced margin */
+    margin: 2px;
 }
 
 .navbar a:hover { /* Upper right navigation bar when hovering */
+    color: #18517b;
+}
+
+.navbar .logo:hover {
+    color: white; 
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.navbar a.active {
+    background-color: transparent;
     color: #18517b;
 }
 
@@ -43,7 +54,7 @@ html {
     left: 20px; /* Reduced space from the left */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust for exact centering */
-    font-size: 30px; /* Reduced font size */
+    font-size: 34px; /* Reduced font size */
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -60,7 +71,9 @@ html {
     background-image: url('images/image.jpg'); /* Path to the background image */
     background-size: cover; /* Cover the entire area */
     background-position: center; /* Center the background image */
-    margin-top: -10px; /* Adjusted to remove any gap */
+    margin-top: 0px; /* Adjusted to remove any gap */
+    padding-left: 90px;
+    padding-top: 10px;
 }
 
 section {
@@ -68,26 +81,25 @@ section {
     display: flex;
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center;
-    padding: 50px 20px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Include padding in the height calculation */
+    align-items: flex-start; /* Center content horizontally */
+    text-align: left;
+    padding: 50px 20px;
+    box-sizing: border-box;
 }
 
 .main-content > div {
-    padding-left: 95px; /* Align content with the logo */
-    /* Add max-width if the content stretches too wide */
-    max-width: 800px; /* Adjust this as needed */
+    padding-left: 20px; /* Align content with the logo */
+    max-width: 800px;
 }
 
 .header {
-    font-size: 48px; /* Increased font size */
+    font-size: 48px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
 .subheader {
-    font-size: 32px; /* Increased font size */
+    font-size: 32px;
     margin-bottom: 50px;
     font-weight: bold;
 }
@@ -106,17 +118,61 @@ section {
 }
 
 .button:hover {
-    background-color: #fff; /* Color change on hover */
-    color: #081b29; /* Text color change on hover */
-    border: 2px solid #fff;
+    background-color: #081b29; /* Color change on hover */
+    color: #fff; /* Text color change on hover */
+    border: 2px solid #081b29;
 }
 
 .social-links a {
     font-size: 24px; /* Size of the social icons */
     margin: 0 10px;
     border: 2px solid #4198d9; /* Border around the icon */
-    border-radius: 50%; /* Makes the border circular */
-    display: inline-flex; /* Aligns the icon in the center */
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center; /* Centers the icon vertically */
+    justify-content: center; /* Centers the icon horizontally */
+    width: 50px; /* Width of the circular button */
+    height: 50px; /* Height of the circular button */
+    text-decoration: none; /* Removes underline from the icon */
+    color: #4198d9; /* Icon color */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.social-links a:hover {
+    background-color: #fff; /* Background color on hover */
+    color: #081b29; /* Icon color on hover */
+    border: 2px solid #fff;
+}
+
+/* Contact Me Section Alignment */
+#contact .section-content p,
+#contact .section-content,
+#contact .social-links,
+#about .section-content,
+#playlist .section-content {
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Align with the navbar logo padding */
+}
+
+#contact .social-links a {
+    margin-right: 10px; /* Space between icons */
+}
+
+footer {
+    display: none;
+}
+
+#contact:target + footer {
+    display: block; 
+}
+
+/* Remaining CSS */
+.social-links a {
+    font-size: 30px; /* Size of the social icons */
+    margin: 0 10px;
+    border: 3px solid #4198d9; /* Border around the icon */
+    border-radius: 50%; 
+    display: inline-flex;
     align-items: center; /* Centers the icon vertically */
     justify-content: center; /* Centers the icon horizontally */
     width: 50px; /* Width of the circular button */
@@ -138,10 +194,10 @@ footer {
     left: 0; /* Align to the left edge */
     bottom: 0; /* Position at the bottom */
     width: 100%; /* Full width to stretch across the screen */
-    background-color: #081b29; /* Background color, can be adjusted */
+    background-color: #081F2C;
     color: white; /* Text color */
     padding: 10px 0; /* Padding for spacing */
-    font-size: 12px; /* Smaller font size */
+    font-size: 12px;
 }
 
 .section-title {
@@ -150,6 +206,7 @@ footer {
     margin-top: 40px; /* Existing top margin */
     margin-bottom: 20px;
     padding-left: 95px; /* Align content with the logo */
+    text-align: top;
 }
 
 .section-content {
