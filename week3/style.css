@@ -38,14 +38,58 @@ html {
     color: #18517b;
 }
 
-/* Right Side GIF */
-.right-side-gif {
+.image-container {
+    display: flex;
+    align-items: center; /* Center images vertically */
+    justify-content: center; /* Center images horizontally */
+}
+
+.left-side-gif {
     position: absolute;
-    right: 180px;
+    right: 40%; /* Adjust this value to position the GIF to the left of the center */
+    top: 55%;
+    transform: translate(50%, -50%); /* Adjust translate values to position the GIF */
+    width: 330px; /* Set your desired width */
+    height: auto; /* Keep height auto to maintain aspect ratio */
+    z-index: 1; /* Ensure it's above other content if necessary */
+}
+
+/* Right Side Image of mine */
+.right-side-image {
+    position: absolute;
+    right: 30px;
     top: 54%;
     transform: translateY(-50%);
     width: 409px;
     height: auto;
+}
+
+/* Right Side Image of mine */
+.right-side-image {
+    /* ... your existing styles ... */
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeInImage 1s ease-in forwards; /* Animation for the image */
+    animation-delay: 1s; /* Delay to control when the animation starts */
+}
+
+/* Left Side GIF */
+.left-side-gif {
+    /* ... your existing styles ... */
+    opacity: 0; /* Start with the GIF being transparent */
+    animation: fadeInGif 2s ease-in forwards; /* Animation for the GIF */
+    animation-delay: 4s; /* Delay to control when the animation starts */
+}
+
+/* Keyframes for image fadeIn */
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Keyframes for GIF fadeIn */
+@keyframes fadeInGif {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .navbar .logo:hover {
@@ -116,6 +160,7 @@ section {
     box-sizing: border-box;
 }
 
+
 .main-content > div {
     padding-left: 20px; /* Align content with the logo */
     max-width: 800px;
@@ -127,10 +172,12 @@ section {
     font-weight: bold;
 }
 
-.subheader {
-    font-size: 32px;
-    margin-bottom: 50px;
+.subheader { /*Home section*/
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-top: 20;
     font-weight: bold;
+    color: #F5B51E;
 }
 
 .button {
@@ -152,27 +199,6 @@ section {
     border: 2px solid #081b29;
 }
 
-.social-links a {
-    font-size: 24px; /* Size of the social icons */
-    margin: 0 10px;
-    border: 2px solid #4198d9; /* Border around the icon */
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center; /* Centers the icon vertically */
-    justify-content: center; /* Centers the icon horizontally */
-    width: 50px; /* Width of the circular button */
-    height: 50px; /* Height of the circular button */
-    text-decoration: none; /* Removes underline from the icon */
-    color: #4198d9; /* Icon color */
-    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
-}
-
-.social-links a:hover {
-    background-color: #fff; /* Background color on hover */
-    color: #081b29; /* Icon color on hover */
-    border: 2px solid #fff;
-}
-
 /* Contact Me Section Alignment */
 #contact .section-content p,
 #contact .section-content,
@@ -187,6 +213,39 @@ section {
     margin-right: 10px; /* Space between icons */
 }
 
+/* Remaining CSS */
+.social-links a {
+    font-size: 45px; /* Size of the social icons */
+    margin: 0 10px;
+    border-radius: 50%; 
+    display: inline-flex;
+    align-items: center; /* Centers the icon vertically */
+    justify-content: center; /* Centers the icon horizontally */
+    width: 60px; /* Width of the circular button */
+    height: 60px; /* Height of the circular button */
+    text-decoration: none; /* Removes underline from the icon */
+    color: #fff; /* Icon color */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.social-links a:hover {
+    background-color: #4198d9; /* Background color on hover */
+    color: #fff; /* Icon color on hover */
+    border: 3px solid #4198d9;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #081F2C; /* Adjust the color as needed */
+    color: white;
+    font-size: 12px;
+    position: relative; /* or 'static' if it doesn't need to be fixed */
+    clear: both; /* Clear any floats */
+    z-index: 10; /* Ensure it's above other content */
+}
+
 footer {
     display: none;
 }
@@ -195,38 +254,73 @@ footer {
     display: block; 
 }
 
-/* Remaining CSS */
-.social-links a {
-    font-size: 30px; /* Size of the social icons */
-    margin: 0 10px;
-    border: 3px solid #4198d9; /* Border around the icon */
-    border-radius: 50%; 
-    display: inline-flex;
-    align-items: center; /* Centers the icon vertically */
-    justify-content: center; /* Centers the icon horizontally */
-    width: 50px; /* Width of the circular button */
-    height: 50px; /* Height of the circular button */
-    text-decoration: none; /* Removes underline from the icon */
-    color: #4198d9; /* Icon color */
-    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+/* Common Styling for All Main Sections */
+#home, #about, #playlist, #contact {
+    min-height: 100vh; /* Minimum height to occupy the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align content vertically in the center */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.social-links a:hover {
-    background-color: #fff; /* Background color on hover */
-    color: #081b29; /* Icon color on hover */
-    border: 2px solid #fff;
+#home {
+    align-items: flex-start; /* Align content horizontally to the start (left) */
+    text-align: left; /* Align the text to the left */
+}   
+
+/* Specific Styling for Playlist Section */
+#playlist {
+    padding-bottom: 50px; /* Add padding to avoid overlapping */
+    flex-direction: row; /* Arrange playlists in a row for horizontal layout */
+    justify-content: space-around; /* Distribute space around playlist items */
+    align-items: flex-start; /* Align items to the start of the cross axis */
+    padding: 20px;
 }
 
-footer {
-    text-align: center; /* Center text horizontally */
-    position: fixed; /* Fixed position to keep it at the bottom */
-    left: 0; /* Align to the left edge */
-    bottom: 0; /* Position at the bottom */
-    width: 100%; /* Full width to stretch across the screen */
-    background-color: #081F2C;
-    color: white; /* Text color */
-    padding: 10px 0; /* Padding for spacing */
-    font-size: 12px;
+.playlist-container {
+    width: 100%; /* Ensure the container takes full width of the section */
+    display: flex;
+    justify-content: center; /* Center playlists horizontally */
+    flex-wrap: wrap; /* Enable wrapping if the screen is too small */
+    gap: 20px; /* Space between playlists */
+}
+
+.playlist {
+    margin: 10px; /* Add margin around playlists */
+    flex: 1; /* Each playlist flexes to fill available space */
+    max-width: calc(50% - 10px); /* Adjust the width as needed */
+}
+
+.playlist iframe {
+    width: 100%; /* Full width of the container */
+    max-width: 400px; /* Maximum size of the iframe */
+    height: 452px;
+}
+
+.playlist h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments if necessary */
+@media (max-width: 768px) {
+    .playlist {
+        flex-basis: 90%; /* Full width on smaller screens */
+        max-width: 100%; /* Allow iframes to take full width */
+    }
+}
+
+
+/* About Section Styling */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: flex-start; /* Align content to the top */
+    text-align: left;
+    padding: 20px; /* Adjust padding as needed */
+    height: auto; /* Adjust height as needed */
 }
 
 .section-title {
@@ -236,6 +330,13 @@ footer {
     margin-bottom: 20px;
     padding-left: 95px; /* Align content with the logo */
     text-align: top;
+}
+
+/* Add or modify styles for subheader if needed */
+.about-subheader {
+    font-size: 24px; /* Example size, adjust as needed */
+    margin-top: 10px; /* Adjust as needed */
+    /* Additional styles... */
 }
 
 .section-content {

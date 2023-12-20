@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css"/>
-    <title>Ronaldo Bernasor II's Profile</title>
+    <link rel="icon" href="images/maximus.ico" type="image/x-icon"> <!-- Favicon link -->
+    <title>Ronaldo Bernasor II's Portfolio</title>
     <style>
         /* Add your CSS here */
     </style>
@@ -28,7 +29,7 @@
             <div class="header"><span class="animate-text">Hi, I'm Ronaldo Bernasor II</span></div>
             <div class="subheader animate-text">Potato Lover</div>
             <p id="typing-paragraph" class="animate-text">
-                You may call me Bam. I love potatoes and enjoy them in all their varieties. <br>
+                You can call me Bam. I love potatoes and enjoy them in all their varieties. <br>
                 Currently, I'm pursuing my studies in BSIT at Asia Pacific College, <br>
                 delving into the fascinating world of technology. <br>
                 If you want to know more about me, kindly click <strong>"Learn More".</strong>
@@ -36,7 +37,8 @@
             <a href="#about" class="button">Learn More</a>
             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="button" target="_blank">My Introduction Video</a>
         </div>
-        <img src="images/cat-kitty.gif" alt="Cat Kitty GIF" class="right-side-gif" />
+        <img src="images/cat-slapping.gif" alt="Cat Slapping GIF" class="left-side-gif" />
+        <img src="images/me.jpg" alt="Me" class="right-side-image" />
     </div>
 
     <!-- About Section -->
@@ -49,18 +51,22 @@
         </div>
     </section>
 
-    <!-- Playlist Section -->
-    <section id="playlist">
-        <div>
-            <div class="section-title">My Playlists</div>
-            <div class="section-content">
-                <ul>
-                    <li><a href="https://music.youtube.com/playlist?list=PLHPgKC5F2XhbkLaCuZ3al-9S4L0RMgUGb&si=8klSv9JZj52KKVfT" target="_blank">Playlist 1</a></li>
-                    <li><a href="https://music.youtube.com/playlist?list=PLHPgKC5F2XhYpHSn-dhmV4M79Vlolq5ED&si=UGklvdv5Nl8a1wSc" target="_blank">Playlist 2</a></li>
-                </ul>
-            </div>
+<!-- Playlist Section -->
+<section id="playlist">
+    <div class="section-title">My Spotify Playlists</div>
+
+    <div class="playlist-container">
+        <div class="playlist">
+            <h3>Playlist 1</h3>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6DEut511BpiRmFtomkYiAL?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-    </section>
+
+        <div class="playlist">
+            <h3>Playlist 2</h3>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/07cApm4yyEUX8HYlDC7cgJ?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Me Section -->
     <section id="contact">
@@ -71,60 +77,19 @@
                 <p>rsbernasor2@student.apc.edu.ph<br></p>
                 <!-- Social Links -->
                 <div class="social-links">
-                    <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+                    <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
                 </div>
             </div>
         </div>
     </section>
-
     <footer>
         <div class="copyright">
             &copy; 2023 Ronaldo Bernasor II | WEBPROG Portfolio | All Rights Reserved.
         </div>
     </footer>
 
-    <!-- JavaScript for Active Navigation Highlighting -->
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.navbar a:not(.logo)');
-            const sections = document.querySelectorAll('section');
-            let currentActive = '';
-
-            // Function to remove 'active' class from all navigation links
-            const clearActive = () => {
-                navLinks.forEach(link => link.classList.remove('active'));
-            };
-
-            // Function to set 'active' class on the current section link
-            const setActive = (id) => {
-                clearActive();
-                const activeLink = document.querySelector(`.navbar a[href="#${id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-                currentActive = id;
-            };
-
-            setActive('home');
-
-            window.addEventListener('scroll', () => {
-                let currentSection = 'home';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100; // Adjust as needed
-                    if (window.scrollY >= sectionTop) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-
-                if (currentActive !== currentSection) {
-                    setActive(currentSection);
-                }
-            });
-        });
-    </script>
     <script src="typing-animation.js"></script>
 </body>
 </html>
