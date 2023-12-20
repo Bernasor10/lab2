@@ -26,9 +26,9 @@ html {
     float: right;
     color: white;
     text-align: center;
-    padding: 10px 15px;
+    padding: 19px 15px;
     text-decoration: none;
-    font-size: 21px; /* Reduced font size */
+    font-size: 27px; /* Reduced font size */
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
     margin: 2px;
@@ -36,60 +36,6 @@ html {
 
 .navbar a:hover { /* Upper right navigation bar when hovering */
     color: #18517b;
-}
-
-.image-container {
-    display: flex;
-    align-items: center; /* Center images vertically */
-    justify-content: center; /* Center images horizontally */
-}
-
-.left-side-gif {
-    position: absolute;
-    right: 40%; /* Adjust this value to position the GIF to the left of the center */
-    top: 55%;
-    transform: translate(50%, -50%); /* Adjust translate values to position the GIF */
-    width: 330px; /* Set your desired width */
-    height: auto; /* Keep height auto to maintain aspect ratio */
-    z-index: 1; /* Ensure it's above other content if necessary */
-}
-
-/* Right Side Image of mine */
-.right-side-image {
-    position: absolute;
-    right: 30px;
-    top: 54%;
-    transform: translateY(-50%);
-    width: 409px;
-    height: auto;
-}
-
-/* Right Side Image of mine */
-.right-side-image {
-    /* ... your existing styles ... */
-    opacity: 0; /* Start with the image being transparent */
-    animation: fadeInImage 1s ease-in forwards; /* Animation for the image */
-    animation-delay: 1s; /* Delay to control when the animation starts */
-}
-
-/* Left Side GIF */
-.left-side-gif {
-    /* ... your existing styles ... */
-    opacity: 0; /* Start with the GIF being transparent */
-    animation: fadeInGif 2s ease-in forwards; /* Animation for the GIF */
-    animation-delay: 4s; /* Delay to control when the animation starts */
-}
-
-/* Keyframes for image fadeIn */
-@keyframes fadeInImage {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Keyframes for GIF fadeIn */
-@keyframes fadeInGif {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .navbar .logo:hover {
@@ -116,6 +62,58 @@ html {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
+.image-container {
+    display: flex;
+    align-items: center; /* Center images vertically */
+    justify-content: center; /* Center images horizontally */
+}
+
+.left-side-gif {
+    position: absolute;
+    right: 40%; /* Adjust this value to position the GIF to the left of the center */
+    top: 55%;
+    transform: translate(50%, -50%); /* Adjust translate values to position the GIF */
+    width: 330px; /* Set your desired width */
+    height: auto; /* Keep height auto to maintain aspect ratio */
+    z-index: 1; /* Ensure it's above other content if necessary */
+}
+
+/* Right Side Image of mine */
+.right-side-image {
+    position: absolute;
+    right: 180px;
+    top: 54%;
+    transform: translateY(-50%);
+    width: 409px;
+    height: auto;
+}
+
+/* Right Side Image of mine */
+.right-side-image {
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeInImage 1s ease-in forwards; /* Animation for the image */
+    animation-delay: 1s; /* Delay to control when the animation starts */
+}
+
+/* Left Side GIF */
+.left-side-gif {
+    opacity: 0; /* Start with the GIF being transparent */
+    animation: fadeInGif 2s ease-in forwards; /* Animation for the GIF */
+    animation-delay: 4s; /* Delay to control when the animation starts */
+}
+
+/* Keyframes for image fadeIn */
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Keyframes for GIF fadeIn */
+@keyframes fadeInGif {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .main-content {
     display: flex;
     justify-content: left; /* Horizontally center the content */
@@ -126,8 +124,17 @@ html {
     background-size: cover; /* Cover the entire area */
     background-position: center; /* Center the background image */
     margin-top: 0px; /* Adjusted to remove any gap */
-    padding-left: 90px;
+    padding-left: 100px;
     padding-top: 10px;
+}
+
+.main-content p {
+    font-size: 23px;
+}
+
+.main-content > div {
+    padding-left: 100px; /* Align content with the logo */
+    max-width: 800px;
 }
 
 /* Typing Cursor Styling */
@@ -160,20 +167,14 @@ section {
     box-sizing: border-box;
 }
 
-
-.main-content > div {
-    padding-left: 20px; /* Align content with the logo */
-    max-width: 800px;
-}
-
-.header {
-    font-size: 48px;
+.header { /*Home section*/
+    font-size: 56px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
 .subheader { /*Home section*/
-    font-size: 35px;
+    font-size: 40px;
     margin-bottom: 20px;
     margin-top: 20;
     font-weight: bold;
@@ -234,7 +235,7 @@ section {
     border: 3px solid #4198d9;
 }
 
-footer {
+footer { /*Copyright*/
     text-align: center;
     width: 100%;
     padding: 10px 0;

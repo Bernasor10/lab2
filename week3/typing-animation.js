@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     typeNextElement(); // End of the typing animation code
 
     // Smooth scrolling functionality
-    const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
-
     const smoothScroll = (target, duration) => {
         const targetPosition = target.getBoundingClientRect().top - document.querySelector('.navbar').offsetHeight;
         let startPosition = window.pageYOffset;
@@ -58,15 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animation);
     };
 
+    // Add event listener to navigation links and 'Learn More' button
+    const navLinks = document.querySelectorAll('.navbar a[href^="#"], .button[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            smoothScroll(targetSection, 1000); // Adjust duration as needed
-            // Manually set active class on clicked nav item
-            navLinks.forEach(lnk => lnk.classList.remove('active'));
-            link.classList.add('active');
+            smoothScroll(targetSection, 1000);
         });
     });
 
@@ -80,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         footer.style.display = isContactInView ? 'block' : 'none';
     };
 
-    // Check footer visibility on scroll and load
     window.addEventListener('scroll', toggleFooterVisibility);
     toggleFooterVisibility();
 
@@ -93,8 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-
-            // Adjust the range in which a section is considered active
             if (window.pageYOffset >= (sectionTop - sectionHeight / 3) &&
                 window.pageYOffset < (sectionTop + sectionHeight - sectionHeight / 3)) {
                 currentActive = section.getAttribute('id');
@@ -109,11 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Call updateActiveNav on scroll and load
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
 
-    // Additional script to handle hash changes
+    // Handle hash changes
     window.addEventListener('hashchange', () => {
         const hash = window.location.hash;
         if (hash === '#contact') {
