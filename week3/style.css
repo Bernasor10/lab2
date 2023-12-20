@@ -38,6 +38,16 @@ html {
     color: #18517b;
 }
 
+/* Right Side GIF */
+.right-side-gif {
+    position: absolute;
+    right: 180px;
+    top: 54%;
+    transform: translateY(-50%);
+    width: 409px;
+    height: auto;
+}
+
 .navbar .logo:hover {
     color: white; 
     background-color: transparent;
@@ -75,6 +85,25 @@ html {
     padding-left: 90px;
     padding-top: 10px;
 }
+
+/* Typing Cursor Styling */
+.typing-cursor {
+    border-right: 2px solid orange; /* Cursor color set to orange */
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Typing Animation Keyframes */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
 
 section {
     height: 100vh;
