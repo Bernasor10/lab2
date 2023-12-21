@@ -70,7 +70,7 @@ html {
 
 .left-side-gif {
     position: absolute;
-    right: 40%; /* Adjust this value to position the GIF to the left of the center */
+    right: 41%; /* Adjust this value to position the GIF to the left of the center */
     top: 55%;
     transform: translate(50%, -50%); /* Adjust translate values to position the GIF */
     width: 330px; /* Set your desired width */
@@ -86,6 +86,7 @@ html {
     transform: translateY(-50%);
     width: 409px;
     height: auto;
+    border-radius: 25px;
 }
 
 /* Right Side Image of mine */

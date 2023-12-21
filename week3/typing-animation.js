@@ -29,27 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             span.style.display = 'inline-block';
             span.style.animation = 'typing 2s steps(30, end) forwards, blink-cursor 0.75s step-end infinite';
             element.appendChild(span);
-    
-            // Set timeout for next sentence
-            setTimeout(() => typeSentence(element, sentences, sentenceIndex + 1), 2000);
-        } else if (currentElementIndex < elementsToAnimate.length - 1) {
-            // Continue to the next element
-            typeNextElement();
-        } else {
-            // Typing animation finished, add class for blinking cursor
-            document.getElementById('typing-paragraph').classList.add('typing-finished');
-        }
-    }
-    function typeSentence(element, sentences, sentenceIndex) {
-        if (sentenceIndex < sentences.length) {
-            element.style.visibility = 'visible';
-            const span = document.createElement('span');
-            span.innerHTML = sentences[sentenceIndex] + (sentenceIndex < sentences.length - 1 ? '<br>' : '');
-            span.style.overflow = 'hidden';
-            span.style.whiteSpace = 'nowrap';
-            span.style.display = 'inline-block';
-            span.style.animation = 'typing 2s steps(30, end) forwards, blink-cursor 0.75s step-end infinite';
-            element.appendChild(span);
 
             setTimeout(() => typeSentence(element, sentences, sentenceIndex + 1), 2000);
         } else if (currentElementIndex < elementsToAnimate.length) {
