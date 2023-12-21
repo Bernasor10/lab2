@@ -99,7 +99,15 @@ html {
 .left-side-gif {
     opacity: 0; /* Start with the GIF being transparent */
     animation: fadeInGif 2s ease-in forwards; /* Animation for the GIF */
-    animation-delay: 4s; /* Delay to control when the animation starts */
+    animation-delay: 5s; /* Delay to control when the animation starts */
+}
+
+.playlist-cat-gif {
+    display: block; /* Display as a block-level element */
+    margin: 210px auto; /* Add margin for spacing and center horizontally */
+    margin-left: -27%; /* Shift the image slightly to the left */
+    width: 498px;
+    height: auto; /* Height is auto to maintain aspect ratio */
 }
 
 /* Keyframes for image fadeIn */
@@ -184,14 +192,38 @@ section {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    margin: 15px 15px 15px 0;
+    margin: 15px 30px 15px 0;
     background-color: #13200e;
     border: 2px solid #13200e; /* Updated border color */
     color: #fff; /* Updated text color */
     text-decoration: none;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 25px;
     transition: background-color 0.3s, color 0.3s;
+    opacity: 0; /* Start with the button being transparent */
+    animation: fadeInButtons 1s ease-in forwards; /* Animation for the button */
+    animation-delay: 13.5s; /* Adjust the delay as needed */
+}
+
+@keyframes fadeInButtons {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#typing-paragraph::after {
+    content: '';
+    display: inline-block;
+    vertical-align: bottom;
+    width: 2px;
+    height: 1em;
+    background-color: white;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 .button:hover {
@@ -241,7 +273,7 @@ footer { /*Copyright*/
     padding: 10px 0;
     background-color: #081F2C; /* Adjust the color as needed */
     color: white;
-    font-size: 12px;
+    font-size: 16px;
     position: relative; /* or 'static' if it doesn't need to be fixed */
     clear: both; /* Clear any floats */
     z-index: 10; /* Ensure it's above other content */
@@ -272,11 +304,11 @@ footer {
 
 /* Specific Styling for Playlist Section */
 #playlist {
-    padding-bottom: 50px; /* Add padding to avoid overlapping */
+    padding-bottom: 50px; /* Retain existing bottom padding */
+    padding-left: 100px; /* Increase left padding to move content to the right */
     flex-direction: row; /* Arrange playlists in a row for horizontal layout */
     justify-content: space-around; /* Distribute space around playlist items */
     align-items: flex-start; /* Align items to the start of the cross axis */
-    padding: 20px;
 }
 
 .playlist-container {
@@ -288,7 +320,7 @@ footer {
 }
 
 .playlist {
-    margin: 10px; /* Add margin around playlists */
+    margin: 15px; /* Add margin around playlists */
     flex: 1; /* Each playlist flexes to fill available space */
     max-width: calc(50% - 10px); /* Adjust the width as needed */
 }
@@ -296,12 +328,12 @@ footer {
 .playlist iframe {
     width: 100%; /* Full width of the container */
     max-width: 400px; /* Maximum size of the iframe */
-    height: 452px;
+    height: 720px; /* Adjusted height */
 }
 
 .playlist h3 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 /* Responsive adjustments if necessary */
@@ -310,7 +342,11 @@ footer {
         flex-basis: 90%; /* Full width on smaller screens */
         max-width: 100%; /* Allow iframes to take full width */
     }
+    #playlist {
+        padding-left: 20px; /* Less padding on smaller screens */
+    }
 }
+
 
 
 /* About Section Styling */
@@ -324,13 +360,21 @@ footer {
     height: auto; /* Adjust height as needed */
 }
 
-.section-title {
-    font-size: 40px; /* Increase the font size as needed */
+.section-title { /*Headers text to every section*/
+    font-size: 45px; /* Increase the font size as needed */
     font-weight: bold; /* Make the text bold */
     margin-top: 40px; /* Existing top margin */
     margin-bottom: 20px;
     padding-left: 95px; /* Align content with the logo */
     text-align: top;
+}
+
+#playlist-title {
+    color: #1ED760;
+    padding-left: 80px;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add shadow to the text */
 }
 
 /* Add or modify styles for subheader if needed */

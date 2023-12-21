@@ -2,11 +2,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.animate-text');
     let currentElementIndex = 0;
 
+    // Handle logo click to scroll to top
+    const logo = document.querySelector('.navbar .logo');
+    logo.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smoothly scroll to the top
+
+        // Wait for the scroll to finish before reloading
+        setTimeout(() => {
+            window.location.reload(true); // Force a reload from the server
+        }, 1000); // Adjust the timeout duration as needed
+    });
+
     // Hide all elements initially
     elementsToAnimate.forEach(element => {
         element.style.visibility = 'hidden';
     });
 
+    function typeSentence(element, sentences, sentenceIndex) {
+        if (sentenceIndex < sentences.length) {
+            element.style.visibility = 'visible';
+            const span = document.createElement('span');
+            span.innerHTML = sentences[sentenceIndex] + (sentenceIndex < sentences.length - 1 ? '<br>' : '');
+            span.style.overflow = 'hidden';
+            span.style.whiteSpace = 'nowrap';
+            span.style.display = 'inline-block';
+            span.style.animation = 'typing 2s steps(30, end) forwards, blink-cursor 0.75s step-end infinite';
+            element.appendChild(span);
+    
+            // Set timeout for next sentence
+            setTimeout(() => typeSentence(element, sentences, sentenceIndex + 1), 2000);
+        } else if (currentElementIndex < elementsToAnimate.length - 1) {
+            // Continue to the next element
+            typeNextElement();
+        } else {
+            // Typing animation finished, add class for blinking cursor
+            document.getElementById('typing-paragraph').classList.add('typing-finished');
+        }
+    }
     function typeSentence(element, sentences, sentenceIndex) {
         if (sentenceIndex < sentences.length) {
             element.style.visibility = 'visible';
@@ -56,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animation);
     };
 
-    // Add event listener to navigation links and 'Learn More' button
-    const navLinks = document.querySelectorAll('.navbar a[href^="#"], .button[href^="#"]');
+    // Add event listener to navigation links
+    const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -67,12 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Add smooth scroll to the 'Ronaldo' logo
+    document.querySelector('.navbar .logo').addEventListener('click', (e) => {
+        e.preventDefault();
+        smoothScroll(document.body, 1000); // Scroll to the top of the document
+    });
+
     // Toggle footer visibility based on active section
     const toggleFooterVisibility = () => {
         const footer = document.querySelector('footer');
         const contactSection = document.querySelector('#contact');
         const isContactInView = contactSection.getBoundingClientRect().top < window.innerHeight &&
-                                contactSection.getBoundingClientRect().bottom > 0;
+                                contactSection.getBoundingClientRect().bottom >= 0;
 
         footer.style.display = isContactInView ? 'block' : 'none';
     };
