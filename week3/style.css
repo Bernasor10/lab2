@@ -348,6 +348,75 @@ footer {
     }
 }
 
+/* About Section */
+#about {
+    padding: 40px;
+    background-color: #081F2C; /* Dark background for the whole section */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns of equal width */
+    gap: 40px; /* Increase space between columns */
+    text-align: left; /* Align text to the left within each grid item */
+}
+
+.about-header {
+    text-align: left;
+    font-size: 2.5em; /* Slightly smaller for balance */
+    margin-bottom: 20px;
+    color: #ffffff; /* Light color for headers for contrast */
+}
+
+.about-description, .about-list {
+    font-size: 1.1em;
+    margin: 0;
+    color: #dddddd; /* Lighter text color for readability against dark background */
+}
+
+.about-list {
+    list-style-type: disc;
+    padding-left: 40px;
+    text-align: left;
+}
+
+/* Individual grid item styling */
+.about-grid > div {
+    background-color: #ffffff; /* White background for each grid item */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for hover effect */
+}
+
+.about-grid > div:hover {
+    transform: scale(1.05); /* Slight increase in size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack in one column on smaller screens */
+    }
+
+    .about-header {
+        padding-left: 20px; /* Adjust header padding on mobile screens */
+    }
+
+    .about-list {
+        padding-left: 20px; /* Adjust padding for better alignment on mobile screens */
+    }
+}
+
+.saitama-gif {
+    max-width: 100%; /* Ensures the GIF is not bigger than its container */
+    max-height: 300px; /* Adjusts the height as needed, keeping aspect ratio */
+    display: block; /* To display it as a block element */
+    margin: 20px auto; /* Centers the GIF and adds some space above and below */
+}
+
+/*End of About*/
 
 
 /* About Section Styling */
