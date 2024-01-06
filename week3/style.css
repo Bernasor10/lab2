@@ -98,6 +98,19 @@ body {
     transition: background-color 0.3s;
 }
 
+/* Transform the hamburger menu into an "X" when active */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
 /* Navigation links container */
 .nav-links {
     display: flex;
@@ -107,18 +120,23 @@ body {
 /* Adjustments for mobile screens */
 @media (max-width: 768px) {
     .navbar {
-        padding: 5px 5px 35px;
+        padding: 3px 5px 7px;
     }
 
     .navbar a {
         display: none; /* Hide links initially for smaller screens */
     }
 
+    .navbar .logo {
+        font-size: 32px; /* Reduce font size of the logo for mobile screens */
+    }
+
     .menu-toggle {
         display: flex; /* Display hamburger menu on mobile */
         position: absolute; /* Position it absolutely within the navbar */
         right: 25px; /* Align to the right */
-        top: 5px; /* Adjust top position as needed */
+        top: 7px; /* Adjust top position as needed */
+        flex-direction: column;
     }
 
     .nav-links {
@@ -152,6 +170,46 @@ body {
     .navbar.active .menu-toggle .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+    /* The sidebar menu */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* The links inside the sidebar */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Hides the text that overflows the container */
+}
+
+/* The close button */
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+    /* Hide sidebar for desktop */
+    .sidebar { display: none; }
 }
 
 
@@ -161,135 +219,8 @@ body {
     justify-content: center; /* Center images horizontally */
 }
 
-/* Right Side Image of mine */
-.right-side-image {
-    opacity: 0; /* Start with the image being transparent */
-    animation: fadeInImage 1s ease-in forwards; /* Animation for the image */
-    animation-delay: 1s; /* Delay to control when the animation starts */
-}
-
-/* Left Side GIF */
-.left-side-gif {
-    opacity: 0; /* Start with the GIF being transparent */
-    animation: fadeInGif 2s ease-in forwards; /* Animation for the GIF */
-    animation-delay: 5s; /* Delay to control when the animation starts */
-}
-
-/* Keyframes for image fadeIn */
-@keyframes fadeInImage {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Keyframes for GIF fadeIn */
-@keyframes fadeInGif {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.main-content {
-    height: 100vh;
-    padding: 20px;
-    background-image: url('images/image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-}
-
-.main-content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
-    gap: 40px; /* Space between the grid items */
-    align-items: center; /* Align items vertically */
-    height: 100%; /* Ensure the grid takes full height of its container */
-}
-
-.text-container {
-    /* background-color: #1b1b1b; /* Dark background color */
-    padding: 20px; /* Padding inside the container */
-    border-radius: 15px; /* Rounded corners */
-    background-color: transparent;
-}
-
-.text-container p { /*Home paragraph*/
-    font-size: 20px;
-    font-family: Arial, sans-serif;
-    color: #fff; 
-}
-
-.image-container {
-    /* background-color: #1b1b1b; /* Dark background color */
-    padding: 20px; /* Padding inside the container */
-    border-radius: 15px; /* Rounded corners */
-    display: flex; /* Use flex layout for images */
-    align-items: center; /* Align images vertically */
-    justify-content: center;
-}
-
-.left-side-gif {
-    max-width: 100%; /* Ensure the images don't overflow their container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 45vh; /* Limit the image height */
-    margin-right: 20px; /* Add margin to the right of the left image */
-}
-
-.right-side-image {
-    max-width: 100%; /* Ensure the images don't overflow their container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 45vh; /* Limit the image height */
-    /* margin-left: 20px; */
-}
-
-@media (min-width: 1024px) {
-    .main-content-grid {
-        display: flex; /* Use Flexbox for desktop layout */
-        justify-content: left; /* Center the items horizontally */
-        align-items: center; /* Center the items vertically */
-        height: 100vh;
-    }
-
-    .text-container, .image-container {
-        flex: 1; /* Each container takes equal space */
-        padding-left: 150px;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .main-content-grid {
-        grid-template-columns: 1fr; /* Stack the grid items in one column on smaller screens */
-        text-align: center; /* Center text for small screens */
-    }
-
-    .text-container {
-        padding: 40px 10px 20px; /* Adjust padding for smaller screens if needed */
-    }
-
-    .image-container {
-        margin-top: -70px; /* Compensate for the added padding on text-container */
-    }
-
-    .left-side-gif, .right-side-image {
-        max-height: 30vh; /* Adjust the image height for smaller screens */
-        margin-right: 1;
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-/* Typing Animation Keyframes */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
 section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -305,20 +236,6 @@ section {
         margin-top: 100px; /* Increased top margin to account for navbar */
         /* Adjust this value based on the actual height of your navbar */
     }
-}
-
-.header { /*Home section*/
-    font-size: 42px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.subheader { /*Home section*/
-    font-size: 38px;
-    margin-bottom: 20px;
-    margin-top: 20;
-    font-weight: bold;
-    color: #F5B51E;
 }
 
 .button {
@@ -340,16 +257,6 @@ section {
 @keyframes fadeInButtons {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-#typing-paragraph::after {
-    content: '';
-    display: inline-block;
-    vertical-align: bottom;
-    width: 2px;
-    height: 1em;
-    background-color: white;
-    animation: blink 1s steps(1) infinite;
 }
 
 @keyframes blink {
@@ -429,11 +336,6 @@ footer {
     box-sizing: border-box;
 }
 
-#home {
-    align-items: flex-start; /* Align content horizontally to the start (left) */
-    text-align: left; /* Align the text to the left */
-}   
-
 /* Spotify Playlist Section */
 .playlist-container {
     padding-top: 20px; /* Reduced top padding */
@@ -458,11 +360,18 @@ footer {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Playlist Iframe and Cat GIF Styling */
-.playlist-grid-item iframe,
+/* Playlist Iframe Styling */
+.playlist-grid-item iframe {
+    width: 352px; /* Ensure they fit within the grid item */
+    height: 552px; /* Maintain aspect ratio */
+    border-radius: 12px; /* Optional border radius for aesthetics */
+}
+
+/* Styling for Cat GIF */
 .playlist-cat-gif {
-    width: auto; /* Ensure they fit within the grid item */
-    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Adjust width as needed */
+    height: auto; /* Adjust height as needed */
+    max-width: 100%; /* Ensure it fits within the container */
     border-radius: 12px; /* Optional border radius for aesthetics */
 }
 
@@ -489,6 +398,122 @@ footer {
 }
 
 /*End of Spotify Playlist*/
+
+/* Home Section */
+.main-content {
+    min-height: 100vh; /* Changed from 'height' to 'min-height' for responsiveness */
+    padding: 40px; /* Consistent padding across the section */
+    background-image: url('images/image.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.header { /*Home section*/
+    font-size: 49px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.subheader { /*Home section*/
+    font-size: 38px;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Added 'px' */
+    font-weight: bold;
+    color: #F5B51E;
+}
+
+.text-container {
+    /* Removed commented out background color */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 15px; /* Rounded corners */
+    background-color: transparent;
+    color: #fff; /* Text color */
+}
+
+.text-container p { /* Home paragraph */
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    gap: 40px; /* Space between the grid items */
+    align-items: center; /* Align items vertically */
+}
+
+.image-container {
+    padding: 20px; /* Padding inside the container */
+    border-radius: 15px; /* Rounded corners */
+    display: flex; /* Use flex layout for images */
+    align-items: center; /* Align images vertically */
+    justify-content: center;
+}
+
+.left-side-gif, .right-side-image {
+    max-width: 100%; /* Ensure the images don't overflow their container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 45vh; /* Limit the image height */
+    margin-right: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .main-content-grid {
+        display: flex; /* Enable flex layout */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        text-align: center; /* Center text */
+        min-height: 100vh; /* Full height */
+    }
+
+    .text-container, .image-container {
+        padding: 0px; /* Adjusted padding for smaller screens */
+        margin-bottom: 0; /* Adjusted margin for smaller screens */
+    }
+
+    .left-side-gif, .right-side-image {
+        max-height: 30vh; /* Adjust the image height for smaller screens */
+        margin-right: 10px;
+    }
+}
+
+/* Fade-in animations for images and GIFs */
+.right-side-image {
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeInImage 1s ease-in forwards 1s; /* Animation with delay */
+}
+
+.left-side-gif {
+    opacity: 0; /* Start with the GIF being transparent */
+    animation: fadeInGif 2s ease-in forwards 5s; /* Animation with delay */
+}
+
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInGif {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+/*End of Home Section*/
+
 
 /* About Section */
 #about {
@@ -593,4 +618,25 @@ footer {
     margin: auto;
     text-align: left;
     padding-left: 95px; /* Align content with the logo */
+}
+
+/* About Section Styling for Desktop */
+@media (min-width: 1024px) {
+    #about {
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center; /* Vertical centering */
+        min-height: 100vh; /* Full height to enable vertical centering */
+        text-align: center; /* Center align the text */
+        padding: 0px 40px 20px;
+        background-color: #081F2C;
+    }
+
+    .about-grid {
+        width: auto; /* Auto width based on content */
+        margin: 0 auto; /* Center grid in the available space */
+        /* Remove any fixed grid-template-columns if any, or adjust as needed */
+    }
+
+    /* Adjust the .about-grid item widths and any other properties as necessary */
 }
