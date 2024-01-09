@@ -1,24 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     var menuToggle = document.querySelector('.menu-toggle');
-    var navLinks = document.querySelector('.nav-links');
     var sidebar = document.getElementById("mySidebar");
-    var mainContent = document.getElementById("main");
+    var body = document.body; // Reference to the body element
 
-    function openSidebar() {
-        sidebar.style.width = "250px";
-        mainContent.style.marginLeft = "250px";
-        menuToggle.classList.add('active');
-    }
+// Function to open the sidebar
+function openSidebar() {
+    sidebar.style.width = "250px";
+    body.classList.add('body-no-scroll'); // Disable scrolling
+    menuToggle.classList.add('active');
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+}
 
-    function closeSidebar() {
-        sidebar.style.width = "0";
-        mainContent.style.marginLeft = "0";
-        menuToggle.classList.remove('active');
-    }
+// Function to close the sidebar
+function closeSidebar() {
+    sidebar.style.width = "0";
+    body.classList.remove('body-no-scroll'); // Enable scrolling
+    menuToggle.classList.remove('active');
+    document.removeEventListener('touchmove', preventDefault, { passive: false });
+}
+
+// Prevent default function
+function preventDefault(e) {
+    e.preventDefault();
+}
 
     // Toggle the sidebar on click
     menuToggle.addEventListener('click', function() {
-        if (sidebar.style.width === '250px') {
+        var isOpen = sidebar.style.width === "250px";
+        if (isOpen) {
             closeSidebar();
         } else {
             openSidebar();
@@ -27,40 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close the sidebar by clicking the close button
     var closeButton = document.querySelector('.closebtn');
-    if (closeButton) {
-        closeButton.addEventListener('click', closeSidebar);
-    }
+    closeButton.addEventListener('click', closeSidebar);
 
-    // Optional: Close the sidebar by clicking on the main content area
-    mainContent.addEventListener('click', function(event) {
-        if (sidebar.style.width === '250px' && !event.target.matches('.menu-toggle, .menu-toggle *')) {
+    // Close the sidebar by clicking outside of it
+    document.addEventListener('click', function(event) {
+        var isClickInsideSidebar = sidebar.contains(event.target);
+        var isClickInsideMenuToggle = menuToggle.contains(event.target);
+
+        if (!isClickInsideSidebar && !isClickInsideMenuToggle && sidebar.style.width === '250px') {
             closeSidebar();
         }
     });
-
-    // Get all the elements with class 'type'
-    let typeElements = document.querySelectorAll('.type');
-
-    // Function to type out text in an element
-    function typeText(element, text, delay, callback) {
-        let i = 0;
-        let typingInterval = setInterval(() => {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-            } else {
-                clearInterval(typingInterval);
-                element.textContent += '|'; // Add cursor at the end
-                if (callback) callback(); // Call the next typing function
-            }
-        }, delay);
-    }
-
-    // Start typing in the first element
-    if (typeElements.length > 0) {
-        let firstElement = typeElements[0];
-        typeText(firstElement, firstElement.getAttribute('data-text'), 100, () => {
-            // Code to start typing in the next element
-        });
-    }
 });

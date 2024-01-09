@@ -23,8 +23,11 @@ img {
 
 /* BG Color for Playlist Section */
 #playlist {
-    background-color: #081F2C; /* Replace with your desired color */
     color: white;
+    background-image: url('images/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
 }
 
 /* BG Color for Contact Me Section */
@@ -74,7 +77,8 @@ img {
 }
 
 .navbar a:hover {
-    color: #18517b;
+    color: #F5B51E;
+    box-shadow: 5px 5px 10px #081b29; /* Add a shadow on hover */
 }
 
 .navbar .logo {
@@ -108,11 +112,12 @@ img {
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: background-color 0.3s;
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin-bottom: 7px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Transform the hamburger menu into an "X" when active */
@@ -139,7 +144,9 @@ img {
 @media (max-width: 768px) {
     .navbar {
         padding: 3px 5px 7px;
+        top: 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+        border-radius: 10px;
     }
     
     .navbar a {
@@ -193,23 +200,56 @@ img {
     .navbar.active .menu-toggle .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
-    /* The sidebar menu */
+/* The sidebar menu */
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will help in pushing the nav links to the bottom */
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
 }
 
+/* The sidebar menu */
+#mySidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100%;
+}
+
+/* Container for Navigation Links within the Sidebar */
+.sidebar-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the links horizontally */
+    gap: 10px; /* Adjust the space between the links */
+
+}
+
+/* Style individual links as buttons */
+.sidebar-nav-links a {
+    background-color: #111; /* Button background color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border if there is any */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    text-align: center; /* Center text inside the button */
+    width: 80%;
+    transition: background-color 0.3s;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adding box shadow */
+}
+
 /* The links inside the sidebar */
 .sidebar a {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
@@ -217,6 +257,8 @@ img {
     transition: 0.3s;
     white-space: nowrap; /* Prevents the text from wrapping */
     overflow: hidden; /* Hides the text that overflows the container */
+    margin: 20px 0px;
+    text-align: center;
 }
 
 /* The close button */
@@ -234,7 +276,6 @@ img {
     /* Hide sidebar for desktop */
     .sidebar { display: none; }
 }
-
 
 .image-container {
     display: flex;
@@ -263,13 +304,18 @@ section {
     text-decoration: none;
     border-radius: 15px;
     font-size: 25px;
+    box-shadow: 5px 5px 10px #081b29; /* Add a shadow */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
 }
 
 .button:hover {
     background-color: #081b29; /* Color change on hover */
     color: #fff; /* Text color change on hover */
     border: 2px solid #081b29;
+    box-shadow: 5px 5px 10px #000000; /* Add a shadow on hover */
+    transform: rotate(10deg); /* Rotate the button 10 degrees on hover */
 }
+
 
 /* Contact Me Section Styling */
 
@@ -392,79 +438,131 @@ footer {
     box-sizing: border-box;
 }
 
-/* Spotify Playlist Section */
+/* Playlist Section */
+#playlist {
+    text-align: center; /* Center text for the title */
+    padding: 20px;
+}
+
+.header-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
 .playlist-container {
-    padding-top: 20px; /* Reduced top padding */
-    padding-bottom: 40px; /* Maintain original bottom padding */
-    padding-left: 40px; /* Maintain original left padding */
-    padding-right: 40px; /* Maintain original right padding */
-    background-color: #081F2C; /* Dark background for the whole section */
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.left-cat-gif, .middle-cat-gif, .right-cat-gif {
+    width: 640px;
+    height: 360px;
+}
+
+.cat-gif-container {
+    margin: 0 10px; /* Adjust the value as needed */
+}
+
+/* Playlist Header */
+.playlist-header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* GIF Grid Container */
+.gif-grid {
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
 }
 
 /* Playlist Grid Container */
 .playlist-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns of equal width for desktop */
-    gap: 25px; /* Space between grid items */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
 }
 
-/* Styling for individual grid items (playlists and cat GIF) */
+/* Individual Playlist Items Styling */
 .playlist-grid-item {
-    background-color: transparent; /* Background color for items */
-    padding: 40px;
+    margin: 0 90px;
+    background-color: transparent;
+    padding: 0px;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Playlist Iframe Styling */
 .playlist-grid-item iframe {
-    width: 352px; /* Ensure they fit within the grid item */
-    height: 552px; /* Maintain aspect ratio */
-    border-radius: 12px; /* Optional border radius for aesthetics */
-}
-
-/* Styling for Cat GIF */
-.playlist-cat-gif {
-    width: auto; /* Adjust width as needed */
-    height: auto; /* Adjust height as needed */
-    max-width: 100%; /* Ensure it fits within the container */
-    border-radius: 12px; /* Optional border radius for aesthetics */
-    margin-top: 80px;
+    width: 352px;
+    height: 662px;
+    border-radius: 12px;
 }
 
 .playlist-grid-item:hover {
-    transform: scale(1.05); /* Slight increase in size on hover */
+    transform: scale(1.05);
+    filter: blur(0px) brightness(0.9);
+    cursor: pointer;
 }
 
-/* Responsive Adjustments for Mobile Devices */
-@media (max-width: 768px) {
-    .playlist-grid {
-        grid-template-columns: 1fr; /* Stack grid items in one column on smaller screens */
-    }
-}
 /* Playlist Section Title Styling */
-#playlist-title {
+#playlist .header-text {
     color: #1ED760;
-    text-align: center; /* Ensures text is centered horizontally */
+    text-align: center;
     font-size: 45px;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add shadow to the text */
-    margin: 0; /* Removes any default margins */
-    padding: 0; /* Removes any default padding */
-    width: 100%; /* Ensures the title spans the full width of its container */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
 }
 
-/*End of Spotify Playlist*/
+.playlist-grid-item h2 {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .playlist-grid {
+        grid-template-columns: 1fr;
+    }
+    .left-cat-gif, .middle-cat-gif, .right-cat-gif {
+        width: auto;
+        height: auto;
+    }
+    .playlist-header {
+        flex-direction: column;
+    }
+    .gif-grid {
+        grid-template-columns: 1fr;     
+    }
+    .cat-gif-container {
+        margin: 10px; /* Adjust the value as needed */
+    }
+    #playlist .header-text{
+        margin-top: 30px;
+    }
+}
+
+/* End of Spotify Playlist */
 
 /* Home Section */
 .main-content {
     min-height: 100vh; /* Changed from 'height' to 'min-height' for responsiveness */
     padding: 40px; /* Consistent padding across the section */
-    background-image: url('images/image.jpg'); /* Background image */
+    background-image: url('images/image2.jpg'); /* Background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-sizing: border-box;
+    color: white; /* Adjust text color if needed */
+    min-height: 500px; /* Minimum height to ensure image visibility */
 }
 
 .header { /*Home section*/
@@ -542,6 +640,8 @@ footer {
 .right-side-image {
     opacity: 0; /* Start with the image being transparent */
     animation: fadeInImage 1s ease-in forwards 1s; /* Animation with delay */
+    border: 10px solid #2d2461; /* Add a white frame */
+    box-shadow: 10px 5px 5px black; /* Add a shadow */
 }
 
 .left-side-gif {
@@ -602,11 +702,22 @@ footer {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
 }
 
 .about-grid > div:hover {
     transform: scale(1.05); /* Slight increase in size on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Styling for the GIF container */
+.about-gif-container {
+    text-align: center; /* Center the GIF */
+    margin-top: 80px;
+    width: auto;
+    height: auto;
+    border: 10px solid #2c080d; /* Add a white frame */
+    box-shadow: 5px 5px 5px black; /* Add a shadow */
 }
 
 /* Adjustments for Mobile Devices */
@@ -630,6 +741,8 @@ footer {
     display: block; /* To display it as a block element */
     margin: 20px auto; /* Centers the GIF and adds some space above and below */
 }
+
+
 
 /*End of About*/
 
