@@ -11,10 +11,28 @@ img {
     height: auto;
 }
 
-body {
-    background-color: #081F2C; /* Ocean Blue */
+/* BG Color for Home Section */
+#home {
     color: white;
-    font-family: Arial, sans-serif;
+}
+
+/* BG Color for About Section */
+#about {
+    background-color: #081F2C; /* Replace with your desired color */
+}
+
+/* BG Color for Playlist Section */
+#playlist {
+    background-color: #081F2C; /* Replace with your desired color */
+    color: white;
+}
+
+/* BG Color for Contact Me Section */
+#contact {
+    display: flex;
+    flex-direction: row;
+    background-color: #081F2C; /* Replace with your desired color */
+    color: white;
 }
 
 /* Original navigation bar styles */
@@ -22,11 +40,10 @@ body {
 .navbar {
     position: fixed;
     width: 100%;
-    padding: 5px 20;
-    background: #05131b;
+    padding: 5px 20px;
+    background-color: #05131b;
     overflow: hidden;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
     display: flex;
     justify-content: space-between; /* Space between logo and menu */
     align-items: center;
@@ -36,11 +53,10 @@ body {
     .navbar {
         position: fixed;
         width: 100%;
-        padding: 5px 20px;
-        background: #05131b;
+        padding: 1px 1px 0px;
+        background-color: transparent;
         overflow: hidden;
         z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2);
         display: flex;
         justify-content: space-between; /* Space between logo and menu */
         align-items: center;
@@ -74,10 +90,11 @@ body {
 @media (min-width: 1024px) {
     .nav-links a {
         padding: 15px 30px; /* Increased padding for desktop */
-        /* Other styles if needed */
     }
 
-    /* add other desktop-specific styles here if necessary */
+    .logo {
+        padding-left: 40px; /* Adjust the value as needed */
+    }
 }
 
 /* Hamburger menu styles */
@@ -115,20 +132,26 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
+    list-style-type: none; /* This removes the bullets */
 }
 
 /* Adjustments for mobile screens */
 @media (max-width: 768px) {
     .navbar {
         padding: 3px 5px 7px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
     }
-
+    
     .navbar a {
         display: none; /* Hide links initially for smaller screens */
     }
 
     .navbar .logo {
-        font-size: 32px; /* Reduce font size of the logo for mobile screens */
+        font-size: 27px; /* Reduce font size of the logo for mobile screens */
+    }
+
+    .logo {
+        padding-left: 10px; /* Adjust the value as needed */
     }
 
     .menu-toggle {
@@ -226,16 +249,8 @@ section {
     justify-content: center;
     align-items: center; /* Changed to center for proper alignment */
     text-align: center; /* Ensure text aligns center for all sections */
-    padding: 50px 20px;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle bottom shadow for separation */
-}
-
-@media (min-width: 1024px) {
-    .section {
-        margin-top: 100px; /* Increased top margin to account for navbar */
-        /* Adjust this value based on the actual height of your navbar */
-    }
 }
 
 .button {
@@ -248,21 +263,6 @@ section {
     text-decoration: none;
     border-radius: 15px;
     font-size: 25px;
-    transition: background-color 0.3s, color 0.3s;
-    opacity: 0; /* Start with the button being transparent */
-    animation: fadeInButtons 1s ease-in forwards; /* Animation for the button */
-    animation-delay: 13.5s; /* Adjust the delay as needed */
-}
-
-@keyframes fadeInButtons {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
 }
 
 .button:hover {
@@ -271,51 +271,39 @@ section {
     border: 2px solid #081b29;
 }
 
-/* Contact Me Section Alignment */
-#contact .section-content p,
-#contact .section-content,
-#contact .social-links,
-#about .section-content,
-#playlist .section-content {
-    text-align: left; /* Align text to the left */
-    padding-left: 20px; /* Align with the navbar logo padding */
-}
+/* Contact Me Section Styling */
 
 #contact .social-links a {
-    margin-right: 10px; /* Space between icons */
-}
-
-/* Remaining CSS */
-.social-links a {
-    font-size: 45px; /* Size of the social icons */
+    font-size: 45px; /* Social icon size */
     margin: 0 10px;
-    border-radius: 50%; 
+    border-radius: 50%;
     display: inline-flex;
-    align-items: center; /* Centers the icon vertically */
-    justify-content: center; /* Centers the icon horizontally */
-    width: 60px; /* Width of the circular button */
-    height: 60px; /* Height of the circular button */
-    text-decoration: none; /* Removes underline from the icon */
+    align-items: center; /* Center icons vertically */
+    justify-content: center; /* Center icons horizontally */
+    width: 60px; /* Button width */
+    height: 60px; /* Button height */
     color: #fff; /* Icon color */
-    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+    text-decoration: none;
+    transition: background-color 1.0s, color 1.0s;
 }
 
-.social-links a:hover {
-    background-color: #4198d9; /* Background color on hover */
-    color: #fff; /* Icon color on hover */
-    border: 3px solid #4198d9;
+#contact .social-links a:hover {
+    background-color: #4198d9; /* Hover background color */
+    color: #fff; /* Hover icon color */
+    border: 3px solid #4198d9; /* Border on hover */
 }
 
-footer { /*Copyright*/
+/* Footer Styling */
+footer {
     text-align: center;
     width: 100%;
     padding: 10px 0;
-    background-color: #081F2C; /* Adjust the color as needed */
+    background-color: #081F2C;
     color: white;
     font-size: 16px;
-    position: relative; /* or 'static' if it doesn't need to be fixed */
-    clear: both; /* Clear any floats */
-    z-index: 10; /* Ensure it's above other content */
+    position: relative;
+    clear: both;
+    z-index: 10;
 }
 
 footer {
@@ -323,8 +311,77 @@ footer {
 }
 
 #contact:target + footer {
-    display: block; 
+    display: block;
 }
+
+@media (min-width: 1024px) {
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+        padding-right: 120px;
+    }
+
+    #contact .section-content,
+    #contact .social-links {
+        width: 100%; /* Full width for the content and social links */
+        text-align: center; /* Center the content and social links text */
+    }
+
+    #contact .section-title {
+        align-self: flex-start; /* Align the title to the left */
+        text-align: left; /* Align the title text to the left */
+        width: 100%; /* Full width for the title */
+    }
+
+    #contact .opportunities-header {
+        order: 1; /* This ensures it's the first item */
+        margin-top: 60px; /* Adjust as necessary */
+    }
+
+
+    #contact p {
+        text-align: center; /* Align text to the left for desktop */
+        margin-bottom: 600px;
+    }
+
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    #contact .section-title {
+        flex-direction: column; /* Stacks content vertically */
+        align-items: center; /* Centers items horizontally */
+        width: 100%; /* Ensures the title spans the full width */
+        text-align: center; /* Centers the text within its container */
+        align-self: flex-start;
+        padding: 20px 5px; /* Adjusts padding for consistent spacing */
+    }
+    
+    /* Center aligns the subheader, paragraph, and social links */
+    #contact .opportunities-header, #contact p, #contact .social-links {
+        text-align: center;
+        width: 100%;
+        padding: 1px;
+        margin-left: -45px;
+    }
+
+    /* Centers the social links container */
+    #contact .social-links {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #contact p {
+        text-align: center; /* Align text to the left for desktop */
+        margin-bottom: 5px;
+    }
+
+}
+
+
+/* End of Contact Me */
 
 /* Common Styling for All Main Sections */
 #home, #about, #playlist, #contact {
@@ -332,7 +389,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Align content vertically in the center */
-    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -355,7 +411,7 @@ footer {
 /* Styling for individual grid items (playlists and cat GIF) */
 .playlist-grid-item {
     background-color: transparent; /* Background color for items */
-    padding: 20px;
+    padding: 40px;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -373,6 +429,7 @@ footer {
     height: auto; /* Adjust height as needed */
     max-width: 100%; /* Ensure it fits within the container */
     border-radius: 12px; /* Optional border radius for aesthetics */
+    margin-top: 80px;
 }
 
 .playlist-grid-item:hover {
@@ -389,7 +446,7 @@ footer {
 #playlist-title {
     color: #1ED760;
     text-align: center; /* Ensures text is centered horizontally */
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add shadow to the text */
     margin: 0; /* Removes any default margins */
@@ -426,7 +483,7 @@ footer {
 
 .text-container {
     /* Removed commented out background color */
-    padding: 20px; /* Padding inside the container */
+    padding: 10px; /* Padding inside the container */
     border-radius: 15px; /* Rounded corners */
     background-color: transparent;
     color: #fff; /* Text color */
@@ -502,16 +559,6 @@ footer {
     to { opacity: 1; }
 }
 
-@keyframes blink {
-    0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-.cursor {
-    animation: blink 1s infinite;
-}
-
 /*End of Home Section*/
 
 
@@ -519,6 +566,7 @@ footer {
 #about {
     padding: 40px;
     background-color: #081F2C; /* Dark background for the whole section */
+    color: white;
 }
 
 .about-grid {
@@ -628,7 +676,7 @@ footer {
         align-items: center; /* Vertical centering */
         min-height: 100vh; /* Full height to enable vertical centering */
         text-align: center; /* Center align the text */
-        padding: 0px 40px 20px;
+        padding: 0px 40px 300px;
         background-color: #081F2C;
     }
 
