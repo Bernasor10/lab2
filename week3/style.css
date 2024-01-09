@@ -457,8 +457,13 @@ footer {
     padding-right: 40px;
 }
 
-.left-cat-gif, .middle-cat-gif, .right-cat-gif {
+.left-cat-gif, .middle-cat-gif {
     width: 640px;
+    height: 360px;
+}
+
+.right-cat-gif {
+    width: 400px;
     height: 360px;
 }
 
