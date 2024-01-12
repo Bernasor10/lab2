@@ -49,18 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Refresh the page and go to the home section when the logo is clicked
-    logo.addEventListener('click', function(event) {
-        event.preventDefault();
-        localStorage.setItem('navigateToHome', 'true');
-        location.reload(); // refresh the page
-    });
-
-    if (localStorage.getItem('navigateToHome') === 'true') {
-        location.href = '#home'; // go to the home section
-        localStorage.removeItem('navigateToHome'); // clear the flag
-    }
-
     $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
     

@@ -1,4 +1,5 @@
 body, html {
+
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -13,11 +14,6 @@ img {
 /* BG Color for Home Section */
 #home {
     color: white;
-}
-
-/* BG Color for About Section */
-#about {
-    background-color: #081F2C; /* Replace with your desired color */
 }
 
 /* BG Color for Playlist Section */
@@ -71,13 +67,13 @@ img {
     text-decoration: none;
     font-size: 28px;
     border-radius: 4px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
     transition: background-color 0.3s, color 0.3s;
     margin: 2px;
 }
 
 .navbar a:hover {
     color: #F5B51E;
-    box-shadow: 5px 5px 10px #081b29; /* Add a shadow on hover */
 }
 
 .navbar .logo {
@@ -86,8 +82,7 @@ img {
     color: white;
     text-decoration: none;
     cursor: pointer;
-    text-shadow: 3px 3px 6
-    px rgba(0, 0, 0, 0.6);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
 }
 
 @media (min-width: 1024px) {
@@ -456,18 +451,23 @@ footer {
     padding-right: 40px;
 }
 
-.left-cat-gif, .middle-cat-gif {
+.left-cat-gif {
+    width: 640px;
+    height: 360px;
+}
+
+.middle-cat-gif {
     width: 640px;
     height: 360px;
 }
 
 .right-cat-gif {
-    width: 400px;
+    width: 430px;
     height: 360px;
 }
 
 .cat-gif-container {
-    margin: 0 10px; /* Adjust the value as needed */
+    margin: 0 20px; /* Adjust the value as needed */
 }
 
 /* Playlist Header */
@@ -668,34 +668,45 @@ footer {
 
 /* About Section */
 #about {
-    padding: 40px;
-    background-color: #081F2C; /* Dark background for the whole section */
-    color: white;
+    background-image: url('images/image5.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Adjust text color if needed */
+    min-height: 100vh; /* Minimum height to ensure image visibility */
+    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four columns of equal width */
-    gap: 40px; /* Increase space between columns */
+    gap: 20px; /* Increase space between columns */
     text-align: left; /* Align text to the left within each grid item */
 }
 
 .about-header {
     text-align: center;
     font-size: 2.5em; /* Slightly smaller for balance */
-    margin-bottom: 20px;
     color: #ffffff; /* Light color for headers for contrast */
 }
 
 .about-description, .about-list {
-    font-size: 1.1em;
-    margin: 0;
+    font-size: 21px;
+    margin: 0px;
     color: #dddddd;
 }
 
+.ol-about-list {
+    list-style-type: decimal;
+    font-size: 21px;
+}
+
+
 .about-list {
     list-style-type: disc;
-    padding-left: 40px;
     text-align: left;
 }
 
@@ -716,12 +727,71 @@ footer {
 
 /* Styling for the GIF container */
 .about-gif-container {
-    text-align: center; /* Center the GIF */
-    margin-top: 80px;
+    text-align: center; /* Center the Cat HUH GIF */
+    float: left;
+    background-color: transparent !important;
+    box-shadow: none !important;
     width: auto;
     height: auto;
-    border: 10px solid #2c080d; /* Add a white frame */
-    box-shadow: 5px 5px 5px black; /* Add a shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-gif-container img {
+    border: 10px solid #2c080d; /* Add a red frame to the image */
+}
+
+.about-gif-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.quote-container {
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-right: 5px !important;
+    max-width: 45%; /* Adjust as needed */
+    text-align: center; /* Centers the text within the quote container */
+    position: absolute; /* Positions the element absolutely to its relative parent */
+    left: 50%; /* Centers the element horizontally */
+    transform: translateX(50%);
+}
+
+.quote2 {
+    position: absolute;
+    max-width: 45% !important;
+    justify-content: center;
+    text-align: center;
+    bottom: -115%;
+    transform: translateX(50%);
+    left: 70%;
+}
+
+.quote-text {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.about-gif-container, .quote-container {
+    max-width: 100%; /* Adjust as needed */
+    margin: 20px auto;
+}
+
+.quote-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-container {
+        position: static; /* Resets the position on smaller screens */
+        max-width: 80%; /* Adjust as needed */
+        left: 50%;
+    }
 }
 
 /* Adjustments for Mobile Devices */
@@ -745,8 +815,6 @@ footer {
     display: block; /* To display it as a block element */
     margin: 20px auto; /* Centers the GIF and adds some space above and below */
 }
-
-
 
 /*End of About*/
 
@@ -793,7 +861,6 @@ footer {
         align-items: center; /* Vertical centering */
         min-height: 100vh; /* Full height to enable vertical centering */
         text-align: center; /* Center align the text */
-        padding: 0px 40px 300px;
         background-color: #081F2C;
     }
 
