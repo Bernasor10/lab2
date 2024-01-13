@@ -1,3 +1,4 @@
+
 body, html {
 
     margin: 0;
@@ -344,6 +345,87 @@ footer .social-links a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
 
+    /* Contact Form Styling */
+    #suggestion-form {
+        background-color: #081F2C; /* Dark background color */
+        padding: 20px;
+        border-radius: 15px;
+        width: 80%;
+        margin: 0 auto;
+        color: white; /* White text color */
+        text-align: center; /* Center the text */
+    }
+    
+    #suggestion-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.2em; /* Larger font size */
+        text-align: left; /* Align the labels to the left */
+    }
+    
+    #suggestion-form textarea {
+        width: 100%;
+        max-width: 1000px;
+        font-size: 21px;
+        border: none;
+        border-radius: 50px; /* Rounded corners */
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
+        background-color: #fff; /* White background color */
+        margin-bottom: 20px; /* Add space below each form field */
+        height: 170px; /* Set a fixed height */
+        resize: none; /* Make it non-resizable */
+        padding: 15px 0px 50px 30px; /* Adjust left padding */
+    }
+    
+    #suggestion-form input[type="text"],
+    #suggestion-form input[type="email"] {
+        width: 1000px;
+        height: 50px;
+        font-size: 21px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 50px; /* Rounded corners */
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
+        background-color: #fff; /* White background color */
+        margin-bottom: 20px; /* Add space below each form field */
+        padding-left: 25px; /* Add padding to the text field*/
+    }
+    
+    #suggestion-form input[type="submit"] {
+        background-color: #0a0a0a; /* Green background */
+        color: white; /* White text */
+        padding: 10px 20px;
+        border: none;
+        margin-top: 20px;
+        border-radius: 50px; /* Rounded corners */
+        cursor: pointer;
+        width: 1000px;
+        font-size: 1.2em; /* Larger font size */
+    }
+    
+    #suggestion-form input[type="submit"]:hover {
+        background-color: #141414; /* Darker green on hover */
+    }
+    
+    #suggestions {
+        font-size: 25px;
+        color: #F5B51E;
+        margin-bottom: 20px; /* Add space below the text */
+    }
+
+    .feedback-prompt {
+        font-size: 25px;
+    }
+
+    #like-button {
+        font-size: 30px; /* Adjust this value to change the size of the like button */
+    }
+    
+    #like-count {
+        font-size: 20px; /* Adjust this value to change the font size of the like count */
+    }
+    
+
 @media (min-width: 1024px) {
     #contact {
         display: flex;
@@ -399,6 +481,76 @@ footer .social-links a:hover {
         text-align: center;
     }
 
+    /* Contact Form Styling */
+#suggestion-form {
+    background-color: #081F2C; /* Dark background color */
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+}
+
+#suggestion-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Larger font size */
+    text-align: left; /* Align the labels to the left */
+}
+
+#suggestion-form textarea {
+    width: 100%;
+    max-width: 1000px;
+    font-size: 21px;
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
+    background-color: #111; /* White background color */
+    margin-bottom: 20px; /* Add space below each form field */
+    height: 170px; /* Set a fixed height */
+    resize: none; /* Make it non-resizable */
+    padding: 15px 0px 50px 30px; /* Adjust left padding */
+}
+
+#suggestion-form input[type="text"],
+#suggestion-form input[type="email"] {
+    width: 1000px;
+    height: 50px;
+    color: #fff;
+    font-size: 21px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
+    background-color: #111; /* White background color */
+    margin-bottom: 20px; /* Add space below each form field */
+    padding-left: 25px; /* Add padding to the text field*/
+}
+
+#suggestion-form input[type="submit"] {
+    background-color: #0a0a0a; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer;
+    width: 1000px;
+    font-size: 1.2em; /* Larger font size */
+}
+
+#suggestion-form input[type="submit"]:hover {
+    background-color: #141414; /* Darker green on hover */
+}
+
+#suggestions {
+    font-size: 25px;
+    color: #F5B51E;
+    margin-bottom: 20px; /* Add space below the text */
+}
+
 }
 
 /* Mobile Adjustments */
@@ -411,6 +563,72 @@ footer .social-links a:hover {
         align-self: flex-start;
         padding: 20px 5px; /* Adjusts padding for consistent spacing */
     }
+
+/* Contact Form Styling */
+#suggestion-form {
+    background-color: #081F2C; /* Dark background color */
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+}
+
+#suggestion-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Larger font size */
+    text-align: left; /* Align the labels to the left */
+}
+
+#suggestion-form textarea {
+    width: 100%;
+    font-size: 21px;
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
+    background-color: #fff; /* White background color */
+    margin-bottom: 20px; /* Add space below each form field */
+    height: 170px; /* Set a fixed height */
+    resize: none; /* Make it non-resizable */
+    padding: 20px 0px 50px 20px; /* Adjust left padding */
+}
+
+#suggestion-form input[type="text"],
+#suggestion-form input[type="email"] {
+    width: 100%;
+    height: 50px;
+    font-size: 21px;
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
+    background-color: #fff; /* White background color */
+    margin-bottom: 20px; /* Add space below each form field */
+    padding: 10px; /* Add padding to the text field*/
+}
+
+#suggestion-form input[type="submit"] {
+    background-color: #0a0a0a; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em; /* Larger font size */
+}
+
+#suggestion-form input[type="submit"]:hover {
+    background-color: #141414; /* Darker green on hover */
+}
+
+#suggestions {
+    font-size: 25px;
+    color: #F5B51E;
+    margin-bottom: 20px; /* Add space below the text */
+}
     
     /* Center aligns the subheader, paragraph, and social links */
     #contact .opportunities-header, #contact p, #contact .social-links {
@@ -435,7 +653,35 @@ footer .social-links a:hover {
         margin-bottom: 5px;
     }
 
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    footer .social-links {
+        order: 1;
+        text-align: center;
+    }
+    
+    footer #time {
+        text-align: center;
+        color: #F5B51E;
+        order: 2;
+    }
+    
+    footer .copyright {
+        order: 3;
+        text-align: center;
+    }
+
+    #suggestion-form {
+        width: 90%;
+    }
+
 }
+
+
 
 /* End of Contact Me */
 
