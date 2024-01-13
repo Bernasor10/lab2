@@ -1,0 +1,889 @@
+body, html {
+
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* BG Color for Home Section */
+#home {
+    color: white;
+}
+
+/* BG Color for Playlist Section */
+#playlist {
+    color: white;
+    background-image: url('images/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+/* BG Color for Contact Me Section */
+#contact {
+    flex-direction: row;
+    background-color: #081F2C; /* Replace with your desired color */
+    color: white;
+}
+
+/* Original navigation bar styles */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 5px 20px;
+    background-color: #05131b;
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+        position: fixed;
+        width: 100%;
+        padding: 1px 1px 0px;
+        background-color: transparent;
+        overflow: hidden;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between; /* Space between logo and menu */
+        align-items: center;
+    }
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+    border-radius: 4px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 2px;
+}
+
+.navbar a:hover {
+    color: #F5B51E;
+}
+
+.navbar .logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
+}
+
+@media (min-width: 1024px) {
+    .nav-links a {
+        padding: 15px 30px; /* Increased padding for desktop */
+    }
+
+    .logo {
+        padding-left: 40px; /* Adjust the value as needed */
+    }
+}
+
+/* Hamburger menu styles */
+
+.menu-toggle {
+    display: none; /* Initially hidden for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+}
+
+.bar {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin-bottom: 7px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Transform the hamburger menu into an "X" when active */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style-type: none; /* This removes the bullets */
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 25px 1px 20px;
+        top: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+        border-radius: 10px;
+    }
+    
+    .navbar a {
+        display: none; /* Hide links initially for smaller screens */
+    }
+
+    .navbar .logo {
+        font-size: 27px; /* Reduce font size of the logo for mobile screens */
+    }
+
+    .logo {
+        padding-left: 10px; /* Adjust the value as needed */
+    }
+
+    .menu-toggle {
+        display: flex; /* Display hamburger menu on mobile */
+        position: absolute; /* Position it absolutely within the navbar */
+        right: 25px; /* Align to the right */
+        top: 7px; /* Adjust top position as needed */
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left */
+        position: absolute;
+        top: 60px; /* Adjust top position to avoid overlapping */
+        left: 0;
+        background: #05131b;
+        width: 100%;
+        padding: 10px 0;
+        transition: max-height 0.3s ease-in-out; /* Add smooth transition */
+        max-height: 0; /* Initially hidden */
+        overflow: hidden;
+        z-index: 999; /* Ensure menu is on top */
+    }
+
+    .navbar.active .nav-links {
+        max-height: 300px; /* Show menu on click */
+    }
+
+    /* Rotate bars to create "close" icon */
+    .navbar.active .menu-toggle .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .navbar.active .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.active .menu-toggle .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+/* The sidebar menu */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will help in pushing the nav links to the bottom */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* The sidebar menu */
+#mySidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100%;
+}
+
+/* Container for Navigation Links within the Sidebar */
+.sidebar-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the links horizontally */
+    gap: 10px; /* Adjust the space between the links */
+
+}
+
+/* Style individual links as buttons */
+.sidebar-nav-links a {
+    background-color: #111; /* Button background color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border if there is any */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    text-align: center; /* Center text inside the button */
+    width: 80%;
+    transition: background-color 0.3s;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adding box shadow */
+}
+
+/* The links inside the sidebar */
+.sidebar a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Hides the text that overflows the container */
+    margin: 20px 0px;
+    text-align: center;
+}
+
+/* The close button */
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+    /* Hide sidebar for desktop */
+    .sidebar { display: none; }
+}
+
+.image-container {
+    display: flex;
+    align-items: center; /* Center images vertically */
+    justify-content: center; /* Center images horizontally */
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Changed to center for proper alignment */
+    text-align: center; /* Ensure text aligns center for all sections */
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle bottom shadow for separation */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px 30px 15px 0;
+    background-color: #13200e;
+    border: 2px solid #13200e; /* Updated border color */
+    color: #fff; /* Updated text color */
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 25px;
+    box-shadow: 5px 5px 10px #081b29; /* Add a shadow */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.button:hover {
+    background-color: #081b29; /* Color change on hover */
+    color: #fff; /* Text color change on hover */
+    border: 2px solid #081b29;
+    box-shadow: 5px 5px 10px #000000; /* Add a shadow on hover */
+    transform: rotate(10deg); /* Rotate the button 10 degrees on hover */
+}
+
+
+/* Start of Contact Me Section Styling */
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #081F2C;
+    color: white;
+    font-size: 19px;
+    position: static;
+    bottom: 0;
+    clear: both;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer .social-links a {
+    font-size: 45px; /* Social icon size */
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center; /* Center icons vertically */
+    justify-content: center; /* Center icons horizontally */
+    width: auto; /* Button width */
+    height: auto; /* Button height */
+    color: #fff; /* Icon color */
+    transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+    background-color: transparent; /* Hover background color */
+    color: #fff; /* Hover icon color */
+    transform: scale(1.19); /* Slight increase in size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+@media (min-width: 1024px) {
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+    }
+    
+    .section-title {
+        text-align: left; /* Centers the text within its container */
+        align-self: flex-start;
+        position: static;
+
+    }
+
+    /* Centers the social links container */
+    #contact .social-links {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    #contact p {
+        text-align: center; /* Align text to the left for desktop */
+
+    }
+
+    .opportunities-header {
+        text-align: center !important;
+        margin-bottom: 90%;
+        font-size: 41px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    footer .social-links {
+        order: 1;
+        text-align: center;
+    }
+    
+    footer #time {
+        text-align: center;
+        color: #F5B51E;
+        order: 2;
+    }
+    
+    footer .copyright {
+        order: 3;
+        text-align: center;
+    }
+
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    #contact .section-title {
+        flex-direction: column; /* Stacks content vertically */
+        align-items: center; /* Centers items horizontally */
+        width: 100%; /* Ensures the title spans the full width */
+        text-align: center; /* Centers the text within its container */
+        align-self: flex-start;
+        padding: 20px 5px; /* Adjusts padding for consistent spacing */
+    }
+    
+    /* Center aligns the subheader, paragraph, and social links */
+    #contact .opportunities-header, #contact p, #contact .social-links {
+        text-align: center;
+        width: 100%;
+    }
+
+    .opportunities-header {
+        margin-bottom: 200%;
+        font-size: 7vw;
+    }
+
+    /* Centers the social links container */
+    #contact .social-links {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #contact p {
+        text-align: center; /* Align text to the left for desktop */
+        margin-bottom: 5px;
+    }
+
+}
+
+/* End of Contact Me */
+
+/* Common Styling for All Main Sections */
+#home, #about, #playlist, #contact {
+    min-height: 100vh; /* Minimum height to occupy the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align content vertically in the center */
+    box-sizing: border-box;
+}
+
+/* Playlist Section */
+#playlist {
+    text-align: center; /* Center text for the title */
+    padding: 20px;
+}
+
+.header-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.playlist-container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.left-cat-gif {
+    width: 640px;
+    height: 360px;
+}
+
+.middle-cat-gif {
+    width: 640px;
+    height: 360px;
+}
+
+.right-cat-gif {
+    width: 430px;
+    height: 360px;
+}
+
+.cat-gif-container {
+    margin: 0 20px; /* Adjust the value as needed */
+}
+
+/* Playlist Header */
+.playlist-header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* GIF Grid Container */
+.gif-grid {
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+/* Playlist Grid Container */
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+}
+
+/* Individual Playlist Items Styling */
+.playlist-grid-item {
+    margin: 0 90px;
+    background-color: transparent;
+    padding: 0px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.playlist-grid-item iframe {
+    width: 352px;
+    height: 662px;
+    border-radius: 12px;
+}
+
+.playlist-grid-item:hover {
+    transform: scale(1.05);
+    filter: blur(0px) brightness(0.9);
+    cursor: pointer;
+}
+
+/* Playlist Section Title Styling */
+#playlist .header-text {
+    color: #1ED760;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.playlist-grid-item h2 {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .playlist-grid {
+        grid-template-columns: 1fr;
+    }
+    .left-cat-gif, .middle-cat-gif, .right-cat-gif {
+        width: auto;
+        height: auto;
+    }
+    .playlist-header {
+        flex-direction: column;
+    }
+    .gif-grid {
+        grid-template-columns: 1fr;     
+    }
+    .cat-gif-container {
+        margin: 10px; /* Adjust the value as needed */
+    }
+    #playlist .header-text{
+        margin-top: 30px;
+    }
+}
+
+/* End of Spotify Playlist */
+
+/* Home Section */
+.main-content {
+    min-height: 100vh; /* Changed from 'height' to 'min-height' for responsiveness */
+    padding: 40px; /* Consistent padding across the section */
+    background-image: url('images/image2.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Adjust text color if needed */
+    min-height: 500px; /* Minimum height to ensure image visibility */
+}
+
+.header { /*Home section*/
+    font-size: 49px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.subheader { /*Home section*/
+    font-size: 38px;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Added 'px' */
+    font-weight: bold;
+    color: #F5B51E;
+}
+
+.text-container {
+    /* Removed commented out background color */
+    padding: 10px; /* Padding inside the container */
+    border-radius: 15px; /* Rounded corners */
+    background-color: transparent;
+    color: #fff; /* Text color */
+}
+
+.text-container p { /* Home paragraph */
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    gap: 40px; /* Space between the grid items */
+    align-items: center; /* Align items vertically */
+}
+
+.image-container {
+    padding: 20px; /* Padding inside the container */
+    border-radius: 15px; /* Rounded corners */
+    display: flex; /* Use flex layout for images */
+    align-items: center; /* Align images vertically */
+    justify-content: center;
+}
+
+.left-side-gif, .right-side-image {
+    max-width: 100%; /* Ensure the images don't overflow their container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 45vh; /* Limit the image height */
+    margin-right: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .main-content-grid {
+        display: flex; /* Enable flex layout */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        text-align: center; /* Center text */
+        min-height: 100vh; /* Full height */
+    }
+
+    .text-container, .image-container {
+        padding: 0px; /* Adjusted padding for smaller screens */
+        margin-bottom: 0; /* Adjusted margin for smaller screens */
+    }
+
+    .left-side-gif, .right-side-image {
+        max-height: 30vh; /* Adjust the image height for smaller screens */
+        margin-right: 10px;
+    }
+}
+
+/* Fade-in animations for images and GIFs */
+.right-side-image {
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeInImage 1s ease-in forwards 1s; /* Animation with delay */
+    border: 10px solid #2d2461; /* Add a white frame */
+    box-shadow: 10px 5px 5px black; /* Add a shadow */
+}
+
+.left-side-gif {
+    opacity: 0; /* Start with the GIF being transparent */
+    animation: fadeInGif 2s ease-in forwards 5s; /* Animation with delay */
+}
+
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInGif {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/*End of Home Section*/
+
+
+/* About Section */
+#about {
+    background-image: url('images/image5.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Adjust text color if needed */
+    min-height: 100vh; /* Minimum height to ensure image visibility */
+    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns of equal width */
+    gap: 20px; /* Increase space between columns */
+    text-align: left; /* Align text to the left within each grid item */
+}
+
+.about-header {
+    text-align: center;
+    font-size: 2.5em; /* Slightly smaller for balance */
+    color: #ffffff; /* Light color for headers for contrast */
+}
+
+.about-description, .about-list {
+    font-size: 21px;
+    margin: 0px;
+    color: #dddddd;
+}
+
+.ol-about-list {
+    list-style-type: decimal;
+    font-size: 21px;
+}
+
+
+.about-list {
+    list-style-type: disc;
+    text-align: left;
+}
+
+/* Individual grid item styling */
+.about-grid > div {
+    background-color: #1b1b1b ; /* Changing to black */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
+}
+
+.about-grid > div:hover {
+    transform: scale(1.05); /* Slight increase in size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Styling for the GIF container */
+.about-gif-container {
+    text-align: center; /* Center the Cat HUH GIF */
+    float: left;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-gif-container img {
+    border: 10px solid #2c080d; /* Add a red frame to the image */
+}
+
+.about-gif-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.quote-container {
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-right: 5px !important;
+    max-width: 45%; /* Adjust as needed */
+    text-align: center; /* Centers the text within the quote container */
+    position: absolute; /* Positions the element absolutely to its relative parent */
+    left: 50%; /* Centers the element horizontally */
+    transform: translateX(50%);
+}
+
+.quote2 {
+    position: absolute;
+    max-width: 45% !important;
+    justify-content: center;
+    text-align: center;
+    bottom: -115%;
+    transform: translateX(50%);
+    left: 70%;
+}
+
+.quote-text {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.about-gif-container, .quote-container {
+    max-width: 100%; /* Adjust as needed */
+    margin: 20px auto;
+}
+
+.quote-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-container {
+        position: static; /* Resets the position on smaller screens */
+        max-width: 80%; /* Adjust as needed */
+        left: 50%;
+    }
+}
+
+/* Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack in one column on smaller screens */
+    }
+
+    .about-header {
+        padding-left: 20px; /* Adjust header padding on mobile screens */
+    }
+
+    .about-list {
+        padding-left: 20px; /* Adjust padding for better alignment on mobile screens */
+    }
+}
+
+.saitama-gif {
+    max-width: 100%; /* Ensures the GIF is not bigger than its container */
+    max-height: 300px; /* Adjusts the height as needed, keeping aspect ratio */
+    display: block; /* To display it as a block element */
+    margin: 20px auto; /* Centers the GIF and adds some space above and below */
+}
+
+/*End of About*/
+
+
+/* About Section Styling */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: flex-start; /* Align content to the top */
+    text-align: left;
+    padding: 20px; /* Adjust padding as needed */
+    min-height: 100vh; /* Adjust height as needed */
+}
+
+.section-title { /*Headers text to every section*/
+    font-size: 45px; /* Increase the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    margin-top: 40px; /* Existing top margin */
+    margin-bottom: 20px;
+    padding-left: 95px; /* Align content with the logo */
+    text-align: top;
+}
+
+/* Add or modify styles for subheader if needed */
+.about-subheader {
+    font-size: 24px; 
+    margin-top: 10px; 
+}
+
+.section-content {
+    font-size: 20px;
+    max-width: auto;
+    margin: auto;
+    text-align: left;
+}
+
+/* About Section Styling for Desktop */
+@media (min-width: 1024px) {
+    #about {
+        display: flex;
+        justify-content: center; /* Horizontal centering */
+        align-items: center; /* Vertical centering */
+        min-height: 100vh; /* Full height to enable vertical centering */
+        text-align: center; /* Center align the text */
+        background-color: #081F2C;
+    }
+
+    .about-grid {
+        width: auto; /* Auto width based on content */
+        margin: 0 auto; /* Center grid in the available space */
+        /* Remove any fixed grid-template-columns if any, or adjust as needed */
+    }
+
+    /* Adjust the .about-grid item widths and any other properties as necessary */
+}
