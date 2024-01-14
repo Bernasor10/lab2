@@ -972,17 +972,16 @@ footer .social-links a:hover {
     text-align: left;
 }
 
-/* Individual grid item styling */
-.about-grid > div {
+.about-grid > div:not(.quote-container) {
     background-color: #1b1b1b ; /* Changing to black */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-.about-grid > div:hover {
+.about-grid > div:not(.quote-container):hover {
     transform: scale(1.05); /* Slight increase in size on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
@@ -1009,51 +1008,66 @@ footer .social-links a:hover {
     box-shadow: none !important;
 }
 
-.quote-container {
-    background-color: #1b1b1b;
+.about-item {
+    background-color: #1b1b1b ; /* Changing to black */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-right: 5px !important;
-    max-width: 45%; /* Adjust as needed */
-    text-align: center; /* Centers the text within the quote container */
-    position: absolute; /* Positions the element absolutely to its relative parent */
-    left: 50%; /* Centers the element horizontally */
-    transform: translateX(50%);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: 40px;
 }
 
-.quote2 {
-    position: absolute;
-    max-width: 45% !important;
-    justify-content: center;
-    text-align: center;
-    bottom: -115%;
-    transform: translateX(50%);
-    left: 70%;
+.quote-container{
+    margin-right: 20px;
 }
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    background-color: #1b1b1b;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+}
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
 
 .quote-text {
     color: #ffffff;
     font-size: 22px;
 }
 
-.about-gif-container, .quote-container {
+.about-gif-container, .quote-container, .quote-container1 {
     max-width: 100%; /* Adjust as needed */
-    margin: 20px auto;
-}
 
-.quote-container:hover {
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-/* Adjustments for Mobile Devices */
-@media (max-width: 768px) {
-    .quote-container {
-        position: static; /* Resets the position on smaller screens */
-        max-width: 80%; /* Adjust as needed */
-        left: 50%;
-    }
 }
 
 /* Adjustments for Mobile Devices */
@@ -1068,6 +1082,15 @@ footer .social-links a:hover {
 
     .about-list {
         padding-left: 20px; /* Adjust padding for better alignment on mobile screens */
+    }
+    .quote-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the left */
+        justify-content: flex-start; /* Align content to the top */
+        min-width: 100%; /* Adjust as needed */
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 

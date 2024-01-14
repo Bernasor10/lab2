@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     var menuToggle = document.querySelector('.menu-toggle');
     var sidebar = document.getElementById("mySidebar");
-    var body = document.body; // Reference to the body element
-    var logo = document.getElementById('logo'); // Reference to the logo element
-    var messages = ['Thanks for your feedback!', 'We appreciate your feedback!', 'Your feedback is valuable to us!']; // Array of messages
-    var likeButton = document.getElementById('like-button'); // Reference to the like button
-    var likeCountElement = document.getElementById('like-count'); // Reference to the like count element
+    var body = document.body;
+    var logo = document.getElementById('logo');
+    var messages = ['Thanks for your feedback!', 'We appreciate your feedback!', 
+    'Your feedback is valuable to us!']; // Array of messages
+    var likeButton = document.getElementById('like-button');
+    var likeCountElement = document.getElementById('like-count');
     var likeCount = 0; // Like count
 
     // Function to open the sidebar
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.removeEventListener('touchmove', preventDefault, { passive: false });
     }
 
+    // Prevent default function
     function preventDefault(e) {
         e.preventDefault();
     }
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var email = document.getElementById('email').value;
         var message = document.getElementById('message').value;
 
-        
+        // Finally, I can now use these values to send an email, save to a database, etc.
         console.log("Full Name: " + fullname + ", Email: " + email + ", Message: " + message);
     }
 
@@ -115,6 +117,5 @@ document.addEventListener('DOMContentLoaded', function() {
         var randomIndex = Math.floor(Math.random() * messages.length);
         alert(messages[randomIndex]);
     });
-
 
 });
