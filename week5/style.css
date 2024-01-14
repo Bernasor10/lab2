@@ -1067,7 +1067,7 @@ footer .social-links a:hover {
 
 .about-gif-container, .quote-container, .quote-container1 {
     max-width: 100%; /* Adjust as needed */
-
+    margin: 40px;
 }
 
 /* Adjustments for Mobile Devices */
@@ -1092,6 +1092,12 @@ footer .social-links a:hover {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .quote-container, .quote-container1 {
+        margin: 0px;
+        margin-bottom: 0px;
+    }
+
 }
 
 .saitama-gif {
