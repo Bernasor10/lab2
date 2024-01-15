@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var sidebar = document.getElementById("mySidebar");
     var body = document.body;
     var logo = document.getElementById('logo');
-    var messages = ['Thanks for your feedback!', 'We appreciate your feedback!', 
-    'Your feedback is valuable to us!']; // Array of messages
+    var messages = ['Thanks for your feedback!', 'We appreciate your feedback!', 'Your feedback is valuable to us!',
+    'Thank you for sharing your thoughts!','We are always open to suggestions!','Your input helps us improve!',
+        'We are grateful for your constructive feedback!','Your insights are important to us!',
+        'Thank you for helping us enhance our services!','Your opinion matters to us!']; // Array of messages
     var likeButton = document.getElementById('like-button');
     var likeCountElement = document.getElementById('like-count');
     var likeCount = 0; // Like count
@@ -117,5 +119,55 @@ document.addEventListener('DOMContentLoaded', function() {
         var randomIndex = Math.floor(Math.random() * messages.length);
         alert(messages[randomIndex]);
     });
+
+    var i = 0;
+    var j = 0;
+    var txt = ['Potato Lover', 'Web Programmer', 'BSIT Student', 'Computer Enthusiast', 'UI/UX Designer', 
+    'Coding Hobbyist', 'Lifelong Learner', 'Cat Lover', 'Dog Lover'];
+    var speed = 100; // Speed of typing in milliseconds
+    var deleteSpeed = 50; // Speed of deleting in milliseconds
+    var waitAfterDelete = 1000; // Wait time after deleting in milliseconds
+    var waitAfterType = 2000; // Wait time after typing in milliseconds
+    var cursorVisible = true;
+    
+    function typeWriter() {
+      if (i < txt[j].length) {
+        document.querySelector('.type1').innerHTML = txt[j].substring(0, i+1) + (cursorVisible ? '|' : '');
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        setTimeout(deleteWriter, waitAfterType);
+      }
+    }
+    
+    function deleteWriter() {
+        if (i > 0) {
+          var temp = txt[j].substring(0, i);
+          document.querySelector('.type1').innerHTML = temp + (cursorVisible ? '|' : '');
+          i--;
+          setTimeout(deleteWriter, deleteSpeed);
+        } else {
+          document.querySelector('.type1').innerHTML = (cursorVisible ? '|' : '\xa0');
+          if (j < txt.length - 1) {
+            j++;
+          } else {
+            j = 0;
+          }
+          setTimeout(typeWriter, waitAfterDelete);
+        }
+      }
+    
+    function toggleCursor() {
+      cursorVisible = !cursorVisible;
+      if (i >= 0 && i <= txt[j].length) {
+        document.querySelector('.type1').innerHTML = txt[j].substring(0, i) + (cursorVisible ? '|' : '');
+      }
+      setTimeout(toggleCursor, 500);
+    }
+    
+    typeWriter();
+    toggleCursor();
+    
+
 
 });

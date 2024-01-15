@@ -12,6 +12,7 @@ img {
     height: auto;
 }
 
+
 /* BG Color for Home Section */
 #home {
     color: white;
@@ -410,7 +411,19 @@ footer .social-links a:hover {
     #suggestions {
         font-size: 25px;
         color: #F5B51E;
-        margin-bottom: 20px; /* Add space below the text */
+        margin-bottom: 20px;
+    }
+
+    #or {
+        font-size: 25px;
+        color: white;
+        margin-top: 0px;
+    }
+
+    #email-address {
+        font-size: 25px;
+        color: #F5B51E;
+        margin-top: 0px;
     }
 
     .feedback-prompt {
@@ -469,11 +482,12 @@ footer .social-links a:hover {
         order: 1;
         text-align: center;
     }
-    
-    footer #time {
-        text-align: center;
+
+    #time {
         color: #F5B51E;
         order: 2;
+        margin-top: 20px;
+        font-size: 18px;
     }
     
     footer .copyright {
@@ -822,6 +836,10 @@ footer .social-links a:hover {
 /* End of Spotify Playlist */
 
 /* Home Section */
+.type1:empty::before {
+    content: '\200B';
+}
+
 .main-content {
     min-height: 100vh; /* Changed from 'height' to 'min-height' for responsiveness */
     padding: 40px; /* Consistent padding across the section */
@@ -837,27 +855,30 @@ footer .social-links a:hover {
     font-size: 49px;
     margin-bottom: 20px;
     font-weight: bold;
+    font-family: 'Lato', sans-serif;
 }
 
 .subheader { /*Home section*/
     font-size: 38px;
     margin-bottom: 20px;
-    margin-top: 20px; /* Added 'px' */
+    margin-top: 20px;
     font-weight: bold;
     color: #F5B51E;
+    font-family: 'Lato', sans-serif;
 }
 
 .text-container {
-    /* Removed commented out background color */
     padding: 10px; /* Padding inside the container */
     border-radius: 15px; /* Rounded corners */
     background-color: transparent;
-    color: #fff; /* Text color */
+    color: #fff;
+    font-family: 'Lato', sans-serif;
 }
 
 .text-container p { /* Home paragraph */
     font-size: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
 }
 
 .main-content-grid {
