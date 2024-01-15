@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var speed = 100; // Speed of typing in milliseconds
     var deleteSpeed = 50; // Speed of deleting in milliseconds
     var waitAfterDelete = 1000; // Wait time after deleting in milliseconds
-    var waitAfterType = 1000; // Wait time after typing in milliseconds
+    var waitAfterType = 2000; // Wait time after typing in milliseconds
     var cursorVisible = true;
     
     function typeWriter() {
