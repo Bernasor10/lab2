@@ -588,7 +588,8 @@ footer .social-links a:hover {
     border: none;
     border-radius: 50px; /* Rounded corners */
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
-    background-color: #fff; /* White background color */
+    color: white;
+    background-color: #111;
     margin-bottom: 20px; /* Add space below each form field */
     height: 170px; /* Set a fixed height */
     resize: none; /* Make it non-resizable */
@@ -600,10 +601,11 @@ footer .social-links a:hover {
     width: 100%;
     height: 50px;
     font-size: 21px;
+    color: white;
     border: none;
     border-radius: 50px; /* Rounded corners */
     box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
-    background-color: #fff; /* White background color */
+    background-color: #111; /* White background color */
     margin-bottom: 20px; /* Add space below each form field */
     padding: 10px; /* Add padding to the text field*/
 }

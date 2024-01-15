@@ -312,10 +312,20 @@ section {
 
 
 /* Start of Contact Me Section Styling */
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #081F2C;
+    color: white;
+    font-size: 19px;
+    position: relative;
+    clear: both;
+    z-index: 10;
+}
 
-#contact .social-links a {
+footer .social-links a {
     font-size: 45px; /* Social icon size */
-    margin: 0 10px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center; /* Center icons vertically */
@@ -327,31 +337,10 @@ section {
     transition: background-color 1.0s, color 1.0s;
 }
 
-#contact .social-links a:hover {
+footer .social-links a:hover {
     background-color: #4198d9; /* Hover background color */
     color: #fff; /* Hover icon color */
     border: 3px solid #4198d9; /* Border on hover */
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-    background-color: #081F2C;
-    color: white;
-    font-size: 16px;
-    position: relative;
-    clear: both;
-    z-index: 10;
-}
-
-footer {
-    display: none;
-}
-
-#contact:target + footer {
-    display: block;
 }
 
 @media (min-width: 1024px) {
