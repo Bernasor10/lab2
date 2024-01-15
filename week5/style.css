@@ -1089,8 +1089,10 @@ footer .social-links a:hover {
 }
 
 .about-gif-container, .quote-container, .quote-container1 {
-    max-width: 100%; /* Adjust as needed */
+    max-width: 100%;
+    align-items: flex-start;
     margin: 40px;
+    margin-left: 0px;
 }
 
 /* Adjustments for Mobile Devices */
