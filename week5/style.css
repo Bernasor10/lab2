@@ -52,7 +52,7 @@ img {
     .navbar {
         position: fixed;
         width: 100%;
-        padding: 1px 1px 0px;
+        padding: 15px 1px 0px;
         background-color: transparent;
         overflow: hidden;
         z-index: 1000;
