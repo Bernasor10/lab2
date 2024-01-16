@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="icon" href="images/maximus.ico" type="image/x-icon"> <!-- Favicon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="images/maximus.png" type="image/x-icon">
     <title>Ronaldo Bernasor II's Portfolio</title>
     <style>
         /* Add your CSS here */
@@ -14,24 +15,26 @@
 </head>
 <body>
 
-    <!-- Sidebar Menu -->
-    <div id="mySidebar" class="sidebar">
-        <!-- Close Button -->
-        <a href="javascript:void:0" class="closebtn" onclick="closeSidebar()">&times;</a>
-    
-        <!-- Container for Navigation Links -->
-        <div class="sidebar-nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#playlist">Playlist</a>
-            <a href="#contact">Contact Me</a>
-        </div>
-    </div>
+<!-- Sidebar Menu -->
+<div id="mySidebar" class="sidebar">
+    <!-- Close Button -->
+    <a href="javascript:void:0" class="closebtn" onclick="closeSidebar()">×</a>
 
+    <!-- Image -->
+    <img src="images/somi.jpg" alt="Profile Picture" style="width:100%;">
+
+    <!-- Container for Navigation Links -->
+    <div class="sidebar-nav-links">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user"></i> About Me</a>
+        <a href="#playlist"><i class="fas fa-music"></i> Playlist</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a>
+    </div>
+</div>
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <a id="logo" href="#home">
+    <a id="logo" href="index.html">
         <div class="logo">호날두</div>
     </a>
     <div class="menu-toggle">
@@ -66,8 +69,7 @@
             <div id="time"></div>
         </div>
         <div class="image-container">
-            <img src="images/cat-slapping.gif" alt="Cat Slapping GIF" class="left-side-gif" />
-            <img src="images/me.jpg" alt="Me" class="right-side-image" />
+            <img src="images/me.jpg" alt="Image of mine" class="right-side-image" />
         </div>
     </div>
 </div>
@@ -77,50 +79,50 @@
 <section id="about">
     <div class="about-grid">
         <div>
-            <h3 class="about-header">About Me</h3>
+            <h3 class="about-header"><i class="fas fa-user"></i> About Me</h3>
             <p class="about-description">
-                I was born in December 10, 2001, I am currently 22 years old and my Junior High School journey includes four years at 
-                Santa Clara Parish School in Pasay City and I graduated Senior High School at Asia Pacific College.
-                One of my hobbies is cycling. I picked it up during the pandemic as a way to stay active. It was just me, my bike, and the open road every morning. But now, with my schedule getting busier, I don't get to cycle as much. Even so, whenever 
+                I was born in <strong>December 10, 2001</strong>, I am currently <strong>22 years old</strong> and my Junior High School journey includes four years at 
+                <em>Santa Clara Parish School</em> in Pasay City and I graduated Senior High School at <em>Asia Pacific College</em>.
+                One of my hobbies is <strong>cycling</strong>. I picked it up during the pandemic as a way to stay active. It was just me, my bike, and the open road every morning. But now, with my schedule getting busier, I don't get to cycle as much. Even so, whenever 
                 I find some free time, I enjoy going for a ride. It's always a good time.
             </p>
-        </div>
+            </div>            
         <div>
-            <h3 class="about-header">Interests</h3>
+            <h3 class="about-header"><i class="fas fa-heart"></i> Interests</h3>
             <ul class="about-list">
-                <li>Binge-watching K-dramas is something I really enjoy. It is a great way 
-                    to unwind and get lost in different stories</li>
-                <li>I enjoy jamming to K-pop and Western music.</li>
-                <li>Playing video games like Valorant, CODM, and Wildrift is something I really enjoy. 
-                    It is a fun experience</li>
-                <li>Cat and dog lover. I used to have dogs and cats before, even a snake
+                <li><strong>Binge-watching K-dramas</strong> is something I really enjoy. It is a great way 
+                    to <em>unwind</em> and get lost in different stories</li>
+                <li>I enjoy <strong>jamming to K-pop and Western music</strong>.</li>
+                <li><strong>Playing video games</strong> like Valorant, CODM, and Wildrift is something I really enjoy. 
+                    It is a <em>fun experience</em></li>
+                <li><strong>Cat and dog lover</strong>. I used to have dogs and cats before, even a snake
                     🐍
                 </li>
-                <li>I like memes</li>
+                <li>I <strong>like memes</strong></li>
             </ul>
         </div>
         <div>
-            <h3 class="about-header">My top 10 favorite foods</h3>
+            <h3 class="about-header"><i class="fas fa-utensils"></i> My top 10 favorite foods</h3>
             <ol class="ol-about-list">
-                <li>French fries</li>
-                <li>Munggo</li>
-                <li>Chicken fillet</li>
-                <li>Mojos</li>
-                <li>Lasagna</li>
-                <li>Salad</li>
-                <li>Pasta</li>
-                <li>Siomai rice</li>
-                <li>Sinigang na baboy</li>
-                <li>Bulalo</li>
+                <li>French fries 🍟</li>
+                <li>Munggo 🥣</li>
+                <li>Chicken fillet 🍗</li>
+                <li>Mojos 🥔</li>
+                <li>Lasagna 🍝</li>
+                <li>Salad 🥗</li>
+                <li>Pasta 🍝</li>
+                <li>Siomai rice 🍚</li>
+                <li>Sinigang na baboy 🍲🐷</li>
+                <li>Bulalo 🥩</li>
             </ol>
             
         </div>
         <div>
-            <h3 class="about-header">Things I do not like</h3>
+            <h3 class="about-header"><i class="fas fa-thumbs-down"></i> Things I do not like</h3>
             <ul class="about-list">
-                <li>Eating my potatoes without my permission</li>
-                <li>People who judge quickly without knowing the full story.</li>
-                <li>Spreading false informations</li>
+                <li><strong>Eating my potatoes</strong> without my permission</li>
+                <li>People who <i>judge quickly</i> without knowing the full story.</li>
+                <li><strong>Spreading false informations</strong></li>
             </ul>
             <!-- Adding the GIF -->
             <img src="images/saitama.gif" alt="Saitama GIF" class="Saitama, the one punch man" />
@@ -146,7 +148,7 @@
         <div class="quote-container quote2 flip-card" onclick="flipCard(this)">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <!-- Front content goes here -->
+
                     <p class="quote-text">Click or hover to reveal the quote!</p>
                 </div>
                 <div class="flip-card-back">
@@ -207,7 +209,7 @@
 
 <!-- Contact Me Section -->
 <section id="contact">
-    <h3 class="section-title">Contact Me</h3>
+    <h3 class="section-title"><i class="fas fa-envelope"></i> Contact Me</h3>
     <p class="feedback-prompt">Do you like my personal website so far?<br></p>
     <div class="like-button-container">
         <i class='bx bx-like' id="like-button"></i>

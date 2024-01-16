@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 body, html {
 
     margin: 0;
@@ -21,7 +21,7 @@ img {
 /* BG Color for Playlist Section */
 #playlist {
     color: white;
-    background-image: url('images/image3.jpg');
+    background-image: url('images/night.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
@@ -34,11 +34,10 @@ img {
     color: white;
 }
 
-/* Original navigation bar styles */
-
 .navbar {
     position: fixed;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
     padding: 5px 20px;
     background-color: #05131b;
     overflow: hidden;
@@ -51,14 +50,16 @@ img {
 @media (min-width: 1024px) {
     .navbar {
         position: fixed;
+        background: rgba(0, 0, 0, 0.5);
         width: 100%;
-        padding: 15px 1px 0px;
-        background-color: transparent;
         overflow: hidden;
         z-index: 1000;
+        height: 9%;
         display: flex;
-        justify-content: space-between; /* Space between logo and menu */
         align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        color: white;
     }
 }
 
@@ -66,7 +67,7 @@ img {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 32px;
     border-radius: 4px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
     transition: background-color 0.3s, color 0.3s;
@@ -219,52 +220,61 @@ img {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     height: 100%;
+    padding-top: 0px;
 }
 
-/* Container for Navigation Links within the Sidebar */
-.sidebar-nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the links horizontally */
-    gap: 10px; /* Adjust the space between the links */
+    /* The sidebar image */
+    #mySidebar img {
+        max-width: 60%;
+        max-height: 60%; 
+        display: block;
+        margin: 0 auto;
+        border: 10px solid #B22222;
+    }
 
-}
+    /* Container for Navigation Links within the Sidebar */
+    .sidebar-nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the links horizontally */
+        gap: 10px; /* Adjust the space between the links */
+        grid-row: 2; /* Place the nav links in the second row */
+    }
 
-/* Style individual links as buttons */
-.sidebar-nav-links a {
-    background-color: #111; /* Button background color */
-    padding: 10px 20px; /* Padding inside the button */
-    border: none; /* Remove border if there is any */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from links */
-    text-align: center; /* Center text inside the button */
-    width: 80%;
-    transition: background-color 0.3s;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adding box shadow */
-}
+    /* Style individual links as buttons */
+    .sidebar-nav-links a {
+        background-color: #111; /* Button background color */
+        padding: 10px 20px; /* Padding inside the button */
+        border: none; /* Remove border if there is any */
+        border-radius: 5px; /* Rounded corners */
+        text-decoration: none; /* Remove underline from links */
+        text-align: center; /* Center text inside the button */
+        width: 80%;
+        transition: background-color 0.3s;
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Adding box shadow */
+    }
 
-/* The links inside the sidebar */
-.sidebar a {
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    white-space: nowrap; /* Prevents the text from wrapping */
-    overflow: hidden; /* Hides the text that overflows the container */
-    margin: 20px 0px;
-    text-align: center;
-}
+    /* The links inside the sidebar */
+    .sidebar a {
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        white-space: nowrap; /* Prevents the text from wrapping */
+        overflow: hidden; /* Hides the text that overflows the container */
+        margin: 20px 0px;
+        text-align: center;
+    }
 
-/* The close button */
-.closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
+    /* The close button */
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -324,7 +334,7 @@ footer {
     bottom: 0;
     clear: both;
     z-index: 10;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 footer .social-links a {
@@ -482,16 +492,9 @@ footer .social-links a:hover {
         order: 1;
         text-align: center;
     }
-
-    #time {
-        color: #F5B51E;
-        order: 2;
-        margin-top: 20px;
-        font-size: 18px;
-    }
     
     footer .copyright {
-        order: 3;
+        order: 2;
         text-align: center;
     }
 
@@ -593,6 +596,7 @@ footer .social-links a:hover {
     display: block;
     margin-bottom: 10px;
     font-size: 1.2em; /* Larger font size */
+    font-family: 'Open Sans', sans-serif;
     text-align: left; /* Align the labels to the left */
 }
 
@@ -679,15 +683,10 @@ footer .social-links a:hover {
         order: 1;
         text-align: center;
     }
-    
-    #time {
-        text-align: center;
-        color: #F5B51E;
-        order: 2;
-    }
+
     
     footer .copyright {
-        order: 3;
+        order: 2;
         text-align: center;
     }
 
@@ -705,6 +704,7 @@ footer .social-links a:hover {
 #home, #about, #playlist, #contact {
     min-height: 100vh; /* Minimum height to occupy the viewport */
     display: flex;
+    font-family: 'Open Sans', sans-serif;
     flex-direction: column;
     justify-content: center; /* Align content vertically in the center */
     box-sizing: border-box;
@@ -840,7 +840,22 @@ footer .social-links a:hover {
     content: '\200B';
 }
 
+strong {
+    color: #ADD8E6;
+}
+
+
+#time {
+    color: #F5B51E;
+    order: 2;
+    margin-top: 20px;
+    font-size: 22px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    
+}
+
 .main-content {
+    position: relative;
     min-height: 100vh; /* Changed from 'height' to 'min-height' for responsiveness */
     padding: 40px; /* Consistent padding across the section */
     background-image: url('images/image2.jpg'); /* Background image */
@@ -852,19 +867,21 @@ footer .social-links a:hover {
 }
 
 .header { /*Home section*/
-    font-size: 49px;
+    font-size: 63px;
     margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     font-weight: bold;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .subheader { /*Home section*/
-    font-size: 38px;
+    font-size: 44px;
     margin-bottom: 20px;
     margin-top: 20px;
     font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     color: #F5B51E;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .text-container {
@@ -872,19 +889,19 @@ footer .social-links a:hover {
     border-radius: 15px; /* Rounded corners */
     background-color: transparent;
     color: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .text-container p { /* Home paragraph */
-    font-size: 20px;
-    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
 }
 
 .main-content-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
-    gap: 40px; /* Space between the grid items */
+    grid-template-columns: 2fr 1fr;
+    gap: 20px; /* Space between the grid items */
     align-items: center; /* Align items vertically */
 }
 
@@ -894,13 +911,25 @@ footer .social-links a:hover {
     display: flex; /* Use flex layout for images */
     align-items: center; /* Align images vertically */
     justify-content: center;
+    object-fit: contain;
 }
 
-.left-side-gif, .right-side-image {
-    max-width: 100%; /* Ensure the images don't overflow their container */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 45vh; /* Limit the image height */
-    margin-right: 10px;
+.right-side-image {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    background-color: #000;
+}
+
+/* Fade-in animations for images and GIFs */
+.right-side-image {
+    opacity: 0; /* Start with the image being transparent */
+    animation: fadeInImage 1s ease-in forwards 1s; /* Animation with delay */
+}
+
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive adjustments for smaller screens */
@@ -918,35 +947,8 @@ footer .social-links a:hover {
         padding: 0px; /* Adjusted padding for smaller screens */
         margin-bottom: 0; /* Adjusted margin for smaller screens */
     }
-
-    .left-side-gif, .right-side-image {
-        max-height: 30vh; /* Adjust the image height for smaller screens */
-        margin-right: 10px;
-    }
 }
 
-/* Fade-in animations for images and GIFs */
-.right-side-image {
-    opacity: 0; /* Start with the image being transparent */
-    animation: fadeInImage 1s ease-in forwards 1s; /* Animation with delay */
-    border: 10px solid #2d2461; /* Add a white frame */
-    box-shadow: 10px 5px 5px black; /* Add a shadow */
-}
-
-.left-side-gif {
-    opacity: 0; /* Start with the GIF being transparent */
-    animation: fadeInGif 2s ease-in forwards 5s; /* Animation with delay */
-}
-
-@keyframes fadeInImage {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInGif {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 
 /*End of Home Section*/
 
@@ -959,6 +961,7 @@ footer .social-links a:hover {
     background-repeat: no-repeat;
     color: white; /* Adjust text color if needed */
     min-height: 100vh; /* Minimum height to ensure image visibility */
+    font-family: 'Open Sans', sans-serif;
     place-items: center;
     display: flex;
     align-items: center;
@@ -975,7 +978,7 @@ footer .social-links a:hover {
 .about-header {
     text-align: center;
     font-size: 2.5em; /* Slightly smaller for balance */
-    color: #ffffff; /* Light color for headers for contrast */
+    color: #B22222; /* Light color for headers for contrast */
 }
 
 .about-description, .about-list {
@@ -996,7 +999,7 @@ footer .social-links a:hover {
 }
 
 .about-grid > div:not(.quote-container) {
-    background-color: #1b1b1b ; /* Changing to black */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -1020,10 +1023,6 @@ footer .social-links a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.about-gif-container img {
-    border: 10px solid #2c080d; /* Add a red frame to the image */
 }
 
 .about-gif-container:hover {
@@ -1058,7 +1057,7 @@ footer .social-links a:hover {
   
   .flip-card-inner {
     position: relative;
-    background-color: #1b1b1b;
+    background-color: rgba(0, 0, 0, 0.5);
     min-width: 100%;
     min-height: 100%;
     text-align: center;
@@ -1085,7 +1084,7 @@ footer .social-links a:hover {
 
 .quote-text {
     color: #ffffff;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .about-gif-container, .quote-container, .quote-container1 {
