@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 body, html {
-
     margin: 0;
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 2s ease-in;
 }
 
 img {
@@ -12,25 +20,27 @@ img {
     height: auto;
 }
 
-
-/* BG Color for Home Section */
-#home {
-    color: white;
-}
-
 /* BG Color for Playlist Section */
 #playlist {
     color: white;
-    background-image: url('images/night.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
 }
+
+#background-wallpaper {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Place the video behind other content */
+}
+
+
 
 /* BG Color for Contact Me Section */
 #contact {
     flex-direction: row;
-    background-color: #081F2C; /* Replace with your desired color */
     color: white;
 }
 
@@ -137,12 +147,14 @@ img {
 }
 
 /* Adjustments for mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 1268px) {
     .navbar {
-        padding: 25px 1px 20px;
-        top: 0;
+        height: 7vh; /* Adjust as needed */
+        width: 100%;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
         border-radius: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: flex-start; /* Align items to the start (top) */
     }
     
     .navbar a {
@@ -158,11 +170,11 @@ img {
     }
 
     .menu-toggle {
-        display: flex; /* Display hamburger menu on mobile */
-        position: absolute; /* Position it absolutely within the navbar */
-        right: 25px; /* Align to the right */
-        top: 7px; /* Adjust top position as needed */
+        display: flex;
         flex-direction: column;
+        position: relative; /* Position it relative to the navbar */
+        margin-right: auto 0px;
+        margin-left: auto 20px;
     }
 
     .nav-links {
@@ -171,9 +183,7 @@ img {
         position: absolute;
         top: 60px; /* Adjust top position to avoid overlapping */
         left: 0;
-        background: #05131b;
         width: 100%;
-        padding: 10px 0;
         transition: max-height 0.3s ease-in-out; /* Add smooth transition */
         max-height: 0; /* Initially hidden */
         overflow: hidden;
@@ -206,7 +216,7 @@ img {
     position: fixed;
     z-index: 1;
     top: 0;
-    right: 0;
+    left: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
@@ -229,7 +239,7 @@ img {
         max-height: 60%; 
         display: block;
         margin: 0 auto;
-        border: 10px solid #B22222;
+        border: 10px solid #9B111E;
     }
 
     /* Container for Navigation Links within the Sidebar */
@@ -277,7 +287,7 @@ img {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1268px) {
     /* Hide sidebar for desktop */
     .sidebar { display: none; }
 }
@@ -296,38 +306,46 @@ section {
     align-items: center; /* Changed to center for proper alignment */
     text-align: center; /* Ensure text aligns center for all sections */
     box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle bottom shadow for separation */
 }
 
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 20px;
     margin: 15px 30px 15px 0;
     background-color: #13200e;
-    border: 2px solid #13200e; /* Updated border color */
     color: #fff; /* Updated text color */
+    text-shadow: 2px 2px 5px #000; /* Add a text shadow */
     text-decoration: none;
     border-radius: 15px;
     font-size: 25px;
     box-shadow: 5px 5px 10px #081b29; /* Add a shadow */
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+    position: relative; /* Add relative positioning */
+    z-index: 1; /* Set the z-index of the button to 1 */
+    overflow: hidden; /* Add overflow hidden */
 }
 
-.button:hover {
-    background-color: #081b29; /* Color change on hover */
-    color: #fff; /* Text color change on hover */
-    border: 2px solid #081b29;
-    box-shadow: 5px 5px 10px #000000; /* Add a shadow on hover */
-    transform: rotate(10deg); /* Rotate the button 10 degrees on hover */
+.button::after {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align it to the top left corner of the button */
+    left: 0;
+    width: 0; /* Set its initial width to 0 */
+    height: 100%; /* Set its height to match the button */
+    background-color: #F5B51E; /* Set the fill color */
+    transition: width 0.7s ease-in-out; /* Add transition for smooth animation */
+    z-index: -1; /* Set the z-index of the pseudo-element to -1 */
 }
 
+.button:hover::after {
+    width: 100%; /* Set the width to 100% on hover */
+    color: #000;
+}
 
 /* Start of Contact Me Section Styling */
 footer {
     text-align: center;
     width: 100%;
     padding: 10px 0;
-    background-color: #081F2C;
     color: white;
     font-size: 19px;
     position: static;
@@ -337,28 +355,8 @@ footer {
     font-family: 'Open Sans', sans-serif;
 }
 
-footer .social-links a {
-    font-size: 45px; /* Social icon size */
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center; /* Center icons vertically */
-    justify-content: center; /* Center icons horizontally */
-    width: auto; /* Button width */
-    height: auto; /* Button height */
-    color: #fff; /* Icon color */
-    transition: all 0.3s ease;
-}
-
-footer .social-links a:hover {
-    background-color: transparent; /* Hover background color */
-    color: #fff; /* Hover icon color */
-    transform: scale(1.19); /* Slight increase in size on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-}
-
     /* Contact Form Styling */
     #suggestion-form {
-        background-color: #081F2C; /* Dark background color */
         padding: 20px;
         border-radius: 15px;
         width: 80%;
@@ -431,7 +429,7 @@ footer .social-links a:hover {
     }
 
     #email-address {
-        font-size: 25px;
+        font-size: 21px;
         color: #F5B51E;
         margin-top: 0px;
     }
@@ -447,7 +445,7 @@ footer .social-links a:hover {
     #like-count {
         font-size: 20px; /* Adjust this value to change the font size of the like count */
     }
-    
+
 
 @media (min-width: 1024px) {
     #contact {
@@ -464,7 +462,7 @@ footer .social-links a:hover {
     }
 
     /* Centers the social links container */
-    #contact .social-links {
+    .social-links {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
@@ -488,7 +486,7 @@ footer .social-links a:hover {
         justify-content: space-between;
     }
 
-    footer .social-links {
+    .social-links {
         order: 1;
         text-align: center;
     }
@@ -500,7 +498,6 @@ footer .social-links a:hover {
 
     /* Contact Form Styling */
 #suggestion-form {
-    background-color: #081F2C; /* Dark background color */
     padding: 20px;
     border-radius: 15px;
     width: 80%;
@@ -571,7 +568,7 @@ footer .social-links a:hover {
 }
 
 /* Mobile Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1268px) {
     #contact .section-title {
         flex-direction: column; /* Stacks content vertically */
         align-items: center; /* Centers items horizontally */
@@ -583,7 +580,6 @@ footer .social-links a:hover {
 
 /* Contact Form Styling */
 #suggestion-form {
-    background-color: #081F2C; /* Dark background color */
     padding: 20px;
     border-radius: 15px;
     width: 80%;
@@ -768,13 +764,13 @@ footer .social-links a:hover {
 /* Playlist Grid Container */
 .playlist-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0px;
 }
 
 /* Individual Playlist Items Styling */
 .playlist-grid-item {
-    margin: 0 90px;
+    margin: 0 40px;
     background-color: transparent;
     padding: 0px;
     border-radius: 15px;
@@ -811,7 +807,7 @@ footer .social-links a:hover {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1268px) {
     .playlist-grid {
         grid-template-columns: 1fr;
     }
@@ -840,30 +836,68 @@ footer .social-links a:hover {
     content: '\200B';
 }
 
+.social-links a {
+    font-size: 70px; /* Social icon size */
+    border-radius: 50%;
+    display: inline-flex;
+    margin: 10px;
+    align-items: center; /* Center icons vertically */
+    justify-content: center; /* Center icons horizontally */
+    width: auto; /* Button width */
+    height: auto; /* Button height */
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: transparent; /* Hover background color */
+    color: #fff; /* Hover icon color */
+    transform: scale(1.19); /* Slight increase in size on hover */
+    box-shadow: 0 4px 8
+    px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Add background colors */
+.bxl-facebook-circle {
+    background: #3B5998;
+}
+
+.bxl-github {
+    background: #333;
+}
+
+.bxl-linkedin-square {
+    background: #0077B5;
+}
+
+.bxl-instagram-alt {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background-clip: content-box;
+}
+
 strong {
-    color: #ADD8E6;
+    color: #f51e5f;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 
 #time {
-    color: #F5B51E;
-    order: 2;
+    color: #F5B51E; /* Set the text color */
+    font-size: 22px; /* Set the text size */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Add a text shadow */
+    padding: 10px; /* Add some space around the text */
+    text-align: left; /* Align the text to the center of the element */
+    white-space: normal; /* Allow the text to wrap to the next line */
+    word-break: break-word; /* Break long words if necessary */
     margin-top: 20px;
-    font-size: 22px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    
 }
 
 .main-content {
     position: relative;
     min-height: 100vh; /* Changed from 'height' to 'min-height' for responsiveness */
-    padding: 40px; /* Consistent padding across the section */
-    background-image: url('images/image2.jpg'); /* Background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: 100px; /* Consistent padding across the section */
     color: white; /* Adjust text color if needed */
-    min-height: 500px; /* Minimum height to ensure image visibility */
 }
 
 .header { /*Home section*/
@@ -875,7 +909,7 @@ strong {
 }
 
 .subheader { /*Home section*/
-    font-size: 44px;
+    font-size: 46px;
     margin-bottom: 20px;
     margin-top: 20px;
     font-weight: bold;
@@ -884,12 +918,21 @@ strong {
     font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Align the container to the center of the screen */
+    align-items: center; /* Align the items vertically */
+    width: 100%; /* Set the width to 100% of the screen */
+    height: 100px; /* Set the height to 100px */
+    background-color: #13200e; /* Set the background color */
+}
+
 .text-container {
-    padding: 10px; /* Padding inside the container */
     border-radius: 15px; /* Rounded corners */
     background-color: transparent;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
+    text-align: left;
 }
 
 .text-container p { /* Home paragraph */
@@ -901,12 +944,13 @@ strong {
 .main-content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px; /* Space between the grid items */
+    gap: 20px;
     align-items: center; /* Align items vertically */
+    justify-content: flex-start;
+    margin-top: 30px;
 }
 
 .image-container {
-    padding: 20px; /* Padding inside the container */
     border-radius: 15px; /* Rounded corners */
     display: flex; /* Use flex layout for images */
     align-items: center; /* Align images vertically */
@@ -933,7 +977,7 @@ strong {
 }
 
 /* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1268px) {
     .main-content-grid {
         display: flex; /* Enable flex layout */
         flex-direction: column; /* Stack items vertically */
@@ -949,24 +993,29 @@ strong {
     }
 }
 
-
 /*End of Home Section*/
 
 
 /* About Section */
+:root {
+    --header-color: #B22222;
+    --text-color: #dddddd;
+    --font-family: 'Open Sans', sans-serif;
+  }
+
+
 #about {
-    background-image: url('images/image5.jpg'); /* Background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: white; /* Adjust text color if needed */
     min-height: 100vh; /* Minimum height to ensure image visibility */
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-family);
     place-items: center;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    /* Make the section relative and hidden */
+    position: relative;
+    overflow: hidden;
+  }
 
 .about-grid {
     display: grid;
@@ -1089,13 +1138,16 @@ strong {
 
 .about-gif-container, .quote-container, .quote-container1 {
     max-width: 100%;
+    max-height: 100%;
     align-items: flex-start;
     margin: 40px;
     margin-left: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 /* Adjustments for Mobile Devices */
-@media (max-width: 768px) {
+@media (max-width: 1268px) {
     .about-grid {
         grid-template-columns: 1fr; /* Stack in one column on smaller screens */
     }
@@ -1107,7 +1159,7 @@ strong {
     .about-list {
         padding-left: 20px; /* Adjust padding for better alignment on mobile screens */
     }
-    .quote-container {
+    .quote-container, .quote-container1 {
         flex-direction: column;
         align-items: flex-start; /* Align content to the left */
         justify-content: flex-start; /* Align content to the top */
@@ -1117,7 +1169,7 @@ strong {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .quote-container, .quote-container1 {
+    .quote-container1 {
         margin: 0px;
         margin-bottom: 0px;
     }
@@ -1175,7 +1227,6 @@ strong {
         align-items: center; /* Vertical centering */
         min-height: 100vh; /* Full height to enable vertical centering */
         text-align: center; /* Center align the text */
-        background-color: #081F2C;
     }
 
     .about-grid {

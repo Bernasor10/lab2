@@ -122,12 +122,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var i = 0;
     var j = 0;
-    var txt = ['Potato Lover', 'Web Programmer', 'BSIT Student', 'Computer Enthusiast', 'UI/UX Designer', 
-    'Coding Hobbyist', 'Lifelong Learner', 'Cat Lover', 'Dog Lover'];
-    var speed = 100; // Speed of typing in milliseconds
+    var txt = ['Potato Lover', 'Gamer 😎', 'Web Programmer', 'BSIT Student', 'Computer Enthusiast', 'UI/UX Designer', 
+    'Lifelong Learner', 'Cat Lover', 'Dog Lover'];
+    var speed = 80; // Speed of typing in milliseconds
     var deleteSpeed = 50; // Speed of deleting in milliseconds
-    var waitAfterDelete = 1000; // Wait time after deleting in milliseconds
-    var waitAfterType = 2000; // Wait time after typing in milliseconds
+    var waitAfterDelete = 900; // Wait time after deleting in milliseconds
+    var waitAfterType = 1000; // Wait time after typing in milliseconds
     var cursorVisible = true;
     
     function typeWriter() {
