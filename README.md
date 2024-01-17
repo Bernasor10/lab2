@@ -8,7 +8,7 @@ Welcome to the GitHub repository of my personal website portfolio, `lab2`. This 
 - **Home**: The main page of my website. Provides the overview about myself, and my socials.
 - **About Me**: This section contains all about myself and my favorite quotes.
 - **Playlist**: Lists of my favorite tracks on Spotify.
-- **Contact Me**: A section where you can write your thoughts about my personal website, and provide feedbacks, and also you can find my email here.
+- **Contact Me**: A section where you can write your thoughts about my personal website, provide feedbacks, and also you can find my email here.
 
 ## Technologies Used
 - HTML
