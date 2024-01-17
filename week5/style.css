@@ -361,7 +361,6 @@ footer {
         border-radius: 15px;
         width: 80%;
         margin: 0 auto;
-        color: white; /* White text color */
         text-align: center; /* Center the text */
     }
     
@@ -401,7 +400,7 @@ footer {
     }
     
     #suggestion-form input[type="submit"] {
-        background-color: #0a0a0a; /* Green background */
+        background-color: #0a0a0a;
         color: white; /* White text */
         padding: 10px 20px;
         border: none;
@@ -420,22 +419,28 @@ footer {
         font-size: 25px;
         color: #F5B51E;
         margin-bottom: 20px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     }
 
     #or {
         font-size: 25px;
         color: white;
         margin-top: 0px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     }
 
     #email-address {
         font-size: 21px;
         color: #F5B51E;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         margin-top: 0px;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .feedback-prompt {
         font-size: 25px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        font-family: 'Open Sans', sans-serif;
     }
 
     #like-button {
@@ -444,8 +449,9 @@ footer {
     
     #like-count {
         font-size: 20px; /* Adjust this value to change the font size of the like count */
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        font-family: 'Open Sans', sans-serif;
     }
-
 
 @media (min-width: 1024px) {
     #contact {
@@ -563,6 +569,7 @@ footer {
     font-size: 25px;
     color: #F5B51E;
     margin-bottom: 20px; /* Add space below the text */
+    font-family: 'Open Sans', sans-serif;
 }
 
 }
@@ -644,6 +651,7 @@ footer {
     font-size: 25px;
     color: #F5B51E;
     margin-bottom: 20px; /* Add space below the text */
+    font-family: 'Open Sans', sans-serif;
 }
     
     /* Center aligns the subheader, paragraph, and social links */
@@ -753,6 +761,10 @@ footer {
     gap: 20px;
 }
 
+#playlist h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+
 /* GIF Grid Container */
 .gif-grid {
     margin-top: 130px;
@@ -791,7 +803,7 @@ footer {
 
 /* Playlist Section Title Styling */
 #playlist .header-text {
-    color: #1ED760;
+    color: #ff006e;
     text-align: center;
     font-size: 45px;
     font-weight: bold;
@@ -877,13 +889,13 @@ footer {
 }
 
 strong {
-    color: #f51e5f;
+    color: #3a86ff;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 
 #time {
-    color: #F5B51E; /* Set the text color */
+    color: #ffbe0b; /* Set the text color */
     font-size: 22px; /* Set the text size */
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Add a text shadow */
     padding: 10px; /* Add some space around the text */
@@ -891,6 +903,7 @@ strong {
     white-space: normal; /* Allow the text to wrap to the next line */
     word-break: break-word; /* Break long words if necessary */
     margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .main-content {
@@ -914,7 +927,7 @@ strong {
     margin-top: 20px;
     font-weight: bold;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    color: #F5B51E;
+    color: #ffbe0b;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -998,7 +1011,7 @@ strong {
 
 /* About Section */
 :root {
-    --header-color: #B22222;
+    --header-color: #3a86ff;
     --text-color: #dddddd;
     --font-family: 'Open Sans', sans-serif;
   }
@@ -1007,7 +1020,6 @@ strong {
 #about {
     color: white; /* Adjust text color if needed */
     min-height: 100vh; /* Minimum height to ensure image visibility */
-    font-family: var(--font-family);
     place-items: center;
     display: flex;
     align-items: center;
@@ -1027,18 +1039,21 @@ strong {
 .about-header {
     text-align: center;
     font-size: 2.5em; /* Slightly smaller for balance */
-    color: #B22222; /* Light color for headers for contrast */
+    color: #ff006e; /* Light color for headers for contrast */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .about-description, .about-list {
     font-size: 21px;
     margin: 0px;
     color: #dddddd;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .ol-about-list {
     list-style-type: decimal;
     font-size: 21px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -1134,6 +1149,7 @@ strong {
 .quote-text {
     color: #ffffff;
     font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .about-gif-container, .quote-container, .quote-container1 {
@@ -1201,7 +1217,10 @@ strong {
     font-size: 45px; /* Increase the font size as needed */
     font-weight: bold; /* Make the text bold */
     margin-top: 40px; /* Existing top margin */
+    color: #ff006e;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
     padding-left: 95px; /* Align content with the logo */
     text-align: top;
 }
@@ -1210,6 +1229,7 @@ strong {
 .about-subheader {
     font-size: 24px; 
     margin-top: 10px; 
+    font-family: 'Open Sans', sans-serif;
 }
 
 .section-content {
