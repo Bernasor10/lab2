@@ -5,10 +5,10 @@ Welcome to the GitHub repository of my personal website portfolio, `lab2`. This 
 `lab2` is a website portfolio that displays my skills in web programming, projects and experiences. It is a showcase of my abilities as I use the web technologies and frameworks to develop this project.
 
 ## Features
-- **Home**: The main page of my website.
+- **Home**: The main page of my website. Provides the overview about myself, and my socials.
 - **About Me**: This section contains all about myself and my favorite quotes.
 - **Playlist**: Lists of my favorite tracks on Spotify.
-- **Contact Me**: A section with my professional contact information and links to my LinkedIn, Facebook, and Instagram.
+- **Contact Me**: A section where you can write your thoughts about my personal website, and provide feedbacks, and also you can find my email here.
 
 ## Technologies Used
 - HTML
