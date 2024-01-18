@@ -997,8 +997,7 @@ footer {
 #driftveil-video {
     width: 50%;
     height: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 3);
-    border-radius: 10px; /* Add a border radius */
+
 }
 
 /* When the screen size is less than or equal to 768px, apply the following styles */
