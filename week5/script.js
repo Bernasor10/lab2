@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', handleFormSubmit);
     likeButton.addEventListener('click', function() {
         // Switch the icon
-        likeButton.className = 'bx bxs-like';
+        likeButton.className = 'fa-solid fa-thumbs-up';
 
         // Increment the like count
         likeCount++;

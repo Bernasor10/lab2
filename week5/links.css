@@ -1,0 +1,72 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#background-wallpaper {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Place the video behind other content */
+} 
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 33px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Round the corners */
+    transition: color 0.3s; /* Smooth transition for hover effects */
+    position: relative; /* Add relative positioning for pseudo-element */
+}
+
+.navbar .logo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Adjust as needed */
+    background: #00FF00; /* Match hover color */
+    transition: width 0.3s;
+}
+
+.navbar .logo:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+.navbar a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    border-radius: 4px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 2px;
+}
+
+

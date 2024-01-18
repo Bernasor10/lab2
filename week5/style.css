@@ -49,7 +49,7 @@ img {
     width: 100%;
     font-family: 'Open Sans', sans-serif;
     padding: 5px 20px;
-    background-color: #05131b;
+    background: rgba(0, 0, 0, 0.5);
     overflow: hidden;
     z-index: 1000;
     display: flex;
@@ -57,7 +57,7 @@ img {
     align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
     .navbar {
         position: fixed;
         background: rgba(0, 0, 0, 0.5);
@@ -85,7 +85,7 @@ img {
 }
 
 .navbar a:hover {
-    color: #F5B51E;
+    color: #FF4500; /* or #03e9f4 */
 }
 
 .navbar .logo {
@@ -308,19 +308,20 @@ section {
     box-sizing: border-box;
 }
 
+/*Home button*/
 .button {
     display: inline-block;
     padding: 15px 20px;
     margin: 15px 30px 15px 0;
-    background-color: #13200e;
-    color: #fff; /* Updated text color */
+    background-color: #282828;
+    color: #D3D3D3; /* Updated text color */
     text-shadow: 2px 2px 5px #000; /* Add a text shadow */
     text-decoration: none;
     border-radius: 15px;
     font-size: 25px;
-    box-shadow: 5px 5px 10px #081b29; /* Add a shadow */
+    box-shadow: 5px 5px 10px #8B0000; /* Add a shadow */
     position: relative; /* Add relative positioning */
-    z-index: 1; /* Set the z-index of the button to 1 */
+    z-index: 0; /* Set the z-index of the button to 1 */
     overflow: hidden; /* Add overflow hidden */
 }
 
@@ -331,7 +332,7 @@ section {
     left: 0;
     width: 0; /* Set its initial width to 0 */
     height: 100%; /* Set its height to match the button */
-    background-color: #F5B51E; /* Set the fill color */
+    background-color: #03e9f4   ; /* Set the fill color */
     transition: width 0.7s ease-in-out; /* Add transition for smooth animation */
     z-index: -1; /* Set the z-index of the pseudo-element to -1 */
 }
@@ -417,9 +418,9 @@ footer {
     
     #suggestions {
         font-size: 25px;
-        color: #F5B51E;
         margin-bottom: 20px;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        line-height: 1.6;
     }
 
     #or {
@@ -431,7 +432,7 @@ footer {
 
     #email-address {
         font-size: 21px;
-        color: #F5B51E;
+        color: #FFFFFF;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         margin-top: 0px;
         font-family: 'Open Sans', sans-serif;
@@ -445,6 +446,7 @@ footer {
 
     #like-button {
         font-size: 30px; /* Adjust this value to change the size of the like button */
+        cursor: pointer;
     }
     
     #like-count {
@@ -567,7 +569,7 @@ footer {
 
 #suggestions {
     font-size: 25px;
-    color: #F5B51E;
+    color: #fff;
     margin-bottom: 20px; /* Add space below the text */
     font-family: 'Open Sans', sans-serif;
 }
@@ -649,7 +651,7 @@ footer {
 
 #suggestions {
     font-size: 25px;
-    color: #F5B51E;
+    color: #fff;
     margin-bottom: 20px; /* Add space below the text */
     font-family: 'Open Sans', sans-serif;
 }
@@ -803,7 +805,7 @@ footer {
 
 /* Playlist Section Title Styling */
 #playlist .header-text {
-    color: #ff006e;
+    color: #FF4500;
     text-align: center;
     font-size: 45px;
     font-weight: bold;
@@ -814,7 +816,7 @@ footer {
 }
 
 .playlist-grid-item h2 {
-    color: #FFFFFF;
+    color: #03e9f4;
     text-shadow: 2px 2px 4px #000;
 }
 
@@ -848,6 +850,10 @@ footer {
     content: '\200B';
 }
 
+.social-links {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5)
+}
+
 .social-links a {
     font-size: 70px; /* Social icon size */
     border-radius: 50%;
@@ -872,30 +878,32 @@ footer {
 /* Add background colors */
 .bxl-facebook-circle {
     background: #3B5998;
+    border-radius: 15%;
 }
 
 .bxl-github {
     background: #333;
+    border-radius: 15%;
 }
 
 .bxl-linkedin-square {
     background: #0077B5;
+    border-radius: 15%;
 }
 
 .bxl-instagram-alt {
-    background: #d6249f;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
     background-clip: content-box;
+    border-radius: 20%;
 }
-
-strong {
-    color: #3a86ff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-}
-
 
 #time {
-    color: #ffbe0b; /* Set the text color */
+    color: #00FF00; /* Set the text color */
     font-size: 22px; /* Set the text size */
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Add a text shadow */
     padding: 10px; /* Add some space around the text */
@@ -916,6 +924,7 @@ strong {
 .header { /*Home section*/
     font-size: 63px;
     margin-bottom: 20px;
+    color: #FFFFFF;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
@@ -927,7 +936,7 @@ strong {
     margin-top: 20px;
     font-weight: bold;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    color: #ffbe0b;
+    color: #03e9f4;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -943,15 +952,16 @@ strong {
 .text-container {
     border-radius: 15px; /* Rounded corners */
     background-color: transparent;
-    color: #fff;
+    color: #ffffff;
     font-family: 'Open Sans', sans-serif;
     text-align: left;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .text-container p { /* Home paragraph */
     font-size: 23px;
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .main-content-grid {
@@ -976,6 +986,7 @@ strong {
     height: auto;
     object-fit: contain;
     background-color: #000;
+    box-shadow: 0px 0px 15px 5px #8B0000;
 }
 
 /* Fade-in animations for images and GIFs */
@@ -1016,6 +1027,9 @@ strong {
     --font-family: 'Open Sans', sans-serif;
   }
 
+#about strong {
+    color: #00FF00;
+}
 
 #about {
     color: white; /* Adjust text color if needed */
@@ -1024,7 +1038,6 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Make the section relative and hidden */
     position: relative;
     overflow: hidden;
   }
@@ -1032,21 +1045,21 @@ strong {
 .about-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four columns of equal width */
-    gap: 20px; /* Increase space between columns */
+    gap: 30px; /* Increase space between columns */
     text-align: left; /* Align text to the left within each grid item */
 }
 
 .about-header {
     text-align: center;
     font-size: 2.5em; /* Slightly smaller for balance */
-    color: #ff006e; /* Light color for headers for contrast */
+    color: #FF4500; /* Light color for headers for contrast */
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .about-description, .about-list {
     font-size: 21px;
     margin: 0px;
-    color: #dddddd;
+    color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -1063,17 +1076,18 @@ strong {
 }
 
 .about-grid > div:not(.quote-container) {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     margin-top: 20px;
+    box-shadow: 0px 0px 15px 8px #8B0000;
 }
 
 .about-grid > div:not(.quote-container):hover {
     transform: scale(1.05); /* Slight increase in size on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    box-shadow: 0px 0px 15px 8px #FF4500;
 }
 
 /* Styling for the GIF container */
@@ -1087,7 +1101,13 @@ strong {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
+
+[src$=".gif"] {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+}
+
 
 .about-gif-container:hover {
     transform: none !important;
@@ -1127,11 +1147,12 @@ strong {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+    box-shadow: 0px 4px 8px 0px #8B0000;
 }
   
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+    box-shadow: 0px 4px 8px 0px #FF4500;
   }
   
   .flip-card-front, .flip-card-back {
@@ -1160,6 +1181,7 @@ strong {
     margin-left: 0px;
     flex-direction: column;
     justify-content: flex-start;
+    box-shadow: 0px 0px 15px 5px #8B0000;
 }
 
 /* Adjustments for Mobile Devices */
@@ -1217,7 +1239,7 @@ strong {
     font-size: 45px; /* Increase the font size as needed */
     font-weight: bold; /* Make the text bold */
     margin-top: 40px; /* Existing top margin */
-    color: #ff006e;
+    color: #FF4500;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
