@@ -994,7 +994,7 @@ footer {
     line-height: 1.6;
 }
 
-.driftveil-video {
+#driftveil-video .video{
     width: 50%;
     height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 3);
