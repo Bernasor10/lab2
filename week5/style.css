@@ -233,14 +233,15 @@ img {
     padding-top: 0px;
 }
 
-    /* The sidebar image */
-    #mySidebar img {
-        max-width: 60%;
-        max-height: 60%; 
-        display: block;
-        margin: 0 auto;
-        border: 10px solid #9B111E;
-    }
+/* The sidebar video */
+#mySidebar video {
+    max-width: 60%;
+    max-height: 60%; 
+    display: block;
+    margin: 0 auto;
+    border: 10px solid #9B111E;
+    align-self: flex-start; /* Align the video at the top */
+}
 
     /* Container for Navigation Links within the Sidebar */
     .sidebar-nav-links {
@@ -291,6 +292,7 @@ img {
     /* Hide sidebar for desktop */
     .sidebar { display: none; }
 }
+/*End of sidebar menu*/
 
 .image-container {
     display: flex;
