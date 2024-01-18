@@ -226,20 +226,20 @@ img {
 #mySidebar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     height: 100%;
     padding-top: 0px;
 }
 
 /* The sidebar video */
-#mySidebar video {
+#mySidebar #somsomi {
     max-width: 60%;
     max-height: 60%; 
     display: block;
     margin: 0 auto;
     border: 10px solid #9B111E;
-    align-self: flex-start;
+    align-self: flex-start; /* Align the video at the top */
 }
 
     /* Container for Navigation Links within the Sidebar */
@@ -979,19 +979,22 @@ footer {
     line-height: 1.6;
 }
 
-video {
+.driftveil-video {
     width: 50%;
     height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 3);
+    border-radius: 10px; /* Add a border radius */
 }
 
-@media (max-width: 1268px) {
-    video {
+/* When the screen size is less than or equal to 768px, apply the following styles */
+@media only screen and (max-width: 768px) {
+    .driftveil-video {
+        /* Set the width and height to 100% */
         width: 100%;
         height: 100%;
+        border-radius: 0; /* Remove the border radius */
     }
 }
-
 .main-content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
