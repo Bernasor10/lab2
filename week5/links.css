@@ -25,7 +25,7 @@ body, html {
     overflow: hidden;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Space between logo and menu */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -36,10 +36,10 @@ body, html {
     text-decoration: none;
     cursor: pointer;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
-    padding: 10px 20px; /* Add some padding */
-    border-radius: 5px; /* Round the corners */
-    transition: color 0.3s; /* Smooth transition for hover effects */
-    position: relative; /* Add relative positioning for pseudo-element */
+    padding: 10px 20px;
+    border-radius: 5px; 
+    transition: color 0.3s;
+    position: relative; 
 }
 
 .navbar .logo::after {
@@ -48,13 +48,13 @@ body, html {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px; /* Adjust as needed */
-    background: #00FF00; /* Match hover color */
-    transition: width 0.3s;
+    height: 2px;
+    background: #00FF00;
+    transition: width 1.2s;
 }
 
 .navbar .logo:hover::after {
-    width: 100%; /* Full width on hover */
+    width: 100%;
 }
 
 
