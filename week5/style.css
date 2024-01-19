@@ -995,9 +995,8 @@ footer {
 }
 
 #driftveil-video {
-    width: 40%;
+    width: 35% !important;
     height: auto;
-    box-shadow: none !important;
 
 }
 
