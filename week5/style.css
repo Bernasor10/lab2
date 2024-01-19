@@ -38,7 +38,7 @@ img {
 }
 /*Customization for Mobile users*/
 /* When the screen size is less than 600px, apply the following styles */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1268px) {
     #background-wallpaper {
         /* Center the video */
         top: 50%;
@@ -59,15 +59,20 @@ img {
 
 .navbar {
     position: fixed;
+    top: 0;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
-    padding: 5px 20px;
-    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    background: rgba(39, 32, 32, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     overflow: hidden;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 @media (max-width: 1024px) {
@@ -99,6 +104,7 @@ img {
 
 .navbar a:hover {
     color: #FF4500;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
 }
 
 .navbar .logo {
@@ -363,13 +369,12 @@ section {
 footer {
     text-align: center;
     width: 100%;
-    padding: 10px 0;
-    color: white;
-    font-size: 19px;
+    padding: 2em 0;
     position: static;
     bottom: 0;
-    clear: both;
-    z-index: 10;
+    color: #fff;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.8);
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -477,9 +482,8 @@ footer {
     }
 
     .copyright {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adjust as needed */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         font-size: 23px;
-        color: #FF4500;
     }    
 
     .shadow {
