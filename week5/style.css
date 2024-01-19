@@ -995,17 +995,27 @@ footer {
 }
 
 #driftveil-video {
-    width: 35% !important;
+    width: 50% !important;
     height: auto;
 
 }
 
 /* When the screen size is less than or equal to 768px, apply the following styles */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1268px) {
     #driftveil-video {
-        width: 100%;
-        height: 100%;
+        width: auto !important;
+        height: auto !important;
         border-radius: 0;
+    }
+
+    .media-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    audio {
+        width: 100% !important;
+        margin-top: 20px;
     }
 }
 
@@ -1040,7 +1050,7 @@ footer {
 }
 
 audio {
-    width: 40% !important;
+    width: 50% !important;
     margin-top: 20px;
 }
 
