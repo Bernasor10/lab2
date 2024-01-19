@@ -60,7 +60,6 @@ img {
     position: fixed;
     top: 0;
     width: 100%;
-    font-family: 'Open Sans', sans-serif;
     padding: 10px 20px;
     background: rgba(39, 32, 32, 0.1);
     backdrop-filter: blur(10px);
@@ -96,6 +95,7 @@ img {
     text-decoration: none;
     font-size: 32px;
     border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
     transition: background-color 0.3s, color 0.3s;
     margin: 2px;
@@ -108,6 +108,7 @@ img {
 
 .navbar .logo {
     font-size: 36px;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -276,6 +277,7 @@ img {
         background-color: #111; 
         padding: 10px 20px; 
         border: none; 
+        font-family: 'Open Sans', sans-serif;
         border-radius: 5px;
         text-decoration: none; 
         text-align: center; 
@@ -374,7 +376,7 @@ footer {
     color: #fff;
     font-size: 20px;
     background: rgba(0, 0, 0, 0.8);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
     /* Contact Form Styling */
@@ -460,13 +462,13 @@ footer {
         color: #FFFFFF;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         margin-top: 0px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     .feedback-prompt {
         font-size: 25px;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     #like-button {
@@ -477,7 +479,7 @@ footer {
     #like-count {
         font-size: 20px; 
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     .copyright {
@@ -605,7 +607,7 @@ footer {
     font-size: 25px;
     color: #fff;
     margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 }
@@ -635,7 +637,7 @@ footer {
     display: block;
     margin-bottom: 10px;
     font-size: 1.2em; 
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: left; 
 }
 
@@ -673,21 +675,21 @@ footer {
     padding: 10px 20px;
     border: none;
     margin-top: 20px;
-    border-radius: 50px; /* Rounded corners */
+    border-radius: 50px;
     cursor: pointer;
     width: 100%;
-    font-size: 1.2em; /* Larger font size */
+    font-size: 1.2em;
 }
 
 #suggestion-form input[type="submit"]:hover {
-    background-color: #141414; /* Darker green on hover */
+    background-color: #141414;
 }
 
 #suggestions {
     font-size: 25px;
     color: #fff;
     margin-bottom: 20px; /* Add space below the text */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
     
     /* Center aligns the subheader, paragraph, and social links */
@@ -742,7 +744,7 @@ footer {
 #about, #playlist, #contact {
     min-height: 100vh; /* Minimum height to occupy the viewport */
     display: flex;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     flex-direction: column;
     justify-content: center; /* Align content vertically in the center */
     box-sizing: border-box;
@@ -757,6 +759,7 @@ footer {
 .header-text {
     position: absolute;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
@@ -796,7 +799,7 @@ footer {
 }
 
 #playlist h2 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* GIF Grid Container */
@@ -820,6 +823,7 @@ footer {
     background-color: transparent;
     padding: 0px;
     border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -880,6 +884,10 @@ footer {
 /* Home Section */
 #home {
     position: relative;
+}
+
+.highlight-video {
+    color: #03e9f4;
 }
 
 .type1:empty::before {
@@ -948,7 +956,7 @@ footer {
     color: #FFFFFF;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .subheader { /*Home section*/
@@ -958,7 +966,7 @@ footer {
     font-weight: bold;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     color: #03e9f4;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #time {
@@ -970,7 +978,7 @@ footer {
     white-space: normal; 
     word-break: break-word;
     margin-top: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -986,15 +994,16 @@ footer {
     border-radius: 15px;
     background-color: transparent;
     color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: left;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .text-container p {
     font-size: 23px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
+    font-weight: normal;
 }
 
 #driftveil-video {
@@ -1092,7 +1101,7 @@ audio {
 :root {
     --header-color: #3a86ff;
     --text-color: #dddddd;
-    --font-family: 'Open Sans', sans-serif;
+    --font-family: 'Roboto', sans-serif;
   }
 
 #about strong {
@@ -1128,13 +1137,13 @@ audio {
     font-size: 21px;
     margin: 0px;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .ol-about-list {
     list-style-type: decimal;
     font-size: 21px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -1237,7 +1246,7 @@ audio {
 .quote-text {
     color: #ffffff;
     font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .about-gif-container, .quote-container, .quote-container1 {
@@ -1309,7 +1318,7 @@ audio {
     color: #FF4500;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding-left: 95px;
 }
 
@@ -1317,7 +1326,7 @@ audio {
 .about-subheader {
     font-size: 24px; 
     margin-top: 10px; 
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .section-content {
