@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to open the sidebar
     function openSidebar() {
         sidebar.style.width = "250px";
-        body.classList.add('body-no-scroll'); // Disable scrolling
+        body.classList.add('body-no-scroll');
         menuToggle.classList.add('active');
         document.addEventListener('touchmove', preventDefault, { passive: false });
     }
@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update the time every second
     setInterval(displayLocalTimeAndTimezone, 1000);
 
-    // Get a reference to the form
     var form = document.getElementById('suggestion-form');
 
     function handleFormSubmit(event) {
@@ -103,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Full Name: " + fullname + ", Email: " + email + ", Message: " + message);
     }
 
-    // Add the event listener
     form.addEventListener('submit', handleFormSubmit);
     likeButton.addEventListener('click', function() {
         // Switch the icon
