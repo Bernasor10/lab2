@@ -155,4 +155,12 @@ footer {
     .resource-section > div {
         align-items: stretch;
     }
+    .navbar a#logo {
+        font-size: 1.5em;
+    }
+
+    .navbar {
+        padding: 1.95em 1em;
+    }
+    
 }
