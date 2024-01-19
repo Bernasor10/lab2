@@ -997,7 +997,7 @@ footer {
 #driftveil-video {
     width: 40%;
     height: auto;
-    box-shadow: none;
+    box-shadow: none !important;
 
 }
 
@@ -1041,8 +1041,8 @@ footer {
 }
 
 audio {
-    width: 40%; /* Adjust as needed */
-    margin-top: 20px; /* Adjust as needed */
+    width: 40% !important;
+    margin-top: 20px;
 }
 
 /* Fade-in animations for images and GIFs */
