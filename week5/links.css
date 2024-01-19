@@ -124,7 +124,7 @@ body, html {
 
 .resource-list-item a {
     color: #fff;
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 22px;
     transition: color 0.3s ease;
 }

@@ -36,8 +36,7 @@ img {
     background-repeat: no-repeat;
     z-index: -1; /* Place the video behind other content */
 }
-/*Customization for Mobile users*/
-/* When the screen size is less than 600px, apply the following styles */
+
 @media only screen and (max-width: 1268px) {
     #background-wallpaper {
         /* Center the video */
