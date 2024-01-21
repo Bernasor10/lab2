@@ -93,7 +93,7 @@ img {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 2em;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
@@ -234,13 +234,13 @@ img {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 1; /* lower than the navbar */
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 70px; /* add some padding to the top */
 }
 
 /* The sidebar menu */
@@ -831,11 +831,11 @@ footer {
     width: 352px;
     height: 662px;
     border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .playlist-grid-item:hover {
     transform: scale(1.05);
-    filter: blur(0px) brightness(0.9);
     cursor: pointer;
 }
 
@@ -924,7 +924,7 @@ footer {
 }
 
 .bxl-github {
-    background: #333;
+    background: #2b3137;
     border-radius: 15%;
 }
 
@@ -947,7 +947,7 @@ footer {
 .main-content {
     position: relative;
     min-height: 100vh; 
-    padding: 100px; 
+    padding: 70px; 
     color: white; 
 }
 
@@ -1012,12 +1012,32 @@ footer {
 
 }
 
+.social-links-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-links-title {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', sans-serif
+}
+
 /* When the screen size is less than or equal to 768px, apply the following styles */
 @media only screen and (max-width: 1268px) {
     #driftveil-video {
         width: auto !important;
         height: auto !important;
         border-radius: 0;
+    }
+
+    .main-content {
+        position: relative;
+        min-height: 100vh; 
+        padding: 20px; 
+        color: white; 
     }
 
     .media-container {
@@ -1105,7 +1125,7 @@ audio {
   }
 
 #about strong {
-    color: #00FF00;
+    color: #03e9f4;
 }
 
 #about {
