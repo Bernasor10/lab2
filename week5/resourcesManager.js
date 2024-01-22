@@ -61,6 +61,7 @@ const categories = {
     ],
     "other-medias": [
       new Resource('1 HOUR Driftveil City - Pokémon / Toothless(Marimba Ringtone)', 'https://www.youtube.com/watch?v=Kug1ITcktJY'),
+      new Resource('Loading Screen Animation', 'https://www.vecteezy.com/video/26651017-loading-bar-animation'),
       new Resource('Random tutorial', 'https://www.youtube.com/watch?v=BbeeuzU5Qc8'),
     ],
   };
