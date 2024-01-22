@@ -39,7 +39,7 @@ const categories = {
       new Resource('Codehal', 'https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLHPgKC5F2XhZxE6u3K7F8caG57JDc6aVy&index=7&t=1s'),
     ],
     "color-palettes": [
-      new Resource('Coolors.co', 'https://coolors.co/?home'),
+      new Resource('Moon Nature Atmosphere', 'https://www.pinterest.ph/pin/812688695256966947/'),
     ],
     "typing-animation-tutorial": [
       new Resource('Html Camp', 'https://www.youtube.com/watch?v=IbGSsy17Ass'),
