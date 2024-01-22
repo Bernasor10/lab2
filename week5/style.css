@@ -946,7 +946,7 @@ footer {
 
 .main-content {
     position: relative;
-    min-height: 100vh; 
+    height: 100%;
     padding: 70px; 
     color: white; 
 }
@@ -1057,7 +1057,7 @@ footer {
     gap: 20px;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 .image-container {
@@ -1076,15 +1076,6 @@ footer {
     box-shadow: 0px 0px 20px 5px #8B0000;
 }
 
-.media-container {
-    display: flex;
-    flex-direction: column;
-}
-
-audio {
-    width: 50% !important;
-    margin-top: 20px;
-}
 
 /* Fade-in animations for images and GIFs */
 .right-side-image {
