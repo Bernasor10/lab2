@@ -33,7 +33,7 @@ const categories = {
       new Resource('Font Awesome', 'https://fontawesome.com'),
     ],
     "live-wallpaper-background": [
-      new Resource('Vecteezy.com', 'https://www.vecteezy.com/video/9435577-abstract-red-blue-light-sci-fi-tunnel-seamless-loop-4k-3d-animation-background'),
+      new Resource('Vecteezy.com', 'https://www.vecteezy.com/video/6972050-the-full-moon-at-night-was-full-of-stars-and-a-faint-mist-a-wooden-bridge-extended-into-the-sea-fantasy-image-at-night-super-moon-sea-water-wave-3d-rendering'),
     ],
     "personal-website-inspiration": [
       new Resource('Codehal', 'https://www.youtube.com/watch?v=sQoiM7i5Nqc&list=PLHPgKC5F2XhZxE6u3K7F8caG57JDc6aVy&index=7&t=1s'),
@@ -53,7 +53,6 @@ const categories = {
     "gifs": [
       new Resource('Cat Jam GIF', 'https://nloversar.life/product_details/35587960.html'),
       new Resource('Chipi chipi chapa cat GIF', 'https://tenor.com/view/chipi-chipi-chapa-chapa-cat-gif-2724505493463639324'),
-      new Resource('Dog dancing GIF', 'https://tenor.com/view/dance-till-your-dead-dance-dog-cutes-fart-gif-20263804'),
       new Resource('Dog with suspicious look GIF', 'https://tenor.com/view/side-eye-dog-suspicious-look-suspicious-doubt-dog-doubt-gif-23680990'),
       new Resource('Huh cat GIF', 'https://tenor.com/view/cat-huh-cat-huh-etr-gif-15332443943609734737'),
       new Resource('Saitama getting mad GIF', 'https://www.pinterest.ph/pin/53691420536993349/'),

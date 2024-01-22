@@ -786,7 +786,7 @@ footer {
 }
 
 .cat-gif-container {
-    margin: 0 20px; /* Adjust the value as needed */
+    margin: 0 40px; /* Adjust the value as needed */
 }
 
 /* Playlist Header */
@@ -806,7 +806,7 @@ footer {
 .gif-grid {
     margin-top: 130px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
 }
 
@@ -887,7 +887,7 @@ footer {
 }
 
 .highlight-video {
-    color: #b38f46;
+    color: #94b4c6;
 }
 
 .type1:empty::before {
