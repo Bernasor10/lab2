@@ -260,6 +260,28 @@
         </div>
     </footer>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbarHeight = 60; // Height of your navbar
+    
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+    
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+    </script>
+    
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <head>
