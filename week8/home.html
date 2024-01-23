@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="images/maximus.png" type="image/x-icon">
+    <title>Ronaldolicious</title>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+    <div id="welcome-message" style="display: none;">
+        <p>Welcome Adventurer!</p>
+    </div>
+    <video autoplay muted loop id="background-wallpaper">
+        <source src="images/thelive-wallpaper02.mp4" type="video/mp4">
+        Your current browser does not support the video tag.
+    </video>
+
+    <div id="mySidebar" class="sidebar">
+        <!-- Close Button -->
+        <a href="javascript:void:0" class="closebtn" onclick="closeSidebar()"></a>
+        
+    <!-- Video -->
+    <img id="somsomi" src="images/somsomiii.gif" width="100%" style="position: relative;"
+    alt="Jeon Somi Happy happy">
+    
+        <!-- Container for Navigation Links -->
+        <div class="sidebar-nav-links">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about-me.html"><i class="fas fa-user"></i> About Me</a>
+            <a href="playlist.html"><i class="fas fa-music"></i> Playlist</a>
+            <a href="contact-me.html"><i class="fas fa-envelope"></i> Contact Me</a>
+            <a href="resources.html"><i class="fas fa-book"></i> Resources</a>
+        </div>
+    </div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <a id="logo" href="website.html">
+        <div class="logo">호날두</div>
+    </a>
+    <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+        <li><a href="playlist.html">Playlist</a></li>
+        <li><a href="contact-me.html">Contact Me</a></li>
+        <li><a href="resources.html">Resources</a></li>
+    </ul>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+    <div class="main-content">
+        <div class="main-content-grid">
+            <div class="text-container">
+                <h1 class="header"><span class="type" data-text="Hi, I'm Ronaldo Bernasor II">Hi, I'm Ronaldo Bernasor II</span></h1>
+                <h2 class="subheader"><span class="type1" data-text="Potato Lover"></span></h2>
+                <p>
+                    You can call me <strong>Bam</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>
+                    I am currently pursuing my studies in <strong>BSIT</strong> at <em>Asia Pacific College</em>.<br>
+                    This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning<br>
+                    experience. I chose BSIT because I have always been <em>fascinated</em> by computers<br>
+                    and the <strong>endless possibilities</strong> they offer.<br>
+                    If you want to know more about me, just click <strong>Learn More</strong><br>
+                    or <strong class="highlight-video">Introduction Video</strong> 😉
+                </p>            
+                <a href="#about" class="button">Learn More</a>
+                <a href="https://www.youtube.com/watch?v=BbeeuzU5Qc8" class="button" target="_blank">Introduction Video</strong></a>
+                <div id="time"></div>
+            </div>
+            <div class="image-container">
+                <img src="images/me.jpg" alt="Image of mine" class="right-side-image" />
+            </div>
+
+        </div>
+    </div>
+<!-- Footer with Social Links -->
+<footer class="social-links-container">
+    <h3 class="social-links-title">Connect with Me</h3>
+    <div class="social-links">
+        <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
+        <a href="https://github.com/Bernasor10" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
+        <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
+        <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
+    </div>
+</footer>
+</section>
+<!-- End of Home Section -->
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <head>
+        <script src="https://kit.fontawesome.com/732c08c56d.js" crossorigin="anonymous"></script>
+    </head>
+    <script src="script.js"></script>
+        
+</body>
+</html>

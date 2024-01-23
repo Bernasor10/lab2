@@ -148,17 +148,17 @@ body, html {
 }
 
 
-/* Footer Style */
-footer {
+/* Styling for the Contact Me Footer */
+#contact-footer {
     text-align: center;
     width: 100%;
     padding: 2em 0;
     position: static;
     bottom: 0;
     color: #fff;
-    font-size: 23px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 20px;
     background: rgba(0, 0, 0, 0.8);
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Responsive Design for smaller screens */
