@@ -749,17 +749,17 @@ section {
 
 /* Common Styling for All Main Sections */
 #about, #playlist, #contact {
-    min-height: 100vh; /* Minimum height to occupy the viewport */
+    min-height: 100vh;
     display: flex;
     font-family: 'Roboto', sans-serif;
     flex-direction: column;
-    justify-content: center; /* Align content vertically in the center */
+    justify-content: center;
     box-sizing: border-box;
 }
 
 /* Playlist Section */
 #playlist {
-    text-align: center; /* Center text for the title */
+    text-align: center; 
     padding: 20px;
 }
 
@@ -793,7 +793,7 @@ section {
 }
 
 .cat-gif-container {
-    margin: 0 40px; /* Adjust the value as needed */
+    margin: 0 40px;
 }
 
 /* Playlist Header */
@@ -809,7 +809,6 @@ section {
     font-family: 'Roboto', sans-serif;
 }
 
-/* GIF Grid Container */
 .gif-grid {
     margin-top: 130px;
     display: grid;
@@ -820,18 +819,23 @@ section {
 /* Playlist Grid Container */
 .playlist-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0px;
+    grid-auto-flow: column; 
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0; 
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Individual Playlist Items Styling */
+
+/* Playlist Grid Item */
 .playlist-grid-item {
-    margin: 0 40px;
+    flex: 0 0 auto; 
     background-color: transparent;
     padding: 0px;
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-right: 40px; /* Space between items */
 }
 
 .playlist-grid-item iframe {
@@ -866,24 +870,53 @@ section {
 /* Responsive Adjustments */
 @media (max-width: 1268px) {
     .playlist-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+        justify-content: flex-start;
     }
+
     .left-cat-gif, .middle-cat-gif, .right-cat-gif {
-        width: auto;
+        max-width: 100%;
         height: auto;
     }
+
     .playlist-header {
+        display: flex;
         flex-direction: column;
+        align-items: center;
     }
+
     .gif-grid {
-        grid-template-columns: 1fr;     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
     .cat-gif-container {
-        margin: 10px; /* Adjust the value as needed */
+        margin: 10px auto; 
     }
-    #playlist .header-text{
+
+    #playlist .header-text {
         margin-top: 30px;
+        font-size: 24px;
     }
+
+    /* Playlist item adjustments for smaller screens */
+    .playlist-grid-item {
+        margin: 0 20px; 
+        width: auto; 
+    }
+    /* Playlist Grid Container */
+.playlist-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; 
+    padding: 20px 0;
+    width: 100%; 
+    justify-content: flex-start;
+    align-items: center; 
+}
 }
 
 /* End of Spotify Playlist */
