@@ -78,19 +78,22 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
     <div class="main-content">
         <div class="main-content-grid">
             <div class="text-container">
-                <h1 class="header"><span class="type" data-text="Hi, I'm Ronaldo Bernasor II">Hi! I am Ronaldo Bernasor II</span></h1>
-                <h2 class="subheader"><span class="type1" data-text="Potato Lover"></span></h2>
-                <p>
-                    And you can call me <strong>Bam</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>
-                    I am currently pursuing my studies in <strong>BSIT</strong> at <em>Asia Pacific College</em>.<br>
-                    This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning<br>
-                    experience. I chose BSIT because I have always been <em>fascinated</em> by computers<br>
-                    and the <strong>endless possibilities</strong> they offer.<br>
-                    If you want to know more about me, just click <strong>Learn More</strong><br>
-                    or <strong class="highlight-video">Introduction Video</strong> 😉
-                </p>            
-                <a href="about-me.html" class="button">Learn More</a>
-                <a href="https://www.youtube.com/watch?v=BbeeuzU5Qc8" class="button" target="_blank">Introduction Video</strong></a>
+            <?php
+                    echo "<h1 class=\"header\"><span class=\"type\" data-text=\"Hi, I'm $title\">$greeting</span></h1>";
+                    echo "<h2 class=\"subheader\"><span class=\"type1\" data-text=\"Potato Lover\"></span></h2>";
+                    echo "<p>";
+                    echo "And you can call me <strong>$nickname</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>";
+                    echo "I am currently pursuing my studies in <strong>$degree</strong> at <em>$college</em>.<br>";
+                    echo "This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning<br>";
+                    echo "experience. I chose $degree because I have always been <em>fascinated</em> by computers<br>";
+                    echo "and the <strong>endless possibilities</strong> they offer.<br>";
+                    echo "If you want to know more about me, just click <strong>Learn More</strong><br>";
+                    echo "or <strong class=\"highlight-video\">Introduction Video</strong> 😉";
+                    echo "</p>";            
+                    echo "<a href=\"about-me.php\" class=\"button\">Learn More</a>";
+                    echo "<a href=\"$youtubeLink\" class=\"button\" target=\"_blank\">Introduction Video</strong></a>";
+                    echo "<div id=\"time\"></div>";
+                    ?>
                 <div id="time"></div>
             </div>
             <div class="image-container">
