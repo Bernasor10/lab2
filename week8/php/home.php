@@ -1,16 +1,29 @@
 <?php
-// Define PHP variables
-$title = "Ronaldo Bernasor II";
-$nickname = "Bam";
-$degree = "BSIT";
-$college = "Asia Pacific College";
-$greeting = "Hi! My name is $title";
-$youtubeLink = "https://www.youtube.com/watch?v=BbeeuzU5Qc8";
-$facebookLink = "https://www.facebook.com/maximuslincoln010/";
-$githubLink = "https://github.com/Bernasor10";
-$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
-$instagramLink = "https://www.instagram.com/potatolicious.10/";
+// PHP Data Types
+$title = "Ronaldo Bernasor II"; // String
+$nickname = "Bam"; // String
+$degree = "BSIT"; // String
+$college = "Asia Pacific College"; // String
+$greeting = "Hi! My name is $title"; // String
+$youtubeLink = "https://www.youtube.com/watch?v=BbeeuzU5Qc8"; // String
+$facebookLink = "https://www.facebook.com/maximuslincoln010/"; // String
+$githubLink = "https://github.com/Bernasor10"; // String
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/"; // String
+$instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
+$age = 22; // Integer
+$isStudent = true; // Boolean
+$favoriteActivities = array("Cycling", "Watching Movies", "Playing Video Games"); // Array
+
+function displayFavoriteActivities($activities) {
+    echo "<ul>";
+    foreach ($activities as $activity) {
+        echo "<li>$activity</li>";
+    }
+    echo "</ul>";
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,23 +90,23 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
 <section id="home">
     <div class="main-content">
         <div class="main-content-grid">
-            <div class="text-container">
-            <?php
-                    echo "<h1 class=\"header\"><span class=\"type\" data-text=\"Hi, I'm $title\">$greeting</span></h1>";
-                    echo "<h2 class=\"subheader\"><span class=\"type1\" data-text=\"Potato Lover\"></span></h2>";
-                    echo "<p>";
-                    echo "And you can call me <strong>$nickname</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>";
-                    echo "I am currently pursuing my studies in <strong>$degree</strong> at <em>$college</em>.<br>";
-                    echo "This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning<br>";
-                    echo "experience. I chose $degree because I have always been <em>fascinated</em> by computers<br>";
-                    echo "and the <strong>endless possibilities</strong> they offer.<br>";
-                    echo "If you want to know more about me, just click <strong>Learn More</strong><br>";
-                    echo "or <strong class=\"highlight-video\">Introduction Video</strong> 😉";
-                    echo "</p>";            
-                    echo "<a href=\"about-me.php\" class=\"button\">Learn More</a>";
-                    echo "<a href=\"$youtubeLink\" class=\"button\" target=\"_blank\">Introduction Video</strong></a>";
-                    echo "<div id=\"time\"></div>";
-                    ?>
+        <div class="text-container">
+        <?php
+        echo "<h1 class='header'><span class='type' data-text='Hi, I'm $title'>$greeting</span></h1>";
+        echo "<h2 class='subheader'><span class='type1' data-text='Potato Lover'></span></h2>";
+        echo "<p>";
+        echo "And you can call me <strong>$nickname</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>";
+        echo "I am currently pursuing my studies in <strong>$degree</strong> at <em>$college</em>.<br>";
+        echo "This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning experience.<br>";
+        echo "I chose $degree because I have always been <em>fascinated</em> by computers and the <strong>endless possibilities</strong> they offer.<br>";
+        echo "I am $age years old and currently a student, enjoying every bit of my journey in the world of technology.<br>";
+        echo "If you want to know more about me, just click <strong class='highlight-video'>Learn More</strong class='highlight-video'><br>";
+        echo "or <strong class='highlight-video'>Introduction Video</strong> 😉";
+        echo "</p>";            
+        echo "<a href='about-me.php' class='button'>Learn More</a>";
+        echo "<a href='$youtubeLink' class='button' target='_blank'>Introduction Video</a>";
+        echo "<div id='time'></div>";
+        ?>
                 <div id="time"></div>
             </div>
             <div class="image-container">
