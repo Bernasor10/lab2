@@ -27,33 +27,33 @@
     <img id="somsomi" src="../images/somsomiii.gif" width="100%" style="position: relative;"
     alt="Jeon Somi Happy happy">
     
-        <!-- Container for Navigation Links -->
-        <div class="sidebar-nav-links">
-            <a href="home.html"><i class="fas fa-home"></i> Home</a>
-            <a href="about-me.html"><i class="fas fa-user"></i> About Me</a>
-            <a href="playlist.html"><i class="fas fa-music"></i> Playlist</a>
-            <a href="contact-me.html"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="resources.html"><i class="fas fa-book"></i> Resources</a>
-        </div>
+    <!-- Container for Navigation Links -->
+    <div class="sidebar-nav-links">
+        <a href="home.php"><i class="fas fa-home"></i> Home</a>
+        <a href="about-me.php"><i class="fas fa-user"></i> About Me</a>
+        <a href="playlist.php"><i class="fas fa-music"></i> Playlist</a>
+        <a href="contact-me.php"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="resources.php"><i class="fas fa-book"></i> Resources</a>
     </div>
+</div>
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <a id="logo" href="home.html">
-        <div class="logo">호날두</div>
-    </a>
-    <div class="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about-me.html">About Me</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="contact-me.html">Contact</a></li>
-        <li><a href="resources.html">Resources</a></li>
-    </ul>
+<a id="logo" href="home.php">
+    <div class="logo">호날두</div>
+</a>
+<div class="menu-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+<ul class="nav-links">
+    <li><a href="home.php">Home</a></li>
+    <li><a href="about-me.php">About Me</a></li>
+    <li><a href="playlist.php">Playlist</a></li>
+    <li><a href="contact-me.php">Contact</a></li>
+    <li><a href="resources.php">Resources</a></li>
+</ul>
 </nav>
 
 <!-- About Section -->
@@ -157,6 +157,59 @@
     </footer>    
 </section>
 <!-- End of About Section-->
+
+<!-- Contact Me Section -->
+<section id="contact">
+    <h3 class="section-title"><i class="fas fa-envelope"></i> Contact</h3>
+    <p class="feedback-prompt">Do you like my personal website so far?<br></p>
+    <div class="like-button-container">
+        <i class='fa-regular fa-thumbs-up' id="like-button"></i>
+        <p id="like-count">Like Count: 0</p>
+    </div>
+    <p id="suggestions">Send me your <strong>suggestions</strong> to improve my website by filling up the form below:<br>
+        or if you’re interested in <em>collaborating</em>, availing my services, or if there’s<br> 
+        something else you’d like to discuss, feel free to reach out to me directly at<br>
+        <strong>ronaldobernasor2@gmail.com</strong>. I look forward to hearing from you!</p>        
+
+    <div class="section-content">
+        <form id="suggestion-form">
+            <label for="fullname"><span class="shadow">Full Name:</span></label>
+            <input type="text" id="fullname" name="fullname" required>
+            <label for="email"><span class="shadow">Email Address:</span></label>
+            <input type="email" id="email" name="email" required>
+            <label for="message"><span class="shadow">Write a message:</span></label>
+            <textarea id="message" name="message" required></textarea>            
+            <input type="submit" value="Send">
+        </form>
+    </div>
+<footer class="social-links-container">
+    <h3 class="social-links-title">Connect with Me</h3>
+    <div class="social-links">
+        <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
+        <a href="https://github.com/Bernasor10" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
+        <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
+        <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
+    </div>
+</footer>    
+</section>
+
+  <!-- Resources Section -->
+  <section class="resources">
+    <div class="resource-section">
+      <div><h1>References</h1></div>
+      <div id="educational-platforms"><h2>Educational Platforms</h2><ul class="resource-list"></ul></div>
+      <div id="social-media-icons"><h2>Social Media Icons:</h2><ul class="resource-list"></ul></div>
+      <div id="other-icons"><h2>Other Icons:</h2><ul class="resource-list"></ul></div>
+      <div id="live-wallpaper-background"><h2>Live Wallpaper Background:</h2><ul class="resource-list"></ul></div>
+      <div id="personal-website-inspiration"><h2>Personal Website Inspiration:</h2><ul class="resource-list"></ul></div>
+      <div id="color-palettes"><h2>Text Color Palettes:</h2><ul class="resource-list"></ul></div>
+      <div id="typing-animation-tutorial"><h2>Typing Animation Tutorial:</h2><ul class="resource-list"></ul></div>
+      <div id="social-media-border-color"><h2>Social Media Border Color Code:</h2><ul class="resource-list"></ul></div>
+      <div id="gifs"><h2>GIFs:</h2><ul class="resource-list"></ul></div>
+      <div id="other-medias"><h2>Other Media(s):</h2><ul class="resource-list"></ul></div>
+    </div>
+  </section>
+  <!-- End of Resources-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>

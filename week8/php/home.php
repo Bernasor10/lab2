@@ -1,3 +1,16 @@
+<?php
+// Define PHP variables
+$title = "Ronaldo Bernasor II";
+$nickname = "Bam";
+$degree = "BSIT";
+$college = "Asia Pacific College";
+$greeting = "Hi! My name is $title";
+$youtubeLink = "https://www.youtube.com/watch?v=BbeeuzU5Qc8";
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10";
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="../images/maximus.png" type="image/x-icon">
-    <title>Ronaldolicious</title>
+    <title><?php echo $title; ?></title>
     <style>
         /* Add your CSS here */
     </style>
@@ -31,33 +44,33 @@
     <img id="somsomi" src="../images/somsomiii.gif" width="100%" style="position: relative;"
     alt="Jeon Somi Happy happy">
     
-        <!-- Container for Navigation Links -->
-        <div class="sidebar-nav-links">
-            <a href="home.html"><i class="fas fa-home"></i> Home</a>
-            <a href="about-me.html"><i class="fas fa-user"></i> About Me</a>
-            <a href="playlist.html"><i class="fas fa-music"></i> Playlist</a>
-            <a href="contact-me.html"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="resources.html"><i class="fas fa-book"></i> Resources</a>
-        </div>
+    <!-- Container for Navigation Links -->
+    <div class="sidebar-nav-links">
+        <a href="home.php"><i class="fas fa-home"></i> Home</a>
+        <a href="about-me.php"><i class="fas fa-user"></i> About Me</a>
+        <a href="playlist.php"><i class="fas fa-music"></i> Playlist</a>
+        <a href="contact-me.php"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="resources.php"><i class="fas fa-book"></i> Resources</a>
     </div>
+</div>
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <a id="logo" href="home.html">
-        <div class="logo">호날두</div>
-    </a>
-    <div class="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about-me.html">About Me</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="contact-me.html">Contact</a></li>
-        <li><a href="resources.html">Resources</a></li>
-    </ul>
+<a id="logo" href="home.php">
+    <div class="logo">호날두</div>
+</a>
+<div class="menu-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+<ul class="nav-links">
+    <li><a href="home.php">Home</a></li>
+    <li><a href="about-me.php">About Me</a></li>
+    <li><a href="playlist.php">Playlist</a></li>
+    <li><a href="contact-me.php">Contact</a></li>
+    <li><a href="resources.php">Resources</a></li>
+</ul>
 </nav>
 
 <!-- Home Section -->
@@ -65,7 +78,7 @@
     <div class="main-content">
         <div class="main-content-grid">
             <div class="text-container">
-                <h1 class="header"><span class="type" data-text="Hi, I'm Ronaldo Bernasor II">Hi! My name is Ronaldo Bernasor II</span></h1>
+                <h1 class="header"><span class="type" data-text="Hi, I'm Ronaldo Bernasor II">Hi! I am Ronaldo Bernasor II</span></h1>
                 <h2 class="subheader"><span class="type1" data-text="Potato Lover"></span></h2>
                 <p>
                     And you can call me <strong>Bam</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>
@@ -90,10 +103,10 @@
 <footer class="social-links-container">
     <h3 class="social-links-title">Connect with Me</h3>
     <div class="social-links">
-        <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
-        <a href="https://github.com/Bernasor10" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
-        <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
-        <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
+    <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
+            <a href="<?php echo $githubLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
+            <a href="<?php echo $linkedinLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
+            <a href="<?php echo $instagramLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
     </div>
 </footer>
 </section>

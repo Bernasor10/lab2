@@ -18,35 +18,43 @@
   </video>
 
   <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"></a>
-    <img id="somsomi" src="../images/somsomiii.gif" width="100%" style="position: relative;" alt="Jeon Somi Happy happy">
+    <!-- Close Button -->
+    <a href="javascript:void:0" class="closebtn" onclick="closeSidebar()"></a>
+    
+<!-- Video -->
+<img id="somsomi" src="../images/somsomiii.gif" width="100%" style="position: relative;"
+alt="Jeon Somi Happy happy">
+
+    <!-- Container for Navigation Links -->
     <div class="sidebar-nav-links">
-        <a href="home.html"><i class="fas fa-home"></i> Home</a>
-        <a href="about-me.html"><i class="fas fa-user"></i> About Me</a>
-        <a href="playlist.html"><i class="fas fa-music"></i> Playlist</a>
-        <a href="contact-me.html"><i class="fas fa-envelope"></i> Contact</a>
-        <a href="resources.html"><i class="fas fa-book"></i> Resources</a>
+        <a href="home.php"><i class="fas fa-home"></i> Home</a>
+        <a href="about-me.php"><i class="fas fa-user"></i> About Me</a>
+        <a href="playlist.php"><i class="fas fa-music"></i> Playlist</a>
+        <a href="contact-me.php"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="resources.php"><i class="fas fa-book"></i> Resources</a>
     </div>
-  </div>
+</div>
 
-  <nav class="navbar">
-    <a id="logo" href="home.html">
-        <div class="logo">호날두</div>
-    </a>
-    <div class="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about-me.html">About Me</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="contact-me.html">Contact</a></li>
-        <li><a href="resources.html">Resources</a></li>
-    </ul>
-  </nav>
+<!-- Navigation Bar -->
+<nav class="navbar">
+<a id="logo" href="home.php">
+    <div class="logo">호날두</div>
+</a>
+<div class="menu-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+<ul class="nav-links">
+    <li><a href="home.php">Home</a></li>
+    <li><a href="about-me.php">About Me</a></li>
+    <li><a href="playlist.php">Playlist</a></li>
+    <li><a href="contact-me.php">Contact</a></li>
+    <li><a href="resources.php">Resources</a></li>
+</ul>
+</nav>
 
+  <!-- Resources Section -->
   <section class="resources">
     <div class="resource-section">
       <div><h1>References</h1></div>
@@ -65,7 +73,7 @@
 
   <footer>
     <div class="copyright">
-      &copy; <?php echo date("Y"); ?> Ronaldo Bernasor II. All Rights Reserved. Crafted for WEBPROG Portfolio.
+      © 2023 Ronaldo Bernasor II. All Rights Reserved. Crafted for WEBPROG Portfolio.
     </div>
   </footer>
   <script type="module" src="../js/resourcesManager.js"></script>
