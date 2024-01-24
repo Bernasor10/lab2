@@ -55,13 +55,11 @@ const categories = {
       new Resource('Chipi chipi chapa cat GIF', 'https://tenor.com/view/chipi-chipi-chapa-chapa-cat-gif-2724505493463639324'),
       new Resource('Dog with suspicious look GIF', 'https://tenor.com/view/side-eye-dog-suspicious-look-suspicious-doubt-dog-doubt-gif-23680990'),
       new Resource('Huh cat GIF', 'https://tenor.com/view/cat-huh-cat-huh-etr-gif-15332443943609734737'),
-      new Resource('Saitama getting mad GIF', 'https://www.pinterest.ph/pin/53691420536993349/'),
-      new Resource('Toothless and Lightfury dancing GIF', 'https://tenor.com/view/nightfury-lightfury-howtotraindragon-howtotraindragon3-toothless-gif-2440374806486612673'),
+      new Resource('Saitama getting mad GIF', 'https://www.pinterest.ph/pin/53691420536993349/')
     ],
     "other-medias": [
-      new Resource('1 HOUR Driftveil City - Pokémon / Toothless(Marimba Ringtone)', 'https://www.youtube.com/watch?v=Kug1ITcktJY'),
       new Resource('Loading Screen Animation', 'https://www.vecteezy.com/video/26651017-loading-bar-animation'),
-      new Resource('Random tutorial', 'https://www.youtube.com/watch?v=BbeeuzU5Qc8'),
+      new Resource('Random tutorial', 'https://www.youtube.com/watch?v=BbeeuzU5Qc8')
     ],
   };
 

@@ -56,17 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-  // Display local time and timezone
-  var timeElement = document.getElementById('time');
-  function displayLocalTimeAndTimezone() {
-      var date = new Date();
-      var localTime = date.toLocaleTimeString();
-      var localDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-      var timeZone = /\((.*)\)/.exec(date.toString())[1];
-      timeElement.textContent = 'Local date: ' + localDate + ', Local time: ' + localTime + ', Timezone: ' + timeZone;
-  }
-  displayLocalTimeAndTimezone();
-  setInterval(displayLocalTimeAndTimezone, 1000);
+// Display local time and timezone
+var timeElement = document.getElementById('time');
+
+function displayLocalTimeAndTimezone() {
+    var date = new Date();
+    var localTime = date.toLocaleTimeString();
+    var localDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); // Change 'long' to 'short'
+    var timeZone = /\((.*)\)/.exec(date.toString())[1];
+    timeElement.textContent = 'Current date: ' + localDate + ', Current time: ' + localTime + ', Current Timezone: ' + timeZone;
+}
+
+displayLocalTimeAndTimezone();
+setInterval(displayLocalTimeAndTimezone, 1000);
 
   // Typing animation for .type1
   var i = 0, j = 0;

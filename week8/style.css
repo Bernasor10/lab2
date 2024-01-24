@@ -11,11 +11,8 @@ body, html {
 }
 
 #about, #playlist, #contact {
-    margin-top: 60px;
+    margin-top: 90px;
 }
-
-
-
 
 body {
     animation: fadeIn 2s ease-in;
@@ -55,7 +52,6 @@ img {
     }
 }
 
-
 /* BG Color for Contact Me Section */
 #contact {
     flex-direction: row;
@@ -67,31 +63,20 @@ img {
     top: 0;
     width: 100%;
     padding: 10px 20px;
-    background: rgba(39, 32, 32, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     overflow: hidden;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1269px) {
     .navbar {
-        position: fixed;
-        background: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        overflow: hidden;
-        z-index: 1000;
-        height: 9%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        color: white;
+        background: rgba(39, 32, 32, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -140,6 +125,7 @@ img {
     cursor: pointer;
     top: 10px;
     right: 10px;
+    text-shadow: 0 10px 6px rgba(0, 0, 0, 0.8);
 }
 
 .bar {
@@ -176,9 +162,7 @@ img {
     .navbar {
         height: 7vh;
         width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
         border-radius: 10px;
-        background: rgba(0, 0, 0, 0.5);
         align-items: flex-start;
     }
     
@@ -329,7 +313,7 @@ img {
 }
 
 section {
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -343,7 +327,7 @@ section {
 .button {
     display: inline-block;
     padding: 15px 20px;
-    margin: 15px 30px 15px 0;
+    margin: 15px 0px 15px 30px;
     background-color: #132633;
     color: #D3D3D3; 
     text-shadow: 2px 2px 5px #000; 
@@ -369,21 +353,8 @@ section {
 }
 
 .button:hover::after {
-    width: 100%; /* Set the width to 100% on hover */
-    color: #94b4c6;
-}
-
-/* Styling for the Contact Me Footer */
-#contact-footer {
-    text-align: center;
     width: 100%;
-    padding: 2em 0;
-    position: static;
-    bottom: 0;
-    color: #fff;
-    font-size: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    font-family: 'Roboto', sans-serif;
+    color: #94b4c6;
 }
 
     /* Contact Form Styling */
@@ -476,6 +447,7 @@ section {
         font-size: 25px;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         font-family: 'Roboto', sans-serif;
+        font-weight: bold;
     }
 
     #like-button {
@@ -489,13 +461,10 @@ section {
         font-family: 'Roboto', sans-serif;
     }
 
-    .copyright {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        font-size: 23px;
-    }    
-
     .shadow {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        color: white;
+        font-weight: bold;
     }
     
 
@@ -539,11 +508,6 @@ section {
 
     .social-links {
         order: 1;
-        text-align: center;
-    }
-    
-    footer .copyright {
-        order: 2;
         text-align: center;
     }
 
@@ -596,7 +560,8 @@ section {
 
 #suggestion-form input[type="submit"] {
     background-color: #0a0a0a;
-    color: #b38f46;
+    color: #fff;
+    font-weight: bold;
     padding: 10px 20px;
     border: none;
     margin-top: 20px;
@@ -654,7 +619,7 @@ section {
     border: none;
     border-radius: 50px;
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.1);
-    color: white;
+    color: #fff;
     background-color: #111;
     margin-bottom: 20px;
     height: 170px; 
@@ -760,7 +725,6 @@ section {
 /* Playlist Section */
 #playlist {
     text-align: center; 
-    padding: 20px;
 }
 
 .header-text {
@@ -902,7 +866,6 @@ section {
         font-size: 24px;
     }
 
-    /* Playlist item adjustments for smaller screens */
     .playlist-grid-item {
         margin: 0 20px; 
         width: auto; 
@@ -996,6 +959,7 @@ section {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    padding-left: 30px;
 }
 
 .subheader { /*Home section*/
@@ -1006,6 +970,7 @@ section {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     color: #b38f46;
     font-family: 'Roboto', sans-serif;
+    padding-left: 30px;
 }
 
 #time {
@@ -1018,6 +983,7 @@ section {
     word-break: break-word;
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
+    padding-left: 30px;
 }
 
 .container {
@@ -1030,12 +996,16 @@ section {
 }
 
 .text-container {
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: transparent;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     text-align: left;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    margin-left: -20px;
 }
 
 .text-container p {
@@ -1043,6 +1013,7 @@ section {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     font-weight: normal;
+    padding-left: 30px;
 }
 
 .social-links-container {
@@ -1067,7 +1038,7 @@ footer.social-links-container {
     color: #fff;
     font-size: 4.2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* When the screen size is less than or equal to 768px, apply the following styles */
@@ -1162,6 +1133,7 @@ footer.social-links-container {
     --font-family: 'Roboto', sans-serif;
   }
 
+
 #about strong {
     color: #94b4c6;
 }
@@ -1213,7 +1185,7 @@ footer.social-links-container {
 .about-grid > div:not(.quote-container) {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     margin-top: 20px;
     box-shadow: 0px 0px 10px 8px #132633;
@@ -1377,7 +1349,6 @@ footer.social-links-container {
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;
-    padding: 20px;
     min-height: 100vh;
 }
 
