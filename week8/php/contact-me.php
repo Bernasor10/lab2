@@ -68,42 +68,69 @@
     <p id="suggestions">Send me your <strong>suggestions</strong> to improve my website by filling up the form below:<br>
         or if you’re interested in <em>collaborating</em>, availing my services, or if there’s<br> 
         something else you’d like to discuss, feel free to reach out to me directly at<br>
-        <strong>ronaldobernasor2@gmail.com</strong>. I look forward to hearing from you!</p>        
-
-        <div class="section-content">
-        <div class="age-calculator-form">
+        <strong>ronaldobernasor2@gmail.com</strong>. I look forward to hearing from you!</p> 
+            <!-- FAQs Section -->
     <?php
-    $userFeedback = ""; // Initialize an empty string for user feedback
+    $faqs = [
+        "What is your website about?" => "It's about my personal portfolio and blog.",
+        "How can I contact you?" => "You can use the form on this page or email me directly."
+    ];
 
-    // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['birthyear'])) {
-        $birthYear = intval($_POST['birthyear']);
-        $currentYear = date("Y");
-
-        // Validate the birth year
-        if (is_numeric($birthYear) && $birthYear > 1900 && $birthYear <= $currentYear) {
-            $age = $currentYear - $birthYear; // Basic arithmetic operation
-            if ($age < 18) {
-                $userFeedback = "You are under 18 years old.";
-            } else {
-                $userFeedback = "You are $age years old.";
-            }
-        } else {
-            $userFeedback = "Please enter a valid birth year.";
-        }
+    foreach ($faqs as $question => $answer) {
+        echo "<p><strong>Q:</strong> $question</p>";
+        echo "<p><strong>A:</strong> $answer</p>";
     }
-    ?>
+    ?>       
 
-    <?php if ($userFeedback): ?>
-    <p><?php echo $userFeedback; ?></p>
-    <?php endif; ?>
+<div class="section-content">
+        <div class="age-calculator-form">
+            <?php
+            // Function to calculate age
+            function calculateAge($birthYear) {
+                $currentYear = date("Y");
+                return $currentYear - $birthYear;
+            }
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <label for="birthyear">Enter your birth year:</label>
-        <input type="text" id="birthyear" name="birthyear" required>
-        <input type="submit" value="Calculate Age">
-    </form>
-</div>
+            $userFeedback = ""; // Initialize an empty string for user feedback
+
+            // Check if the form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['birthyear'])) {
+                $birthYear = intval($_POST['birthyear']);
+                $currentYear = date("Y");
+
+                // Validate the birth year
+                if (is_numeric($birthYear) && $birthYear > 1900 && $birthYear <= $currentYear) {
+                    $age = calculateAge($birthYear); // Use the function to calculate age
+                    if ($age < 18) {
+                        $userFeedback = "You are under 18 years old.";
+                    } else {
+                        $userFeedback = "You are $age years old.";
+                    }
+                } else {
+                    $userFeedback = "Please enter a valid birth year.";
+                }
+            }
+
+            if (isset($_POST['email']) && !empty($_POST['email'])) {
+                $email = $_POST['email'];
+                // Validate email with RegEx
+                if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
+                    $userFeedback .= "<br>Please enter a valid email address.";
+                }
+            }
+
+            if (!empty($userFeedback)) {
+                echo "<p>$userFeedback</p>";
+            }
+            ?>
+
+            <!-- Age Calculation Form -->
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <label for="birthyear">Enter your birth year:</label>
+                <input type="text" id="birthyear" name="birthyear" required>
+                <input type="submit" value="Calculate Age">
+            </form>
+        </div>
 
         <!-- Original Contact Form -->
         <form id="suggestion-form">
@@ -138,18 +165,35 @@
         </ul>
     </div>
 
-        <!-- Social Media Links -->
-        <div class="footer-grid-item">
-            <h4>Connect with Me</h4>
-            <div class="social-links">
-                <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
-                <a href="<?php echo $githubLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
-                <a href="<?php echo $linkedinLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
-                <a href="<?php echo $instagramLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
-            </div>
-        </div>
-    </footer>
-    </section>
+    <?php
+// Define social media links
+$facebookLink = "https://www.facebook.com/your-facebook-profile";
+$githubLink = "https://github.com/your-github-profile";
+$linkedinLink = "https://www.linkedin.com/in/your-linkedin-profile";
+$instagramLink = "https://www.instagram.com/your-instagram-profile";
+?>
+<!-- Social Media Links -->
+<div class="footer-grid-item">
+    <h4>Connect with Me</h4>
+    <div class="social-links">
+        <?php
+        // Array of social links
+        $socialLinks = [
+            'facebook' => $facebookLink,
+            'github' => $githubLink,
+            'linkedin' => $linkedinLink,
+            'instagram' => $instagramLink
+        ];
+
+        // Loop through social links and display them with existing CSS classes
+        foreach ($socialLinks as $network => $link) {
+            echo "<a href='{$link}' target='_blank'><span class='icon'><i class='bx bxl-{$network} bxl'></i></span></a>";
+        }
+        ?>
+    </div>
+</div>
+</footer>
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <head>

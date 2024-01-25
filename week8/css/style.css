@@ -960,6 +960,17 @@ section {
     border-radius: 20%;
 }
 
+/* Update the CSS classes to match the PHP code */
+.bxl-facebook {
+    background: #29487d;
+    border-radius: 15%;
+}
+
+.bxl-linkedin {
+    background: #004182;
+    border-radius: 15%;
+}
+
 .main-content {
     position: relative;
     height: 100%;
