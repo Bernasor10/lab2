@@ -71,30 +71,39 @@
         <strong>ronaldobernasor2@gmail.com</strong>. I look forward to hearing from you!</p>        
 
         <div class="section-content">
-    <!-- Age Calculator Form -->
-    <div class="age-calculator-form">
-        <?php
-        // Check if the form is submitted
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['birthyear'])) {
-            $birthYear = intval($_POST['birthyear']);
-            $currentYear = date("Y");
+        <div class="age-calculator-form">
+    <?php
+    $userFeedback = ""; // Initialize an empty string for user feedback
 
-            // Validate the birth year
-            if ($birthYear > 1900 && $birthYear <= $currentYear) {
-                $age = $currentYear - $birthYear; // Basic arithmetic operation
-                echo "<p>Your age is: " . $age . " years old.</p>";
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['birthyear'])) {
+        $birthYear = intval($_POST['birthyear']);
+        $currentYear = date("Y");
+
+        // Validate the birth year
+        if (is_numeric($birthYear) && $birthYear > 1900 && $birthYear <= $currentYear) {
+            $age = $currentYear - $birthYear; // Basic arithmetic operation
+            if ($age < 18) {
+                $userFeedback = "You are under 18 years old.";
             } else {
-                echo "<p>Please enter a valid birth year.</p>";
+                $userFeedback = "You are $age years old.";
             }
+        } else {
+            $userFeedback = "Please enter a valid birth year.";
         }
-        ?>
+    }
+    ?>
 
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <label for="birthyear">Enter your birth year:</label>
-            <input type="text" id="birthyear" name="birthyear" required>
-            <input type="submit" value="Calculate Age">
-        </form>
-    </div>
+    <?php if ($userFeedback): ?>
+    <p><?php echo $userFeedback; ?></p>
+    <?php endif; ?>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="birthyear">Enter your birth year:</label>
+        <input type="text" id="birthyear" name="birthyear" required>
+        <input type="submit" value="Calculate Age">
+    </form>
+</div>
 
         <!-- Original Contact Form -->
         <form id="suggestion-form">
