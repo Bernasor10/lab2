@@ -367,65 +367,69 @@ section {
     color: #94b4c6;
 }
 
-    /* Contact Form Styling */
-    #suggestion-form {
-        padding: 20px;
-        border-radius: 15px;
-        width: 80%;
-        margin: 0 auto;
-        text-align: center; 
-    }
-    
-    #suggestion-form label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 1.2em; 
-        text-align: left;
-    }
-    
-    #suggestion-form textarea {
-        width: 100%;
-        max-width: 1000px;
-        font-size: 21px;
-        border: none;
-        border-radius: 50px;
-        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
-        background-color: #fff; 
-        margin-bottom: 20px; 
-        height: 170px; 
-        resize: none; 
-        padding: 15px 0px 50px 30px; 
-    }
-    
-    #suggestion-form input[type="text"],
-    #suggestion-form input[type="email"] {
-        width: 1000px;
-        height: 50px;
-        font-size: 21px;
-        box-sizing: border-box;
-        border: none;
-        border-radius: 50px;
-        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); 
-        background-color: #fff;
-        margin-bottom: 20px; 
-        padding-left: 25px;
-    }
-    
-    #suggestion-form input[type="submit"] {
-        background-color: #0a0a0a;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        margin-top: 20px;
-        border-radius: 50px; 
-        cursor: pointer;
-        width: 1000px;
-        font-size: 1.2em;
-    }
-    
-    #suggestion-form input[type="submit"]:hover {
-        background-color: #141414;
-    }
+/* Contact Form Styling */
+#suggestion-form, .age-calculator-form {
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+#suggestion-form label, .age-calculator-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em; 
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Styling for text inputs, email inputs, and textareas */
+#suggestion-form textarea,
+#suggestion-form input[type="text"],
+#suggestion-form input[type="email"],
+.age-calculator-form input[type="text"] {
+    width: 100%;
+    max-width: 800px;
+    font-size: 21px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
+    background-color: #111; 
+    margin: 10px auto;
+    height: 50px;
+    resize: none; 
+    padding: 0 30px; 
+    display: block; 
+}
+
+#suggestion-form textarea {
+    height: 170px; 
+    padding: 15px 30px; 
+}
+
+/* Styling for submit buttons */
+#suggestion-form input[type="submit"],
+.age-calculator-form input[type="submit"] {
+    background-color: #0a0a0a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 50px; 
+    cursor: pointer;
+    width: 100%;
+    min-width: 660px;
+    font-size: 1.2em;
+}
+
+#suggestion-form input[type="submit"]:hover,
+.age-calculator-form input[type="submit"]:hover {
+    background-color: #141414;
+}
     
     #suggestions {
         font-size: 25px;
@@ -550,12 +554,12 @@ section {
     margin-bottom: 20px;
     height: 170px;
     resize: none; 
-    padding: 15px 0px 50px 30px;
+    padding: 15px 50px 50px 30px;
 }
 
 #suggestion-form input[type="text"],
 #suggestion-form input[type="email"] {
-    width: 1000px;
+    width: 660px;
     height: 50px;
     color: #fff;
     font-size: 21px;
@@ -577,7 +581,7 @@ section {
     margin-top: 20px;
     border-radius: 50px;
     cursor: pointer;
-    width: 1000px;
+    width: 700px;
     font-size: 1.2em; 
 }
 
