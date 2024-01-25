@@ -8,6 +8,17 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Overlay Style */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1; /* Ensure it's behind other content but above the video */
+}
+
 #background-wallpaper {
     position: fixed;
     right: 0;
@@ -16,7 +27,7 @@ body, html {
     max-height: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: -2; /* Place the video behind the overlay */
 }
 
 @media only screen and (max-width: 1268px) {
@@ -158,6 +169,13 @@ footer {
     font-size: 23px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     background: rgba(0, 0, 0, 0.6);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    padding: 20px;
 }
 
 /* Responsive Design for smaller screens */

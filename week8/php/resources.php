@@ -16,6 +16,7 @@
     <source src="../images/thelive-wallpaper02.mp4" type="video/mp4">
     Your selected browser does not support the video tag.
   </video>
+  <div class="overlay"></div>
 
   <div id="mySidebar" class="sidebar">
     <!-- Close Button -->

@@ -34,6 +34,7 @@ function displayFavoriteActivities($activities) {
     <link rel="stylesheet" href="../css/style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="icon" href="../images/maximus.png" type="image/x-icon">
     <title><?php echo $title; ?></title>
     <style>
@@ -45,9 +46,10 @@ function displayFavoriteActivities($activities) {
         <p>Welcome Adventurer!</p>
     </div>
     <video autoplay muted loop id="background-wallpaper">
-        <source src="../images/thelive-wallpaper02.mp4" type="video/mp4">
-        Your current browser does not support the video tag.
-    </video>
+    <source src="../images/thelive-wallpaper02.mp4" type="video/mp4">
+    Your current browser does not support the video tag.
+</video>
+<div class="overlay"></div>
 
     <div id="mySidebar" class="sidebar">
         <!-- Close Button -->
@@ -115,19 +117,47 @@ function displayFavoriteActivities($activities) {
 
         </div>
     </div>
-<!-- Footer with Social Links -->
+
+<!-- Footer with Social Links and More -->
 <footer class="social-links-container">
-    <h3 class="social-links-title">Connect with Me</h3>
-    <div class="social-links">
-    <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
-            <a href="<?php echo $githubLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
-            <a href="<?php echo $linkedinLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
-            <a href="<?php echo $instagramLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
+    <!-- Fun Facts Section with Swiper -->
+    <div class="footer-grid-item">
+        <h4>Fun Facts</h4>
+        <p>Mostly spends my time in my computer</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="footer-grid-item">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about-me.php">About Me</a></li>
+            <li><a href="playlist.php">Playlist</a></li>
+            <li><a href="contact-me.php">Contact</a></li>
+            <li><a href="resources.php">Resources</a></li>
+        </ul>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-grid-item">
+        <h4>Connect with Me</h4>
+        <div class="social-links">
+        <?php
+                // Ensure you have defined these variables earlier in your PHP script
+                echo "<a href='{$facebookLink}' target='_blank'><span class='icon'><i class='bx bxl-facebook-circle'></i></span></a>";
+                echo "<a href='{$githubLink}' target='_blank'><span class='icon'><i class='bx bxl-github'></i></span></a>";
+                echo "<a href='{$linkedinLink}' target='_blank'><span class='icon'><i class='bx bxl-linkedin-square'></i></span></a>";
+                echo "<a href='{$instagramLink}' target='_blank'><span class='icon'><i class='bx bxl-instagram'></i></span></a>";
+                ?>
+        </div>
     </div>
 </footer>
+<!-- End of Footer -->
+
 </section>
 <!-- End of Home Section -->
- 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <head>
         <script src="https://kit.fontawesome.com/732c08c56d.js" crossorigin="anonymous"></script>

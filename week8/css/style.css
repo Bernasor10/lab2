@@ -28,7 +28,17 @@ img {
     color: white;
 }
 
-/*Customization for PC*/
+/* Overlay Style */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    z-index: -1; /* Ensure it's behind other content but above the video */
+}
+
 #background-wallpaper {
     position: fixed;
     right: 0;
@@ -37,7 +47,7 @@ img {
     max-height: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
-    z-index: -1; /* Place the video behind other content */
+    z-index: -2; /* Place the video behind the overlay */
 }
 
 @media only screen and (max-width: 1268px) {
@@ -1002,7 +1012,6 @@ section {
     font-family: 'Roboto', sans-serif;
     text-align: left;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
     width: 90%;
     margin-left: -20px;
@@ -1031,14 +1040,72 @@ section {
 
 /* Footer Style */
 footer.social-links-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     width: 100%;
     position: static;
     bottom: 0;
     color: #fff;
-    font-size: 4.2em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    background: rgba(0, 0, 0, 0.6);
+    font-size: 1em; /* Reduced font size */
+    padding: 10px; /* Adjusted padding */
+    background: #0a0a0a;
+}
+
+.footer-grid-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.9em;
+}
+
+.footer-grid-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-grid-item ul li {
+    margin-bottom: 10px; /* Spacing between list items */
+}
+
+.footer-grid-item ul li a {
+    color: #fff;
+    text-decoration: none; /* No underline for links */
+    font-size: 1.3em;
+}
+
+.footer-grid-item .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.footer-grid-item .social-links a {
+    font-size: 2.9em; /* Size of social icons */
+}
+
+.footer-grid-item p {
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    footer.social-links-container {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+    .social-links {
+        padding-right: 20px;
+    }
+}
+
+/* Grid container within the footer */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
 }
 
 /* When the screen size is less than or equal to 768px, apply the following styles */

@@ -18,6 +18,7 @@
         <source src="../images/thelive-wallpaper02.mp4" type="video/mp4">
         Your current browser does not support the video tag.
     </video>
+    <div class="overlay"></div>
 
     <div id="mySidebar" class="sidebar">
         <!-- Close Button -->
@@ -80,15 +81,37 @@
             <input type="submit" value="Send">
         </form>
     </div>
+<!-- Footer with Social Links and More -->
 <footer class="social-links-container">
-    <h3 class="social-links-title">Connect with Me</h3>
-    <div class="social-links">
-        <a href="https://www.facebook.com/maximuslincoln010/" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
-        <a href="https://github.com/Bernasor10" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
-        <a href="https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
-        <a href="https://www.instagram.com/potatolicious.10/" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
+    <!-- About Section -->
+    <div class="footer-grid-item">
+        <h4>About Me</h4>
+        <p>I'm Ronaldo Bernasor II, a BSIT student passionate about web development and technology. This website is a portfolio of my work and a window into my world of tech and creativity.</p>
     </div>
-</footer>    
+
+    <!-- Navigation Links -->
+    <div class="footer-grid-item">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about-me.php">About Me</a></li>
+            <li><a href="playlist.php">Playlist</a></li>
+            <li><a href="contact-me.php">Contact</a></li>
+            <li><a href="resources.php">Resources</a></li>
+        </ul>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-grid-item">
+        <h4>Connect with Me</h4>
+        <div class="social-links">
+            <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
+            <a href="<?php echo $githubLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
+            <a href="<?php echo $linkedinLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
+            <a href="<?php echo $instagramLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
+        </div>
+    </div>
+</footer>
 </section>
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
