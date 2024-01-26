@@ -202,7 +202,7 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
             <span class="error"><?php echo $phoneErr;?></span>
         </div>
         <div class="form-group">
-            Your Website (http or https) <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
+            Your SOCIT Website (http or https) <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
             <span class="error"><?php echo $websiteErr;?></span>
         </div>
     </div>
