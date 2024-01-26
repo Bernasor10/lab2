@@ -135,7 +135,6 @@ img {
     cursor: pointer;
     top: 10px;
     right: 10px;
-    text-shadow: 0 10px 6px rgba(0, 0, 0, 0.8);
 }
 
 .bar {
@@ -192,8 +191,6 @@ img {
         display: flex;
         flex-direction: column;
         position: relative;
-        margin-right: auto 0px;
-        margin-left: auto 20px;
     }
 
     .nav-links {
@@ -237,7 +234,7 @@ img {
     z-index: 1; /* lower than the navbar */
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #0a0a0a;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 70px; /* add some padding to the top */
@@ -274,7 +271,7 @@ img {
 
     /* Style individual links as buttons */
     .sidebar-nav-links a {
-        background-color: #111; 
+        background-color: #0a0a0a; 
         padding: 10px 20px; 
         border: none; 
         font-family: 'Open Sans', sans-serif;
@@ -367,12 +364,14 @@ section {
     color: #94b4c6;
 }
 
+.error {
+    color: red;
+}
+
 /* Contact Form Styling */
-#suggestion-form, .age-calculator-form {
-    padding: 20px;
+.age-calculator-form {
     border-radius: 15px;
-    width: 80%;
-    max-width: 800px;
+    width: 100%; /* Set width to 100% */
     margin: 0 auto;
     text-align: center; 
 }
@@ -392,23 +391,37 @@ section {
 #suggestion-form input[type="email"],
 .age-calculator-form input[type="text"] {
     width: 100%;
+    font-size: 21px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    background-color: #111;
+    margin: 10px auto;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    resize: none;
+    display: block;
+}
+
+/* Styling for text inputs, email inputs, and textareas */
+.styled-input {
+    width: 100%;
     max-width: 800px;
     font-size: 21px;
     color: #fff;
     border: none;
     border-radius: 50px;
-    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
-    background-color: #111; 
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    background-color: #111;
     margin: 10px auto;
-    height: 50px;
-    resize: none; 
-    padding: 0 30px; 
-    display: block; 
-}
-
-#suggestion-form textarea {
-    height: 170px; 
-    padding: 15px 30px; 
+    height: 300px;
+    resize: none;
+    line-height: 50px;
+    box-sizing: border-box; /* Add this line */
+    padding: 0px 20px; /* Adjust the padding */
+    display: block;
 }
 
 /* Styling for submit buttons */
@@ -421,8 +434,7 @@ section {
     margin-top: 20px;
     border-radius: 50px; 
     cursor: pointer;
-    width: 100%;
-    min-width: 660px;
+    width: 100%; /* Set width to 100% */
     font-size: 1.2em;
 }
 
@@ -447,21 +459,6 @@ section {
         color: white;
         margin-top: 0px;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    }
-
-    #email-address {
-        font-size: 21px;
-        color: #FFFFFF;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-        margin-top: 0px;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .feedback-prompt {
-        font-size: 25px;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
     }
 
     #like-button {
@@ -524,80 +521,7 @@ section {
         order: 1;
         text-align: center;
     }
-
-    /* Contact Form Styling */
-#suggestion-form {
-    padding: 20px;
-    border-radius: 15px;
-    width: 80%;
-    margin: 0 auto;
-    color: white;
-    text-align: center;
 }
-
-#suggestion-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    text-align: left; 
-}
-
-#suggestion-form textarea {
-    width: 100%;
-    max-width: 1000px;
-    font-size: 21px;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1); 
-    background-color: #111;
-    margin-bottom: 20px;
-    height: 170px;
-    resize: none; 
-    padding: 15px 50px 50px 30px;
-}
-
-#suggestion-form input[type="text"],
-#suggestion-form input[type="email"] {
-    width: 660px;
-    height: 50px;
-    color: #fff;
-    font-size: 21px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1); 
-    background-color: #111;
-    margin-bottom: 20px; 
-    padding-left: 25px; 
-}
-
-#suggestion-form input[type="submit"] {
-    background-color: #0a0a0a;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    margin-top: 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 700px;
-    font-size: 1.2em; 
-}
-
-#suggestion-form input[type="submit"]:hover {
-    background-color: #141414;
-}
-
-#suggestions {
-    font-size: 25px;
-    color: #fff;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-}
-
 /* Mobile Adjustments */
 @media (max-width: 1268px) {
     #contact .section-title {
@@ -613,7 +537,7 @@ section {
 #suggestion-form {
     padding: 20px;
     border-radius: 15px;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     color: white; 
     text-align: center; 
@@ -627,8 +551,10 @@ section {
     text-align: left; 
 }
 
-#suggestion-form textarea {
-    width: 100%;
+#suggestion-form textarea,
+#suggestion-form input[type="text"],
+#suggestion-form input[type="email"] {
+    width: 100%; /* Set width to 100% */
     font-size: 21px;
     border: none;
     border-radius: 50px;
@@ -641,20 +567,6 @@ section {
     padding: 20px 0px 50px 20px;
 }
 
-#suggestion-form input[type="text"],
-#suggestion-form input[type="email"] {
-    width: 100%;
-    height: 50px;
-    font-size: 21px;
-    color: white;
-    border: none;
-    border-radius: 50px; /* Rounded corners */
-    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); /* Add some shadow for a 3D effect */
-    background-color: #111; /* White background color */
-    margin-bottom: 20px; /* Add space below each form field */
-    padding: 10px; /* Add padding to the text field*/
-}
-
 #suggestion-form input[type="submit"] {
     background-color: #0a0a0a; /* Green background */
     color: white; /* White text */
@@ -663,7 +575,7 @@ section {
     margin-top: 20px;
     border-radius: 50px;
     cursor: pointer;
-    width: 100%;
+    width: 100%; /* Set width to 100% */
     font-size: 1.2em;
 }
 
@@ -674,7 +586,7 @@ section {
 #suggestions {
     font-size: 25px;
     color: #fff;
-    margin-bottom: 20px; /* Add space below the text */
+    margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
 }
     
@@ -697,7 +609,7 @@ section {
     }
 
     #contact p {
-        text-align: center; /* Align text to the left for desktop */
+        text-align: center;
         margin-bottom: 5px;
     }
 
@@ -705,17 +617,6 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-
-    footer .social-links {
-        order: 1;
-        text-align: center;
-    }
-
-    
-    footer .copyright {
-        order: 2;
-        text-align: center;
     }
 
     #suggestion-form {
@@ -1002,7 +903,7 @@ section {
     color: #fff;
     font-size: 22px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); 
-    padding: 10px;
+    padding: 5px;
     text-align: left;
     white-space: normal; 
     word-break: break-word;
@@ -1033,7 +934,7 @@ section {
 }
 
 .text-container p {
-    font-size: 1.7em;
+    font-size: 1.4em;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     font-weight: normal;
@@ -1042,7 +943,7 @@ section {
 
 .social-links-container {
     text-align: center;
-    margin-top: 0px;
+    margin-top: 100px;
 }
 
 .social-links-title {
@@ -1057,7 +958,7 @@ section {
 footer.social-links-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three columns layout */
-    gap: 20px;
+    gap: 0px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -1155,7 +1056,7 @@ footer.social-links-container {
     }
     
     .subheader { /*Home section*/
-        font-size: 1.9em;
+        font-size: 2.2em;
         margin-bottom: 20px;
         margin-top: 20px;
         font-weight: bold;
@@ -1197,7 +1098,7 @@ footer.social-links-container {
     gap: 20px;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 70px;
+    margin-top: 0px;
 }
 .image-container {
     border-radius: 15px;

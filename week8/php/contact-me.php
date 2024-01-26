@@ -60,19 +60,20 @@
 <!-- Contact Me Section -->
 <section id="contact">
     <h3 class="section-title"><i class="fas fa-envelope"></i> Contact</h3>
-    <p class="feedback-prompt">Do you like my personal website so far?<br></p>
-    <div class="like-button-container">
-        <i class='fa-regular fa-thumbs-up' id="like-button"></i>
-        <p id="like-count">Like Count: 0</p>
-    </div>
     <p id="suggestions">Send me your <strong>suggestions</strong> to improve my website by filling up the form below:<br>
         or if you’re interested in <em>collaborating</em>, availing my services, or if there’s<br> 
         something else you’d like to discuss, feel free to reach out to me directly at<br>
         <strong>ronaldobernasor2@gmail.com</strong>. I look forward to hearing from you!</p> 
-            <!-- FAQs Section -->
+        <p class="feedback-prompt">Do you like my personal website so far?<br></p>
+    <div class="like-button-container">
+        <i class='fa-regular fa-thumbs-up' id="like-button"></i>
+        <p id="like-count">Like Count: 0</p>
+    </div>
+
+    <!-- FAQs Section -->
     <?php
     $faqs = [
-        "What is your website about?" => "It's about my personal portfolio and blog.",
+        "What is your website about?" => "It's all about my personal portfolio showing my interest, dislikes, and music preferences.",
         "How can I contact you?" => "You can use the form on this page or email me directly."
     ];
 
@@ -80,9 +81,9 @@
         echo "<p><strong>Q:</strong> $question</p>";
         echo "<p><strong>A:</strong> $answer</p>";
     }
-    ?>       
+    ?>
 
-<div class="section-content">
+    <div class="section-content">
         <div class="age-calculator-form">
             <?php
             // Function to calculate age
@@ -91,59 +92,107 @@
                 return $currentYear - $birthYear;
             }
 
+            $nameErr = $emailErr = $genderErr = $websiteErr = "";
+            $name = $email = $gender = $comment = $website = "";
+
             $userFeedback = ""; // Initialize an empty string for user feedback
 
             // Check if the form is submitted
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['birthyear'])) {
-                $birthYear = intval($_POST['birthyear']);
-                $currentYear = date("Y");
-
-                // Validate the birth year
-                if (is_numeric($birthYear) && $birthYear > 1900 && $birthYear <= $currentYear) {
-                    $age = calculateAge($birthYear); // Use the function to calculate age
-                    if ($age < 18) {
-                        $userFeedback = "You are under 18 years old.";
-                    } else {
-                        $userFeedback = "You are $age years old.";
-                    }
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (empty($_POST["name"])) {
+                    $nameErr = "Name is required";
                 } else {
-                    $userFeedback = "Please enter a valid birth year.";
+                    $name = test_input($_POST["name"]);
+                    // check if name only contains letters and whitespace
+                    if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+                        $nameErr = "Only letters and white space allowed";
+                    }
+                }
+
+                if (empty($_POST["email"])) {
+                    $emailErr = "Email is required";
+                } else {
+                    $email = test_input($_POST["email"]);
+                    // check if e-mail address is well-formed
+                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        $emailErr = "Invalid email format";
+                    }
+                }
+
+                if (empty($_POST["website"])) {
+                    $website = "";
+                } else {
+                    $website = test_input($_POST["website"]);
+                    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+                    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
+                        $websiteErr = "Invalid URL";
+                    }
+                }
+
+                if (empty($_POST["comment"])) {
+                    $comment = "";
+                } else {
+                    $comment = test_input($_POST["comment"]);
+                }
+
+                if (empty($_POST["gender"])) {
+                    $genderErr = "Gender is required";
+                } else {
+                    $gender = test_input($_POST["gender"]);
+                }
+                
+                if (empty($nameErr) && empty($emailErr) && empty($websiteErr) && empty($genderErr)) {
+                    // No errors, display user's input
+                    echo "<h2>Your Input:</h2>";
+                    echo "Name: " . $name . "<br>";
+                    echo "Email: " . $email . "<br>";
+                    echo "Website: " . $website . "<br>";
+                    echo "Comment: " . $comment . "<br>";
+                    echo "Gender: " . $gender . "<br>";
                 }
             }
 
-            if (isset($_POST['email']) && !empty($_POST['email'])) {
-                $email = $_POST['email'];
-                // Validate email with RegEx
-                if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
-                    $userFeedback .= "<br>Please enter a valid email address.";
-                }
-            }
-
-            if (!empty($userFeedback)) {
-                echo "<p>$userFeedback</p>";
+            function test_input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
             }
             ?>
 
-            <!-- Age Calculation Form -->
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <label for="birthyear">Enter your birth year:</label>
-                <input type="text" id="birthyear" name="birthyear" required>
-                <input type="submit" value="Calculate Age">
-            </form>
-        </div>
-
-        <!-- Original Contact Form -->
-        <form id="suggestion-form">
-            <label for="fullname"><span class="shadow">Full Name:</span></label>
-            <input type="text" id="fullname" name="fullname" required>
-            <label for="email"><span class="shadow">Email Address:</span></label>
-            <input type="email" id="email" name="email" required>
-            <label for="message"><span class="shadow">Write a message:</span></label>
-            <textarea id="message" name="message" required></textarea>            
-            <input type="submit" value="Send">
-        </form>
-    </div>
+<!-- W3Schools Form -->
+<h2>PHP Form Validation Example</h2>
+<p><span class="error">*Required field</span></p>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    <fieldset>
+        <legend>Personal Information</legend>
+        Full Name <span class="error">*</span> <input type="text" name="name" value="<?php echo $name;?>">
+        <span class="error"><?php echo $nameErr;?></span>
+        <br><br>
+        E-mail <span class="error">*</span> <input type="text" name="email" value="<?php echo $email;?>">
+        <span class="error"><?php echo $emailErr;?></span>
+        <br><br>
+        Website <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>">
+        <span class="error"><?php echo $websiteErr;?></span>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Additional Information</legend>
+        Comments <textarea name="comment" rows="5" cols="40" class="styled-input"><?php echo $comment;?></textarea>
+        <br><br>
+        Gender
+        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
+        <span class="error">* <?php echo $genderErr;?></span>
+    </fieldset>
+    <br><br>
+    <input type="submit" name="submit" value="Submit">  
+</form>
+</div>
+</div>
 </section>
+
 
 <!-- Footer with Social Links and More -->
 <footer class="social-links-container">

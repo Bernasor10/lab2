@@ -118,7 +118,6 @@ setInterval(displayLocalTimeAndTimezone, 1000);
   toggleCursor();
 
   // Contact Me Section Logic
-  var form = document.getElementById('suggestion-form');
   var likeButton = document.getElementById('like-button');
   var likeCountElement = document.getElementById('like-count');
   var likeCount = 0;
@@ -126,17 +125,6 @@ setInterval(displayLocalTimeAndTimezone, 1000);
   'We are always open to suggestions!', 'Your input helps us improve!', 
   'We are grateful for your constructive feedback!', 'Your insights are important to us!', 
   'Thank you for helping us enhance our services!', 'Your opinion matters to us!'];
-
-  // Form submission handling
-  if (form) {
-      form.addEventListener('submit', function(event) {
-          event.preventDefault();
-          var fullname = document.getElementById('fullname').value;
-          var email = document.getElementById('email').value;
-          var message = document.getElementById('message').value;
-          console.log("Full Name: " + fullname + ", Email: " + email + ", Message: " + message);
-      });
-  }
 
   // Like button handling
   if (likeButton && likeCountElement) {
