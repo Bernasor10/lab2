@@ -1,3 +1,9 @@
+<?php
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10"; // String
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

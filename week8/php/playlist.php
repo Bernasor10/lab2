@@ -1,3 +1,9 @@
+<?php
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10"; // String
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="icon" href="../images/maximus.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="images/maximus.png" type="image/x-icon">
@@ -123,7 +130,7 @@
     <div class="footer-grid-item">
         <h4>Connect with Me</h4>
         <div class="social-links">
-            <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
+        <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
             <a href="<?php echo $githubLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
             <a href="<?php echo $linkedinLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
             <a href="<?php echo $instagramLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>

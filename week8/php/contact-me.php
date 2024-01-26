@@ -1,4 +1,11 @@
-    <!DOCTYPE html>
+<?php
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10"; // String
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
+?>
+
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -238,10 +245,10 @@
 
     <?php
 // Define social media links
-$facebookLink = "https://www.facebook.com/your-facebook-profile";
-$githubLink = "https://github.com/your-github-profile";
-$linkedinLink = "https://www.linkedin.com/in/your-linkedin-profile";
-$instagramLink = "https://www.instagram.com/your-instagram-profile";
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10";
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/";
 ?>
 <!-- Social Media Links -->
 <div class="footer-grid-item">
