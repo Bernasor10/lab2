@@ -184,7 +184,7 @@
             <span class="error"><?php echo $nameErr;?></span>
         </div>
         <div class="form-group">
-            E-mail <span class="error">*</span> <input type="text" name="email" value="<?php echo $email;?>" class="styled-input">
+            E-mail address <span class="error">*</span> <input type="text" name="email" value="<?php echo $email;?>" class="styled-input">
             <span class="error"><?php echo $emailErr;?></span>
         </div>
     </div>
@@ -195,7 +195,7 @@
             <span class="error"><?php echo $phoneErr;?></span>
         </div>
         <div class="form-group">
-            Your Website <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
+            Your Website (http or https) <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
             <span class="error"><?php echo $websiteErr;?></span>
         </div>
     </div>
