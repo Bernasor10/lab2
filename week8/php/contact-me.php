@@ -92,8 +92,8 @@
                 return $currentYear - $birthYear;
             }
 
-            $nameErr = $emailErr = $genderErr = $websiteErr = "";
-            $name = $email = $gender = $comment = $website = "";
+            $nameErr = $emailErr = $genderErr = $websiteErr = $phoneErr = "";
+            $name = $email = $gender = $comment = $website = $phone = "";
 
             $userFeedback = ""; // Initialize an empty string for user feedback
 
@@ -140,15 +140,28 @@
                 } else {
                     $gender = test_input($_POST["gender"]);
                 }
+                if (empty($_POST["phone"])) {
+                    $phoneErr = "Phone number is required";
+                } else {
+                    $phone = test_input($_POST["phone"]);
+                    // check if phone number is well-formed
+                    if (!preg_match("/^[0-9]{11}$/", $phone)) {
+                        $phoneErr = "Invalid phone number format";
+                    }
+                }
                 
-                if (empty($nameErr) && empty($emailErr) && empty($websiteErr) && empty($genderErr)) {
+                if (empty($nameErr) && empty($emailErr) && empty($websiteErr) && empty($genderErr) && empty($phoneErr)) {
                     // No errors, display user's input
                     echo "<h2>Your Input:</h2>";
                     echo "Name: " . $name . "<br>";
                     echo "Email: " . $email . "<br>";
+                    echo "Phone Number: " . $phone . "<br>";
                     echo "Website: " . $website . "<br>";
                     echo "Comment: " . $comment . "<br>";
                     echo "Gender: " . $gender . "<br>";
+            
+                    // Clear the form fields after displaying the output
+                    $name = $email = $phone = $website = $comment = $gender = "";
                 }
             }
 
@@ -164,30 +177,39 @@
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">*Required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-    <fieldset>
-        <legend>Personal Information</legend>
-        Full Name <span class="error">*</span> <input type="text" name="name" value="<?php echo $name;?>">
-        <span class="error"><?php echo $nameErr;?></span>
-        <br><br>
-        E-mail <span class="error">*</span> <input type="text" name="email" value="<?php echo $email;?>">
-        <span class="error"><?php echo $emailErr;?></span>
-        <br><br>
-        Website <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>">
-        <span class="error"><?php echo $websiteErr;?></span>
-    </fieldset>
-    <br>
-    <fieldset>
-        <legend>Additional Information</legend>
-        Comments <textarea name="comment" rows="5" cols="40" class="styled-input"><?php echo $comment;?></textarea>
-        <br><br>
-        Gender
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-        <span class="error">* <?php echo $genderErr;?></span>
-    </fieldset>
+    Personal Information
+    <div class="form-row">
+        <div class="form-group">
+            Full Name <span class="error">*</span> <input type="text" name="name" value="<?php echo $name;?>" class="styled-input">
+            <span class="error"><?php echo $nameErr;?></span>
+        </div>
+        <div class="form-group">
+            E-mail <span class="error">*</span> <input type="text" name="email" value="<?php echo $email;?>" class="styled-input">
+            <span class="error"><?php echo $emailErr;?></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            Phone Number <span class="error">*</span> <input type="tel" name="phone" value="<?php echo $phone;?>" pattern="[0-9]{11}" required class="style-input">
+            <small>Format: 09123456789</small>
+            <span class="error"><?php echo $phoneErr;?></span>
+        </div>
+        <div class="form-group">
+            Your Website <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
+            <span class="error"><?php echo $websiteErr;?></span>
+        </div>
+    </div>
+    <div class="comments-section">
+        Additional Comments <textarea name="comment" rows="5" cols="40" class="styled-input"><?php echo $comment;?></textarea>
+    </div>
     <br><br>
-    <input type="submit" name="submit" value="Submit">  
+    Gender
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other  
+    <span class="error">* <?php echo $genderErr;?></span>
+<br><br>
+<input type="submit" name="submit" value="Submit">  
 </form>
 </div>
 </div>

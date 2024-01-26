@@ -385,10 +385,11 @@ section {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Styling for text inputs, email inputs, and textareas */
+/* Styling for text inputs, email inputs, textareas, and phone number inputs */
 #suggestion-form textarea,
 #suggestion-form input[type="text"],
 #suggestion-form input[type="email"],
+#suggestion-form input[type="tel"],
 .age-calculator-form input[type="text"] {
     width: 100%;
     font-size: 21px;
@@ -397,13 +398,35 @@ section {
     border-radius: 50px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
-    margin: 10px auto;
+    margin: 10px;
     height: 50px;
     box-sizing: border-box;
     padding: 15px 20px;
     resize: none;
     display: block;
 }
+
+.style-input {
+    width: 100%;
+    font-size: 21px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    background-color: #111;
+    margin: 10px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    resize: none;
+    display: block;
+}
+
+/* Add this new style */
+.comments-section {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+
 
 /* Styling for text inputs, email inputs, and textareas */
 .styled-input {
@@ -419,8 +442,8 @@ section {
     height: 300px;
     resize: none;
     line-height: 50px;
-    box-sizing: border-box; /* Add this line */
-    padding: 0px 20px; /* Adjust the padding */
+    box-sizing: border-box;
+    padding: 0px 20px;
     display: block;
 }
 
@@ -441,6 +464,17 @@ section {
 #suggestion-form input[type="submit"]:hover,
 .age-calculator-form input[type="submit"]:hover {
     background-color: #141414;
+}
+
+/* Add these new styles */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1;
+    padding: 0 10px;
 }
     
     #suggestions {
