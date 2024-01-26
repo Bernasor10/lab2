@@ -71,6 +71,15 @@ body, html {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
 }
 
+@keyframes revealFlipCard {
+    from {
+        clip-path: inset(0 100% 0 0); /* Start with content fully clipped */
+    }
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
+}
+
 /* Resources Section */
 .resources {
     display: flex;
@@ -123,6 +132,9 @@ body, html {
     color: #fff;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin: 0.4em 0;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .resource-section h2 {
@@ -130,6 +142,9 @@ body, html {
     color: #94b4c6;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin: 0.4em 0;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .resource-list {
@@ -151,6 +166,9 @@ body, html {
     text-decoration: underline;
     font-size: 22px;
     transition: color 0.3s ease;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 2.5s;
 }
 
 .resource-list-item a:hover {
@@ -168,6 +186,9 @@ footer {
     font-size: 23px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     background: rgba(0, 0, 0, 0.6);
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 5.5s;
 }
 
 .footer-grid {

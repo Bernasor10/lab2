@@ -100,11 +100,36 @@ img {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
     transition: background-color 0.3s, color 0.3s;
     margin: 2px;
+    clip-path: inset(0 100% 0 0);
 }
 
 .navbar a:hover {
     color: #b38f46;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 2.0);
+}
+
+/* Progressive reveal animation */
+@keyframes revealNavLinks {
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
+}
+
+.navbar a {
+    animation: revealNavLinks 2s ease-out forwards;
+}
+
+.navbar a:nth-child(1) {
+    animation-delay: 0.5s;
+}
+.navbar a:nth-child(2) {
+    animation-delay: 0.6s;
+}
+.navbar a:nth-child(3) {
+    animation-delay: 0.7s;
+}
+.navbar a:nth-child(4) {
+    animation-delay: 0.8s;
 }
 
 .navbar .logo {
@@ -364,16 +389,45 @@ section {
     color: #94b4c6;
 }
 
-.error {
-    color: red;
+/* Contact Form Styling */
+@keyframes revealContent {
+    from {
+        clip-path: inset(0 100% 0 0); /* Start with content fully clipped */
+    }
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
 }
 
-/* Contact Form Styling */
+.reveal-animation {
+    clip-path: inset(0 100% 0 0);
+    animation: revealContent 2s ease-out 1.5s forwards;
+}
+
+.section-title { 
+    font-size: 45px; 
+    font-weight: bold; 
+    margin-top: 40px; 
+    color: #b38f46;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 95px;
+    clip-path: inset(0 100% 0 0);
+    animation: revealContent 2s ease-out 1.5s forwards;
+}
+
 .age-calculator-form {
     border-radius: 15px;
-    max-width: 100%; /* Set width to 100% */
+    max-width: 100%;
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
+    clip-path: inset(0 100% 0 0);
+    animation: revealContent 2s ease-out 1.5s forwards;
+}
+
+.error {
+    color: red;
 }
 
 #suggestion-form label, .age-calculator-form label {
@@ -447,23 +501,53 @@ section {
     display: block;
 }
 
+.form-title {
+    font-weight: normal;
+}
+
+.form-heading, legend {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.feedback-prompt {
+    font-size: 1.4em;
+}
+
+
 /* Styling for submit buttons */
 #suggestion-form input[type="submit"],
 .age-calculator-form input[type="submit"] {
-    background-color: #0a0a0a;
+    background-color: #111;
     color: white;
     padding: 10px 20px;
     border: none;
     margin-top: 20px;
     border-radius: 50px; 
     cursor: pointer;
-    width: 80%; /* Set width to 100% */
+    width: 70%;
     font-size: 1.2em;
 }
+
 
 #suggestion-form input[type="submit"]:hover,
 .age-calculator-form input[type="submit"]:hover {
     background-color: #141414;
+}
+
+.age-calculator-form .error {
+    font-size: 1.5em;
+    color: red;
+}
+
+/* Styling for Radio Buttons and Labels */
+.age-calculator-form input[type="radio"] + label {
+    font-size: 1.5em; 
+}
+
+.age-calculator-form input[type="radio"] {
+    transform: scale(1.4);
+    margin-right: 10px;
 }
 
 /* Add these new styles */
@@ -475,10 +559,11 @@ section {
 .form-group {
     flex: 1;
     padding: 0 10px;
+    font-size: 1.1em;
 }
     
     #suggestions {
-        font-size: 25px;
+        font-size: 1.4em;
         margin-bottom: 20px;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         line-height: 1.6;
@@ -720,16 +805,19 @@ section {
 .left-cat-gif {
     width: 640px;
     height: 360px;
+    animation: revealPlaylistItem 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .middle-cat-gif {
     width: 640px;
     height: 360px;
+    animation: revealPlaylistItem 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
-.right-cat-gif {
-    width: 430px;
-    height: 360px;
+.left-cat-gif, .middle-cat-gif {
+    clip-path: inset(0 100% 0 0);
 }
 
 .cat-gif-container {
@@ -766,6 +854,16 @@ section {
     -webkit-overflow-scrolling: touch;
 }
 
+/* Progressive reveal animation for playlist items */
+@keyframes revealPlaylistItem {
+    from {
+        clip-path: inset(0 100% 0 0); /* Start with content fully clipped */
+    }
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
+}
+
 
 /* Playlist Grid Item */
 .playlist-grid-item {
@@ -776,6 +874,9 @@ section {
     font-family: 'Roboto', sans-serif;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     margin-right: 40px; /* Space between items */
+    clip-path: inset(0 100% 0 0);
+    animation: revealPlaylistItem 2s ease-out forwards;
+    animation-delay: var(--animation-delay, 0s);
 }
 
 .playlist-grid-item iframe {
@@ -800,6 +901,8 @@ section {
     margin: 0px;
     padding: 0px;
     width: 100%;
+    clip-path: inset(0 100% 0 0);
+    animation: revealContent 2s ease-out 1.5s forwards;
 }
 
 .playlist-grid-item h2 {
@@ -1030,6 +1133,9 @@ footer.social-links-container {
     font-size: 1em; /* Reduced font size */
     padding: 10px; /* Adjusted padding */
     background: #0a0a0a;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 2.5s;
 }
 
 .footer-grid-item h4 {
@@ -1153,6 +1259,7 @@ footer.social-links-container {
     }
 }
 
+/* Existing styles for .main-content-grid */
 .main-content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr; /* Adjusted column sizes */
@@ -1160,6 +1267,32 @@ footer.social-links-container {
     align-items: center;
     justify-content: flex-start;
     margin-top: -10px;
+    overflow: hidden;
+}
+
+/* Apply the initial state to each direct child of .main-content-grid */
+.main-content-grid > * {
+    clip-path: inset(0 100% 0 0);
+}
+
+/* Progressive reveal animation */
+@keyframes progressiveReveal {
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
+}
+
+/* Apply the animation to each direct child of .main-content-grid */
+.main-content-grid > * {
+    animation: progressiveReveal 3s ease-out forwards;
+}
+
+/* Specific delays for each child to create a staggered effect */
+.main-content-grid > *:nth-child(1) {
+    animation-delay: 1.5s;
+}
+.main-content-grid > *:nth-child(2) {
+    animation-delay: 3s;
 }
 .image-container {
     border-radius: 15px;
@@ -1175,19 +1308,6 @@ footer.social-links-container {
     object-fit: contain;
     background-color: #000;
     box-shadow: 0px 0px 20px 5px #132633;
-}
-
-
-/* Fade In Up Animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Apply the Animation to various sections */
@@ -1238,11 +1358,14 @@ footer.social-links-container {
     overflow: hidden;
   }
 
-.about-grid {
+  .about-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as necessary */
     gap: 30px;
     text-align: left;
+    padding: 0 20px; /* Add padding to the left and right */
+    margin: auto; /* This will center the grid if there is a width restriction */
+    max-width: calc(100% - 40px); /* This ensures the max-width of the grid takes the padding into account */
 }
 
 .about-header {
@@ -1250,6 +1373,9 @@ footer.social-links-container {
     font-size: 2.5em;
     color: #b38f46;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .about-description, .about-list {
@@ -1257,12 +1383,18 @@ footer.social-links-container {
     margin: 0px;
     color: #fff;
     font-family: 'Roboto', sans-serif;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .ol-about-list {
     list-style-type: decimal;
     font-size: 21px;
     font-family: 'Roboto', sans-serif;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 
@@ -1272,17 +1404,42 @@ footer.social-links-container {
 }
 
 .about-grid > div:not(.quote-container) {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     margin-top: 20px;
-    box-shadow: 0px 0px 10px 8px #132633;
+    margin-bottom: 20px; /* Add space at the bottom */
 }
 
 .about-grid > div:not(.quote-container):hover {
-    transform: scale(1.01);
-    box-shadow: 0px 0px 10px 8px #b38f46;
+    transform: scale(1.10);
+}
+
+/* Progressive reveal animation */
+@keyframes revealContent {
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
+}
+
+/* Apply the reveal animation to each direct child within .about-grid */
+.about-grid > div {
+    animation: revealContent 3s ease-out forwards;
+}
+
+/* Specific delays for each child to create a staggered effect */
+.about-grid > div:nth-child(1) {
+    animation-delay: 1.5s;
+}
+.about-grid > div:nth-child(2) {
+    animation-delay: 1.5s;
+}
+.about-grid > div:nth-child(3) {
+    animation-delay: 1.5s;
+}
+.about-grid > div:nth-child(4) {
+    animation-delay: 1.5s;
 }
 
 /* Styling for the GIF container */
@@ -1301,6 +1458,9 @@ footer.social-links-container {
 
 [src$=".gif"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 
@@ -1321,19 +1481,14 @@ footer.social-links-container {
     margin-right: 20px;
 }
 
-.flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
     width: 100%;
     height: 200px;
-  }
-  
-  .flip-card-inner {
+}
+
+.flip-card-inner {
     position: relative;
     background-color: rgba(0, 0, 0, 0.5);
     min-width: 100%;
@@ -1341,33 +1496,43 @@ footer.social-links-container {
     text-align: center;
     transition: transform 1s;
     transform-style: preserve-3d;
-    box-shadow: 0px 0px 10px 5px #132633;
 }
 
+/* Reset clip-path on hover to ensure the back face is visible */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-    box-shadow: 0px 0px 10px 5px #b38f46;
 }
 
-  
-  .flip-card-front, .flip-card-back {
+.flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hide the back face of the front panel */
-    background-color: #1b1b1b; /* Ensure it has an opaque background */
+    backface-visibility: hidden;
+    background-color: #1b1b1b;
     color: white;
 }
   
-  .flip-card-back {
+.flip-card-back {
     transform: rotateY(180deg);
-  }
+}
+
+@keyframes revealFlipCard {
+    from {
+        clip-path: inset(0 100% 0 0); /* Start with content fully clipped */
+    }
+    to {
+        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+    }
+}
   
 
 .quote-text {
     color: #ffffff;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .about-gif-container {
@@ -1439,17 +1604,6 @@ footer.social-links-container {
     justify-content: flex-start;
     text-align: left;
     min-height: 100vh;
-}
-
-.section-title { 
-    font-size: 45px; 
-    font-weight: bold; 
-    margin-top: 40px; 
-    color: #b38f46;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-    padding-left: 95px;
 }
 
 /* Add or modify styles for subheader*/

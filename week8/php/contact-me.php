@@ -66,29 +66,7 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
 
 <!-- Contact Me Section -->
 <section id="contact">
-    <h3 class="section-title"><i class="fas fa-envelope"></i> Contact</h3>
-    <p id="suggestions">Send me your <strong>suggestions</strong> to improve my website by filling up the form below:<br>
-        or if you’re interested in <em>collaborating</em>, availing my services, or if there’s<br> 
-        something else you’d like to discuss, feel free to reach out to me directly at<br>
-        <strong>ronaldobernasor2@gmail.com</strong>. I look forward to hearing from you!</p> 
-        <p class="feedback-prompt">Do you like my personal website so far?<br></p>
-    <div class="like-button-container">
-        <i class='fa-regular fa-thumbs-up' id="like-button"></i>
-        <p id="like-count">Like Count: 0</p>
-    </div>
-
-    <!-- FAQs Section -->
-    <?php
-    $faqs = [
-        "What is your website about?" => "It's all about my personal portfolio showing my interest, dislikes, and music preferences.",
-        "How can I contact you?" => "You can use the form on this page or email me directly."
-    ];
-
-    foreach ($faqs as $question => $answer) {
-        echo "<p><strong>Q:</strong> $question</p>";
-        echo "<p><strong>A:</strong> $answer</p>";
-    }
-    ?>
+    <h3 class="section-title reveal-animation"><i class="fas fa-envelope"></i> Contact</h3>
 
     <div class="section-content">
         <div class="age-calculator-form">
@@ -180,11 +158,10 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
             }
             ?>
 
-<!-- W3Schools Form -->
-<h2>PHP Form Validation Example</h2>
-<p><span class="error">*Required field</span></p>
+<h2 class="form-title">PHP Form Validation</h2>
+
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-    Personal Information
+<h2 class="form-heading">Personal Information</h2>
     <div class="form-row">
         <div class="form-group">
             Full Name <span class="error">*</span> <input type="text" name="name" value="<?php echo $name;?>" class="styled-input">
@@ -207,19 +184,31 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
         </div>
     </div>
     <div class="comments-section">
-        Additional Comments <textarea name="comment" rows="5" cols="40" class="styled-input"><?php echo $comment;?></textarea>
+        Additional Comments: <textarea name="comment" rows="5" cols="40" class="styled-input"><?php echo $comment;?></textarea>
     </div>
     <br><br>
-    Gender
+    Gender:
     <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
     <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
     <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other  
     <span class="error">* <?php echo $genderErr;?></span>
 <br><br>
-<input type="submit" name="submit" value="Submit">  
+<input type="submit" name="submit" value="Submit" onclick="buttonClickAnimation(this);">
 </form>
 </div>
 </div>
+<p class="feedback-prompt reveal-animation">Do you like my personal website so far?<br></p>
+<div class="like-button-container reveal-animation">
+    <i class='fa-regular fa-thumbs-up' id="like-button"></i>
+    <p id="like-count">Like Count: 0</p>
+</div>
+<p id="suggestions" class="reveal-animation">
+    Thank you for taking the time to fill out the form! Your insights and feedback are invaluable to me.<br>
+    If you have any further <strong>suggestions</strong> on how to improve my website, or if you’re interested in<br>
+    <em>collaborating</em>, availing my services, or have any other questions, please don't hesitate to reach out directly at<br>
+    <strong>ronaldobernasor2@gmail.com</strong>. I'm always excited to connect and look forward to hearing from you!
+</p>
+
 </section>
 
 
@@ -279,5 +268,12 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
     </head>
     <script src="../js/contact-me.js"></script>
     <script src="../js/script.js"></script>
-
+    <script>
+function buttonClickAnimation(button) {
+    button.style.opacity = "1";
+    setTimeout(function() {
+        button.style.opacity = "1";
+    }, 150);
+}
+</script>
     </body>

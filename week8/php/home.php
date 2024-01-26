@@ -5,10 +5,10 @@ $nickname = "Bam"; // String
 $degree = "BSIT"; // String
 $college = "Asia Pacific College"; // String
 $greeting = "Hi! My name is $title"; // String
-$youtubeLink = "https://www.youtube.com/watch?v=BbeeuzU5Qc8"; // String
-$facebookLink = "https://www.facebook.com/maximuslincoln010/"; // String
+$youtubeLink = "https://www.youtube.com/watch?v=BbeeuzU5Qc8";
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
 $githubLink = "https://github.com/Bernasor10"; // String
-$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/"; // String
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
 $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
 $age = 22; // Integer
 $isStudent = true; // Boolean
