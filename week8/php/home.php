@@ -100,8 +100,8 @@ function displayFavoriteActivities($activities) {
         echo "And you can call me <strong>$nickname</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>";
         echo "I am currently pursuing my studies in <strong>$degree</strong> at <em>$college</em>.<br>";
         echo "This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning experience.<br>";
-        echo "I chose $degree because I have always been <em>fascinated</em> by computers and the <strong>endless possibilities</strong> they offer.<br>";
-        echo "I am $age years old and currently a student, enjoying every bit of my journey in the world of technology.<br>";
+        echo "I chose $degree because I have always been <em>fascinated</em> by computers and the <strong>endless<br>
+        possibilities</strong> they offer. I am $age years old and currently a full-time student<br>";  
         echo "If you want to know more about me, just click <strong class='highlight-video'>Learn More</strong class='highlight-video'><br>";
         echo "or <strong class='highlight-video'>Introduction Video</strong> 😉";
         echo "</p>";            

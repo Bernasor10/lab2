@@ -175,11 +175,12 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
     <div class="form-row">
         <div class="form-group">
             Phone Number <span class="error">*</span> <input type="tel" name="phone" value="<?php echo $phone;?>" pattern="[0-9]{11}" required class="style-input">
-            <small>Format: 09123456789</small>
+            <small class="format-example">Format: 09123456789</small>
             <span class="error"><?php echo $phoneErr;?></span>
         </div>
         <div class="form-group">
-            Your SOCIT Website (http or https) <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
+            Your SOCIT Website <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
+            <small class="format-example">Format: http or https</small>
             <span class="error"><?php echo $websiteErr;?></span>
         </div>
     </div>
