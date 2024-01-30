@@ -264,7 +264,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p class="feedback-prompt reveal-animation">Do you like my personal website so far?<br></p>
 <div class="like-button-container reveal-animation">
     <i class='fa-regular fa-thumbs-up' id="like-button"></i>
-    <p id="like-count">Like Count: 0</p>
+    <p id="like-count">Like Count:</p>
 </div>
 <p id="suggestions" class="reveal-animation">
     If you have any further <strong>suggestions</strong> on how to improve my website, or if you’re interested in<br>

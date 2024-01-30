@@ -113,7 +113,7 @@ body, html {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    align-items: center;
+    align-items: start; /* Align items to the start of each cell */
     animation: colorMotion 7s infinite alternate ease-in-out;
 }
 
@@ -132,7 +132,7 @@ body, html {
     color: #fff;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin: 0.4em 0;
-    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    clip-path: inset(0 100% 0 0);
     animation: revealFlipCard 2s ease-out forwards;
     animation-delay: 1.5s;
 }
@@ -142,7 +142,7 @@ body, html {
     color: #94b4c6;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin: 0.4em 0;
-    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    clip-path: inset(0 100% 0 0);
     animation: revealFlipCard 2s ease-out forwards;
     animation-delay: 1.5s;
 }
@@ -155,6 +155,7 @@ body, html {
     flex-direction: column;
     align-items: center;
 }
+
 
 .resource-list-item {
     width: 100%;
