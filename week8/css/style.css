@@ -350,7 +350,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; 
     box-sizing: border-box;
     margin-top: 0px;
 }
@@ -402,6 +401,7 @@ section {
 .reveal-animation {
     clip-path: inset(0 100% 0 0);
     animation: revealContent 2s ease-out 1.5s forwards;
+    text-align: center;
 }
 
 .section-title { 
@@ -419,6 +419,16 @@ section {
 
 .format-example {
     font-size: 0.95em; 
+}
+
+.user-input-header {
+    text-align: center;
+    color: #b38f46;
+}
+
+.user-input-container {
+    clip-path: inset(0 100% 0 0);
+    animation: revealContent 2s ease-out 1.5s forwards;
 }
 
 .age-calculator-form {
@@ -507,11 +517,13 @@ section {
 
 .form-title {
     font-weight: normal;
+    font-size: 1.6em;
 }
 
 .form-heading, legend {
     font-size: 1.2em;
     font-weight: normal;
+    color: red;
 }
 
 .feedback-prompt {
@@ -540,7 +552,7 @@ section {
 }
 
 .age-calculator-form .error {
-    font-size: 1.5em;
+    font-size: 1em;
     color: red;
 }
 
@@ -569,18 +581,11 @@ section {
     #suggestions {
         font-size: 1.4em;
         margin-bottom: 20px;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         line-height: 1.6;
     }
 
     #contact strong {
         color: #94b4c6;
-    }
-
-    #or {
-        font-size: 25px;
-        color: white;
-        margin-top: 0px;
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     }
 
@@ -606,7 +611,6 @@ section {
     #contact {
         display: flex;
         flex-direction: column;
-        align-items: center; 
     }
 
     /* Styling for text inputs, email inputs, and textareas */
@@ -648,11 +652,6 @@ section {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-    }
-
-    #contact p {
-        text-align: center;
-
     }
 
     .opportunities-header {
@@ -1032,12 +1031,11 @@ section {
     border-radius: 15%;
 }
 
-.bxl-instagram, .bxl-instagram-alt {
+.bxl-instagram {
     background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background-clip: text;
     -webkit-background-clip: text;
     background-clip: content-box;
     border-radius: 20%;
@@ -1160,6 +1158,7 @@ footer.social-links-container {
 .footer-grid-item h4 {
     margin-bottom: 10px;
     font-size: 1.9em;
+    
 }
 
 .footer-grid-item ul {
@@ -1173,8 +1172,9 @@ footer.social-links-container {
 
 .footer-grid-item ul li a {
     color: #fff;
-    text-decoration: none; /* No underline for links */
+    text-decoration: none;
     font-size: 1.3em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .footer-grid-item .social-links {

@@ -121,10 +121,19 @@ setInterval(displayLocalTimeAndTimezone, 1000);
   var likeButton = document.getElementById('like-button');
   var likeCountElement = document.getElementById('like-count');
   var likeCount = 0;
-  var messages = ['Thanks for your feedback!', 'We appreciate your feedback!', 'Your feedback is valuable to us!', 'Thank you for sharing your thoughts!', 
-  'We are always open to suggestions!', 'Your input helps us improve!', 
-  'We are grateful for your constructive feedback!', 'Your insights are important to us!', 
-  'Thank you for helping us enhance our services!', 'Your opinion matters to us!'];
+  var messages = [
+    'Your support means a lot to us. Thank you!',
+    'Thanks for the thumbs up!',
+    'Your feedback lights up our day. Thank you!',
+    'Heartfelt thanks for your positive vibes!',
+    'Your approval fuels our passion. Thanks for liking!',
+    'Thanks for the boost! Your feedback propels us forward.',
+    'Every bit of feedback counts. Thanks for yours!',
+    'Your positive response is truly cherished. Thank you!',
+    'Together, we grow better. Thanks for the like!',
+    'Your encouragement is warmly received.'
+  ];
+  
 
   // Like button handling
   if (likeButton && likeCountElement) {

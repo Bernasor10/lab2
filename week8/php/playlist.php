@@ -126,16 +126,33 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
         </ul>
     </div>
 
-    <!-- Social Media Links -->
-    <div class="footer-grid-item">
-        <h4>Connect with Me</h4>
-        <div class="social-links">
-        <a href="<?php echo $facebookLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-facebook-circle'></i></span></a>
-            <a href="<?php echo $githubLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-github'></i></span></a>
-            <a href="<?php echo $linkedinLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-linkedin-square'></i></span></a>
-            <a href="<?php echo $instagramLink; ?>" target="_blank"><span class="icon"><i class='bx bxl-instagram'></i></span></a>
-        </div>
+    <?php
+// Define social media links
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10";
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/";
+?>
+<!-- Social Media Links -->
+<div class="footer-grid-item">
+    <h4>Connect with Me</h4>
+    <div class="social-links">
+        <?php
+        // Array of social links
+        $socialLinks = [
+            'facebook' => $facebookLink,
+            'github' => $githubLink,
+            'linkedin' => $linkedinLink,
+            'instagram' => $instagramLink
+        ];
+
+        // Loop through social links and display them with existing CSS classes
+        foreach ($socialLinks as $network => $link) {
+            echo "<a href='{$link}' target='_blank'><span class='icon'><i class='bx bxl-{$network} bxl'></i></span></a>";
+        }
+        ?>
     </div>
+</div>
 </footer>
 </section>
 

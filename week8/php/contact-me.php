@@ -1,8 +1,81 @@
 <?php
+require_once 'contact-form.php';
 $facebookLink = "https://www.facebook.com/maximuslincoln010/";
 $githubLink = "https://github.com/Bernasor10"; // String
 $linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
 $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
+
+// Define variables and initialize with empty values
+$name = $email = $phone = $website = $gender = $comment = "";
+$nameErr = $emailErr = $phoneErr = $websiteErr = $genderErr = "";
+
+// Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate name
+    if (empty(trim($_POST["name"]))) {
+        $nameErr = "Please enter your name.";
+    } else {
+        $name = trim($_POST["name"]);
+    }
+
+    // Validate email
+    if (empty(trim($_POST["email"]))) {
+        $emailErr = "Please enter your email.";
+    } else {
+        $email = trim($_POST["email"]);
+    }
+
+    // Validate phone (optional)
+    $phone = trim($_POST["phone"]);
+
+    // Validate website (optional)
+    $website = trim($_POST["website"]);
+
+    // Validate gender
+    if (empty($_POST["gender"])) {
+        $genderErr = "Please select your gender.";
+    } else {
+        $gender = $_POST["gender"];
+    }
+
+    // Validate comment (optional)
+    $comment = trim($_POST["comment"]);
+
+    // Check input errors before inserting in database
+    if (empty($nameErr) && empty($emailErr) && empty($genderErr)) {
+        // Prepare an insert statement
+        $sql = "INSERT INTO MyGuests (full_name, email_address, phone_number, website, gender, comment) VALUES (?, ?, ?, ?, ?, ?)";
+
+        if ($stmt = $conn->prepare($sql)) {
+            // Bind variables to the prepared statement as parameters
+            $stmt->bind_param("ssssss", $param_name, $param_email, $param_phone, $param_website, $param_gender, $param_comment);
+
+            // Set parameters
+            $param_name = $name;
+            $param_email = $email;
+            $param_phone = $phone;
+            $param_website = $website;
+            $param_gender = $gender;
+            $param_comment = $comment;
+
+            // Attempt to execute the prepared statement
+            if ($stmt->execute()) {
+                // Redirect to a success page or display a success message
+                $_SESSION['message'] = "Record added successfully.";
+                header("Location: ../php/contact-me.php");
+                exit;
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            $stmt->close();
+        }
+    }
+
+    // Close connection
+    $conn->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +139,7 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
 
 <!-- Contact Me Section -->
 <section id="contact">
-    <h3 class="section-title reveal-animation"><i class="fas fa-envelope"></i> Contact</h3>
+    <h3 class="section-title reveal-animation"><i class="fas fa-envelope"></i> Contact Me</h3>
 
     <div class="section-content">
         <div class="age-calculator-form">
@@ -80,7 +153,7 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
             $nameErr = $emailErr = $genderErr = $websiteErr = $phoneErr = "";
             $name = $email = $gender = $comment = $website = $phone = "";
 
-            $userFeedback = ""; // Initialize an empty string for user feedback
+            $userFeedback = "";
 
             // Check if the form is submitted
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -104,14 +177,14 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
                     }
                 }
 
-                if (empty($_POST["website"])) {
-                    $website = "";
-                } else {
+                if (!empty($_POST["website"])) {
                     $website = test_input($_POST["website"]);
                     // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
                     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
                         $websiteErr = "Invalid URL";
                     }
+                } else {
+                    $website = "";
                 }
 
                 if (empty($_POST["comment"])) {
@@ -125,29 +198,14 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
                 } else {
                     $gender = test_input($_POST["gender"]);
                 }
-                if (empty($_POST["phone"])) {
-                    $phoneErr = "Phone number is required";
-                } else {
-                    $phone = test_input($_POST["phone"]);
+                if (!empty($_POST["phone"])) {
+                    $phone = trim($_POST["phone"]);
                     // check if phone number is well-formed
                     if (!preg_match("/^[0-9]{11}$/", $phone)) {
                         $phoneErr = "Invalid phone number format";
                     }
                 }
                 
-                if (empty($nameErr) && empty($emailErr) && empty($websiteErr) && empty($genderErr) && empty($phoneErr)) {
-                    // No errors, display user's input
-                    echo "<h2>Your Input:</h2>";
-                    echo "Name: " . $name . "<br>";
-                    echo "Email: " . $email . "<br>";
-                    echo "Phone Number: " . $phone . "<br>";
-                    echo "Website: " . $website . "<br>";
-                    echo "Comment: " . $comment . "<br>";
-                    echo "Gender: " . $gender . "<br>";
-            
-                    // Clear the form fields after displaying the output
-                    $name = $email = $phone = $website = $comment = $gender = "";
-                }
             }
 
             function test_input($data) {
@@ -161,41 +219,46 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
 <h2 class="form-title">PHP Form Validation</h2>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-<h2 class="form-heading">Personal Information</h2>
+
     <div class="form-row">
         <div class="form-group">
-            Full Name <span class="error">*</span> <input type="text" name="name" value="<?php echo $name;?>" class="styled-input">
+            <input type="text" name="name" value="<?php echo $name;?>" class="styled-input" placeholder="Full Name (Required)">
             <span class="error"><?php echo $nameErr;?></span>
         </div>
         <div class="form-group">
-            E-mail address <span class="error">*</span> <input type="text" name="email" value="<?php echo $email;?>" class="styled-input">
+            <input type="text" name="email" value="<?php echo $email;?>" class="styled-input" placeholder="E-mail Address (Required)">
             <span class="error"><?php echo $emailErr;?></span>
         </div>
     </div>
     <div class="form-row">
-        <div class="form-group">
-            Phone Number <span class="error">*</span> <input type="tel" name="phone" value="<?php echo $phone;?>" pattern="[0-9]{11}" required class="style-input">
-            <small class="format-example">Format: 09123456789</small>
+    <div class="form-group">
+            <input type="tel" name="phone" value="<?php echo $phone;?>" class="style-input" placeholder="Phone Number (Optional)">
+            <small class="format-example">Format: 09123456789<br></small>
             <span class="error"><?php echo $phoneErr;?></span>
         </div>
         <div class="form-group">
-            Your SOCIT Website <span class="error">*</span> <input type="text" name="website" value="<?php echo $website;?>" class="styled-input">
-            <small class="format-example">Format: http or https</small>
+            <input type="text" name="website" value="<?php echo $website;?>" class="styled-input" placeholder="Your SOCIT Website (Optional)">
+            <small class="format-example">Format: http:// or https://<br></small>
             <span class="error"><?php echo $websiteErr;?></span>
         </div>
     </div>
+    <div class="gender-section">
+    <p>Gender:</p>
+    <div class="gender-options">
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
+        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
+        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other
+        <span class="error">* <?php echo $genderErr;?></span>
+    </div>
     <div class="comments-section">
-        Additional Comments: <textarea name="comment" rows="5" cols="40" class="styled-input"><?php echo $comment;?></textarea>
+        <textarea name="comment" rows="5" cols="40" class="styled-input" placeholder="Additional Comments (Optional)"><?php echo $comment;?></textarea>
     </div>
     <br><br>
-    Gender:
-    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
-    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
-    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other  
-    <span class="error">* <?php echo $genderErr;?></span>
-<br><br>
-<input type="submit" name="submit" value="Submit" onclick="buttonClickAnimation(this);">
+</div>
+
+    <input type="submit" name="submit" value="Submit" onclick="buttonClickAnimation(this);">
 </form>
+
 </div>
 </div>
 <p class="feedback-prompt reveal-animation">Do you like my personal website so far?<br></p>
@@ -204,12 +267,10 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
     <p id="like-count">Like Count: 0</p>
 </div>
 <p id="suggestions" class="reveal-animation">
-    Thank you for taking the time to fill out the form! Your insights and feedback are invaluable to me.<br>
     If you have any further <strong>suggestions</strong> on how to improve my website, or if you’re interested in<br>
-    <em>collaborating</em>, availing my services, or have any other questions, please don't hesitate to reach out directly at<br>
+    <em>collaborating</em>, availing my services, or have any other questions, please don't hesitate to reach me out directly at<br>
     <strong>ronaldobernasor2@gmail.com</strong>. I'm always excited to connect and look forward to hearing from you!
 </p>
-
 </section>
 
 

@@ -185,7 +185,7 @@ footer {
     color: #fff;
     font-size: 23px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    background: rgba(0, 0, 0, 0.6);
+    background-color: #0a0a0a;
     clip-path: inset(0 100% 0 0); /* Initially hide the content */
     animation: revealFlipCard 2s ease-out forwards;
     animation-delay: 5.5s;

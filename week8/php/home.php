@@ -120,10 +120,10 @@ function displayFavoriteActivities($activities) {
 
 <!-- Footer with Social Links and More -->
 <footer class="social-links-container">
-    <!-- Fun Facts Section with Swiper -->
+    <!-- About Section -->
     <div class="footer-grid-item">
-        <h4>Fun Facts</h4>
-        <p>Mostly spends my time in my computer</p>
+        <h4>About Me</h4>
+        <p>I'm Ronaldo Bernasor II, a BSIT student passionate about web development and technology. This website is a portfolio of my work and a window into my world of tech and creativity.</p>
     </div>
 
     <!-- Navigation Links -->
@@ -138,19 +138,33 @@ function displayFavoriteActivities($activities) {
         </ul>
     </div>
 
-    <!-- Social Media Links -->
-    <div class="footer-grid-item">
-        <h4>Connect with Me</h4>
-        <div class="social-links">
+    <?php
+// Define social media links
+$facebookLink = "https://www.facebook.com/maximuslincoln010/";
+$githubLink = "https://github.com/Bernasor10";
+$linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
+$instagramLink = "https://www.instagram.com/potatolicious.10/";
+?>
+<!-- Social Media Links -->
+<div class="footer-grid-item">
+    <h4>Connect with Me</h4>
+    <div class="social-links">
         <?php
-                // Ensure you have defined these variables earlier in your PHP script
-                echo "<a href='{$facebookLink}' target='_blank'><span class='icon'><i class='bx bxl-facebook-circle'></i></span></a>";
-                echo "<a href='{$githubLink}' target='_blank'><span class='icon'><i class='bx bxl-github'></i></span></a>";
-                echo "<a href='{$linkedinLink}' target='_blank'><span class='icon'><i class='bx bxl-linkedin-square'></i></span></a>";
-                echo "<a href='{$instagramLink}' target='_blank'><span class='icon'><i class='bx bxl-instagram'></i></span></a>";
-                ?>
-        </div>
+        // Array of social links
+        $socialLinks = [
+            'facebook' => $facebookLink,
+            'github' => $githubLink,
+            'linkedin' => $linkedinLink,
+            'instagram' => $instagramLink
+        ];
+
+        // Loop through social links and display them with existing CSS classes
+        foreach ($socialLinks as $network => $link) {
+            echo "<a href='{$link}' target='_blank'><span class='icon'><i class='bx bxl-{$network} bxl'></i></span></a>";
+        }
+        ?>
     </div>
+</div>
 </footer>
 <!-- End of Footer -->
 
