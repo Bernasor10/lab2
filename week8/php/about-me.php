@@ -81,12 +81,11 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
                 <li><strong>Binge-watching K-dramas</strong> is something I really enjoy. It is a great way 
                     to <em>unwind</em> and get lost in different stories</li>
                 <li>I enjoy <strong>jamming to K-pop and Western music</strong>.</li>
-                <li><strong>Playing video games</strong> like Valorant, CODM, and Wildrift, Among Us is something I really enjoy. 
-                    It is a <em>fun experience</em></li>
+                <li><strong>In my younger days, I used to play video games competitively,</strong> such as Valorant, CODM, Wildrift, and Cytus, which I really enjoyed. It was a <em>fun experience</em>.</li>
                 <li><strong>Cat and dog lover</strong>. I used to have dogs and cats before, even a snake
                     🐍
                 </li>
-                <li>I <strong>like memes</strong></li>
+                <li>Memes</li>
             </ul>
         </div>
         <div>
@@ -95,7 +94,7 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
                 <li>French fries 🍟</li>
                 <li>Munggo 🥣</li>
                 <li>Chicken fillet 🍗</li>
-                <li>Mojos 🥔</li>
+                <li>Medium steak 🥩</li>
                 <li>Lasagna 🍝</li>
                 <li>Salad 🥗</li>
                 <li>Pasta 🍝</li>
@@ -152,7 +151,17 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
         <div class="about-gif-container">
             <img src="../images/dog-suspiciouslook.gif" alt="A dog with a suspicious look on its face">
         </div>
+        <button type="button" class="custom-button">Click to see more</button>
     </div>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">×</span>
+    <p>Your modal content goes here...</p>
+  </div>
+</div>
+
 
 <!-- Footer with Social Links and More -->
 <footer class="social-links-container">

@@ -10,6 +10,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.querySelector(".custom-button");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
     // Contact Me Section Logic
     var likeButton = document.getElementById('like-button');
     var likeCountElement = document.getElementById('like-count');
@@ -44,33 +70,48 @@ document.addEventListener('DOMContentLoaded', function() {
     xhr.send();
   }
 
-  // Function to send a like to the server
-  function sendLike() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "like_handler.php", true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
-      if (this.status === 200) {
-        getLikeCount(); // Refresh the like count after successful update
-        var randomIndex = Math.floor(Math.random() * messages.length);
-        alert(messages[randomIndex]); // Show random thank you message
-      }
-    };
-    xhr.send();
+// Function to send a like to the server
+function sendLike() {
+  // Check if the user has already liked in this session
+  if (sessionStorage.getItem('liked')) {
+    return;
   }
 
-  var oldLikeButton = document.getElementById('like-button');
-  var newLikeButton = oldLikeButton.cloneNode(true);
-  oldLikeButton.parentNode.replaceChild(newLikeButton, oldLikeButton);
-  
-  newLikeButton.addEventListener('click', function() {
-    newLikeButton.className = 'fa-solid fa-thumbs-up'; // Change icon to solid on click
-    sendLike();
-  });
-  
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "like_handler.php", true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (this.status === 200) {
+      getLikeCount(); // Refresh the like count after successful update
 
-  // Initialize the like count when the page loads
-  getLikeCount();
+      // Show random thank you message
+      var randomIndex = Math.floor(Math.random() * messages.length);
+      alert(messages[randomIndex]);
+
+      // Set the 'liked' session storage item
+      sessionStorage.setItem('liked', 'true');
+    }
+  };
+  xhr.send();
+}
+
+var oldLikeButton = document.getElementById('like-button');
+var newLikeButton = oldLikeButton.cloneNode(true);
+oldLikeButton.parentNode.replaceChild(newLikeButton, oldLikeButton);
+
+newLikeButton.addEventListener('click', function() {
+  newLikeButton.className = 'fa-solid fa-thumbs-up'; // Change icon to solid on click
+  sendLike();
+});
+
+// Clear sessionStorage when the page is refreshed or closed
+window.addEventListener('beforeunload', function() {
+  sessionStorage.clear();
+});
+
+// Initialize the like count when the page loads
+getLikeCount();
+
 
   // Sidebar functionality
   var menuToggle = document.querySelector('.menu-toggle');

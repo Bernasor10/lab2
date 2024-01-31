@@ -1289,7 +1289,6 @@ footer.social-links-container {
     overflow: hidden;
 }
 
-/* Apply the initial state to each direct child of .main-content-grid */
 .main-content-grid > * {
     clip-path: inset(0 100% 0 0);
 }
@@ -1297,7 +1296,7 @@ footer.social-links-container {
 /* Progressive reveal animation */
 @keyframes progressiveReveal {
     to {
-        clip-path: inset(0 0 0 0); /* End with content fully revealed */
+        clip-path: inset(0 0 0 0);
     }
 }
 
@@ -1361,7 +1360,6 @@ footer.social-links-container {
     --font-family: 'Roboto', sans-serif;
   }
 
-
 #about strong {
     color: #94b4c6;
 }
@@ -1375,18 +1373,96 @@ footer.social-links-container {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    clip-path: inset(0 100% 0 0); /* Initially hide the content */
+    animation: revealFlipCard 2s ease-out forwards;
+    animation-delay: 1.5s;
   }
 
   .about-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as necessary */
+    position: relative;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     text-align: left;
-    padding: 0 20px; /* Add padding to the left and right */
-    margin: auto; /* This will center the grid if there is a width restriction */
-    max-width: calc(100% - 40px); /* This ensures the max-width of the grid takes the padding into account */
+    padding: 0 20px;
+    margin: auto;
+    max-width: calc(100% - 40px);
+    align-items: start;
 }
 
+.custom-button {
+    position: absolute;
+    top: 75%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    background-color: #132633;
+    text-shadow: 2px 2px 5px #000; 
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 25px;
+    box-shadow: 5px 5px 10px #b38f46;
+    cursor: pointer;
+    color: #fff;
+    overflow: hidden; 
+    border: none;
+}
+
+.custom-button::after {
+    content: ""; 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 0;
+    height: 100%; 
+    background-color: #343b4a;
+    transition: width 0.7s ease-in-out; 
+    z-index: -1;
+}
+
+.custom-button:hover::after {
+    width: 100%;
+    color: #94b4c6;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #0a0a0a;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    height: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 2.2em;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #b38f46;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 .about-header {
     text-align: center;
     font-size: 2.5em;
@@ -1515,6 +1591,7 @@ footer.social-links-container {
     text-align: center;
     transition: transform 1s;
     transform-style: preserve-3d;
+    display: flex;
 }
 
 /* Reset clip-path on hover to ensure the back face is visible */
@@ -1547,7 +1624,7 @@ footer.social-links-container {
 
 .quote-text {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 1.2em;
     font-family: 'Roboto', sans-serif;
     clip-path: inset(0 100% 0 0); /* Initially hide the content */
     animation: revealFlipCard 2s ease-out forwards;
@@ -1579,6 +1656,14 @@ footer.social-links-container {
 @media (max-width: 1268px) {
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .custom-button {
+        position: absolute;
+        top: 100%;
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        margin-top: 30px;
     }
 
     .about-header {
