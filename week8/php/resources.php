@@ -79,5 +79,6 @@ alt="Jeon Somi Happy happy">
   </footer>
   <script type="module" src="../js/resourcesManager.js"></script>
   <script src="../js/script.js"></script>
+  <script src="../js/resourcesManager.js"></script>
 </body>
 </html>

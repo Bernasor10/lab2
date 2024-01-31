@@ -330,6 +330,7 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
     </head>
     <script src="../js/contact-me.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/resourcesManager.js"></script>
     <script>
 function buttonClickAnimation(button) {
     button.style.opacity = "1";

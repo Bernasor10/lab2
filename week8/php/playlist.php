@@ -161,5 +161,6 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
     <script src="https://kit.fontawesome.com/732c08c56d.js" crossorigin="anonymous"></script>
 </head>
 <script src="../js/script.js"></script>
+<script src="../js/resourcesManager.js"></script>
 
 </body>

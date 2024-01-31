@@ -91,3 +91,86 @@ if (document.readyState === 'loading') {
 } else {
   fetchResources();
 }
+
+  // Sidebar functionality
+  var menuToggle = document.querySelector('.menu-toggle');
+  var sidebar = document.getElementById("mySidebar");
+  var body = document.body;
+
+  function openSidebar() {
+      sidebar.style.width = "250px";
+      body.classList.add('body-no-scroll');
+      menuToggle.classList.add('active');
+  }
+
+  function closeSidebar() {
+      sidebar.style.width = "0";
+      body.classList.remove('body-no-scroll');
+      menuToggle.classList.remove('active');
+  }
+
+  menuToggle.addEventListener('click', function() {
+      var isOpen = sidebar.style.width === "250px";
+      isOpen ? closeSidebar() : openSidebar();
+  });
+
+  var closeButton = document.querySelector('.closebtn');
+  closeButton.addEventListener('click', closeSidebar);
+
+  document.addEventListener('click', function(event) {
+      var isClickInsideSidebar = sidebar.contains(event.target);
+      var isClickInsideMenuToggle = menuToggle.contains(event.target);
+
+      if (!isClickInsideSidebar && !isClickInsideMenuToggle && sidebar.style.width === '250px') {
+          closeSidebar();
+      }
+  });
+
+  // Smooth scrolling for anchor links
+  $('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var target = this.hash;
+    var $target = $(target);
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+    }, 500, 'swing', function() {
+        window.location.hash = target;
+    });
+});
+
+// Only run the welcome message logic on the home.html page
+if (window.location.href.endsWith('home.html') || window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+  // Welcome message logic
+  if (!localStorage.getItem('visited')) {
+    alert('Welcome Adventurer!'); // Alert for first-time visitors
+    localStorage.setItem('visited', 'true');
+  } else {
+    alert('Welcome back, Adventurer!'); // Alert for returning visitors
+  }
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.querySelector(".custom-button");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+  modal.style.display = "none";
+}
+}

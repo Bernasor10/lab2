@@ -153,15 +153,42 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
         </div>
         <button type="button" class="custom-button">Click to see more</button>
     </div>
-    <!-- The Modal -->
+
+<!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">×</span>
-    <p>Your modal content goes here...</p>
+    <p>My Gameplay Throwbacks and Travel Memories</p>
+    <!-- Add your videos here -->
+    <div class="video-container">
+      <div>
+        <p>Codename: Zero (Cytus)</p>
+        <video controls>
+          <source src="../images/codename_zero.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>May 13, 2015</p>
+      </div>
+      <div>
+        <p>L2B (Cytus)</p>
+        <video controls>
+          <source src="../images/l2b.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>March 23, 2015</p>
+      </div>
+      <div>
+        <p>Area 184 Platinum Mix (Cytus)</p>
+        <video controls>
+          <source src="../images/area184.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>July 10, 2016</p>
+      </div>
+    </div>
   </div>
 </div>
-
 
 <!-- Footer with Social Links and More -->
 <footer class="social-links-container">
@@ -218,5 +245,6 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
     <script src="https://kit.fontawesome.com/732c08c56d.js" crossorigin="anonymous"></script>
 </head>
 <script src="../js/script.js"></script>
+<script src="../js/resourcesManager.js"></script>
 
 </body>
