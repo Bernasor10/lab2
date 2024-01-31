@@ -77,8 +77,7 @@ alt="Jeon Somi Happy happy">
       © 2023 Ronaldo Bernasor II. All Rights Reserved. Crafted for WEBPROG Portfolio.
     </div>
   </footer>
-  <script type="module" src="../js/resourcesManager.js"></script>
-  <script src="../js/script.js"></script>
   <script src="../js/resourcesManager.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
