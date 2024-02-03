@@ -1,56 +1,82 @@
 <?php
 require_once 'contact-form.php';
 $facebookLink = "https://www.facebook.com/maximuslincoln010/";
-$githubLink = "https://github.com/Bernasor10"; // String
+$githubLink = "https://github.com/Bernasor10";
 $linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
-$instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
+$instagramLink = "https://www.instagram.com/potatolicious.10/";
 
 // Define variables and initialize with empty values
-$name = $email = $phone = $website = $gender = $comment = "";
-$nameErr = $emailErr = $phoneErr = $websiteErr = $genderErr = "";
+$nameErr = $emailErr = $genderErr = $websiteErr = $phoneErr = $commentErr = "";
+$name = $email = $gender = $comment = $website = $phone = "";
+$userFeedback = "";
+
+// Function for sanitizing input
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
     if (empty(trim($_POST["name"]))) {
-        $nameErr = "Please enter your name.";
+        $nameErr = "Name is required";
     } else {
-        $name = trim($_POST["name"]);
+        $name = test_input($_POST["name"]);
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+            $nameErr = "Only English alphabet letters are allowed";
+        }
     }
 
     // Validate email
-    if (empty(trim($_POST["email"]))) {
-        $emailErr = "Please enter your email.";
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
     } else {
-        $email = trim($_POST["email"]);
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
     }
 
-    // Validate phone (optional)
-    $phone = trim($_POST["phone"]);
-
-    // Validate website (optional)
-    $website = trim($_POST["website"]);
+    if (!empty(trim($_POST["phone"]))) {
+        $phone = test_input($_POST["phone"]);
+        if (!preg_match("/^[0-9]{11}$/", $phone)) {
+            $phoneErr = "Invalid phone number format";
+        }
+    }
+    
+    // Validate website
+    if (empty(trim($_POST["website"]))) {
+        $websiteErr = "Please enter your website.";
+    } else {
+        $website = test_input($_POST["website"]);
+        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
+            $websiteErr = "Invalid URL";
+        }
+    }
 
     // Validate gender
     if (empty($_POST["gender"])) {
-        $genderErr = "Please select your gender.";
+        $genderErr = "Gender is required";
     } else {
-        $gender = $_POST["gender"];
+        $gender = test_input($_POST["gender"]);
     }
 
-    // Validate comment (optional)
-    $comment = trim($_POST["comment"]);
+    // Validate comment
+    if (empty(trim($_POST["comment"]))) {
+        $commentErr = "Please enter a comment.";
+    } else {
+        $comment = test_input($_POST["comment"]);
+    }
 
-    // Check input errors before inserting in database
-    if (empty($nameErr) && empty($emailErr) && empty($genderErr)) {
-        // Prepare an insert statement
+    if (empty($nameErr) && empty($emailErr) && empty($phoneErr) && empty($websiteErr) && empty($genderErr) && empty($commentErr)) {
         $sql = "INSERT INTO MyGuests (full_name, email_address, phone_number, website, gender, comment) VALUES (?, ?, ?, ?, ?, ?)";
 
         if ($stmt = $conn->prepare($sql)) {
-            // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ssssss", $param_name, $param_email, $param_phone, $param_website, $param_gender, $param_comment);
 
-            // Set parameters
             $param_name = $name;
             $param_email = $email;
             $param_phone = $phone;
@@ -58,9 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_gender = $gender;
             $param_comment = $comment;
 
-            // Attempt to execute the prepared statement
             if ($stmt->execute()) {
-                // Redirect to a success page or display a success message
                 $_SESSION['message'] = "Record added successfully.";
                 header("Location: ../php/contact-me.php");
                 exit;
@@ -68,12 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Oops! Something went wrong. Please try again later.";
             }
 
-            // Close statement
+            // Closing the statement
             $stmt->close();
         }
     }
 
-    // Close connection
+    // Closing the connection
     $conn->close();
 }
 ?>
@@ -143,119 +167,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="section-content">
         <div class="age-calculator-form">
-            <?php
-            // Function to calculate age
-            function calculateAge($birthYear) {
-                $currentYear = date("Y");
-                return $currentYear - $birthYear;
-            }
+            <h2 class="form-title">PHP Form Validation</h2>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" name="name" value="<?php echo $name;?>" class="styled-input" placeholder="Full Name (Required)">
+                    <span class="error"><?php echo $nameErr;?></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email" value="<?php echo $email;?>" class="styled-input" placeholder="E-mail Address (Required)">
+                    <span class="error"><?php echo $emailErr;?></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="tel" name="phone" value="<?php echo $phone;?>" class="style-input" placeholder="Phone Number (Optional)">
+                    <small class="format-example">Sample format: 09123456789<br></small>
+                    <span class="error"><?php echo $phoneErr;?></span>
+                </div>
 
-            $nameErr = $emailErr = $genderErr = $websiteErr = $phoneErr = "";
-            $name = $email = $gender = $comment = $website = $phone = "";
+                <div class="form-group">
+                    <input type="text" name="website" value="<?php echo $website;?>" class="styled-input" placeholder="Your Website (Required)">
+                    <small class="format-example">Sample format: http:// or https://<br></small>
+                        <span class="error"><?php echo $websiteErr;?></span>
+                    </div>
+            </div>
 
-            $userFeedback = "";
-
-            // Check if the form is submitted
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (empty($_POST["name"])) {
-                    $nameErr = "Name is required";
-                } else {
-                    $name = test_input($_POST["name"]);
-                    // check if name only contains letters and whitespace
-                    if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-                        $nameErr = "Only letters and white space allowed";
-                    }
-                }
-
-                if (empty($_POST["email"])) {
-                    $emailErr = "Email is required";
-                } else {
-                    $email = test_input($_POST["email"]);
-                    // check if e-mail address is well-formed
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $emailErr = "Invalid email format";
-                    }
-                }
-
-                if (!empty($_POST["website"])) {
-                    $website = test_input($_POST["website"]);
-                    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-                    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $website)) {
-                        $websiteErr = "Invalid URL";
-                    }
-                } else {
-                    $website = "";
-                }
-
-                if (empty($_POST["comment"])) {
-                    $comment = "";
-                } else {
-                    $comment = test_input($_POST["comment"]);
-                }
-
-                if (empty($_POST["gender"])) {
-                    $genderErr = "Gender is required";
-                } else {
-                    $gender = test_input($_POST["gender"]);
-                }
-                if (!empty($_POST["phone"])) {
-                    $phone = trim($_POST["phone"]);
-                    // check if phone number is well-formed
-                    if (!preg_match("/^[0-9]{11}$/", $phone)) {
-                        $phoneErr = "Invalid phone number format";
-                    }
-                }
-                
-            }
-
-            function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }
-            ?>
-
-<h2 class="form-title">PHP Form Validation</h2>
-
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-
-    <div class="form-row">
-        <div class="form-group">
-            <input type="text" name="name" value="<?php echo $name;?>" class="styled-input" placeholder="Full Name (Required)">
-            <span class="error"><?php echo $nameErr;?></span>
-        </div>
-        <div class="form-group">
-            <input type="text" name="email" value="<?php echo $email;?>" class="styled-input" placeholder="E-mail Address (Required)">
-            <span class="error"><?php echo $emailErr;?></span>
-        </div>
-    </div>
-    <div class="form-row">
-    <div class="form-group">
-            <input type="tel" name="phone" value="<?php echo $phone;?>" class="style-input" placeholder="Phone Number (Optional)">
-            <small class="format-example">Sample format: 09123456789<br></small>
-            <span class="error"><?php echo $phoneErr;?></span>
-        </div>
-        <div class="form-group">
-            <input type="text" name="website" value="<?php echo $website;?>" class="styled-input" placeholder="Your SOCIT Website (Optional)">
-            <small class="format-example">Sample format: http:// or https://<br></small>
-            <span class="error"><?php echo $websiteErr;?></span>
-        </div>
-    </div>
     <div class="gender-section">
     <p>Gender:</p>
     <div class="gender-options">
     <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
-        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
+    <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other
         <span class="error">* <?php echo $genderErr;?></span>
     </div>
     <div class="comments-section">
-        <textarea name="comment" rows="5" cols="40" class="styled-input" placeholder="Additional Comments (Optional)"><?php echo $comment;?></textarea>
+    <textarea name="comment" rows="5" cols="40" class="styled-input" placeholder="Comment (Required)"><?php echo $comment;?></textarea>
+    <span class="error"><?php echo $commentErr;?></span>
     </div>
-    <br><br>
+    <br>
 </div>
-
     <input type="submit" name="submit" value="Submit" onclick="buttonClickAnimation(this);">
 </form>
 
@@ -264,7 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p class="feedback-prompt reveal-animation">Do you like my personal website so far?<br></p>
 <div class="like-button-container reveal-animation">
     <i class='fa-regular fa-thumbs-up' id="like-button"></i>
-    <p id="like-count">Like Count:</p>
+    <p id="like-count">Total Likes:</p>
 </div>
 <p id="suggestions" class="reveal-animation">
     If you have any further <strong>suggestions</strong> on how to improve my website, or if you’re interested in<br>
@@ -329,7 +280,6 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
         <script src="https://kit.fontawesome.com/732c08c56d.js" crossorigin="anonymous"></script>
     </head>
     <script src="../js/contact-me.js"></script>
-    <script src="../js/script.js"></script>
     <script src="../js/resourcesManager.js"></script>
     <script>
 function buttonClickAnimation(button) {

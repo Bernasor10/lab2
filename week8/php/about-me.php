@@ -186,8 +186,15 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
         </video>
         <p>July 10, 2016</p>
       </div>
+      <div>
+        <p>Taiwan Trip</p>
+        <a href="../images/taiwan.jpg" target="_blank">
+            <img src="../images/taiwan.jpg" alt="Taiwan">
+        </a>
+        <p>January 29 - February 2, 2020</p>
     </div>
   </div>
+</div>
 </div>
 
 <!-- Footer with Social Links and More -->
@@ -197,7 +204,6 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/"; // String
         <h4>About Me</h4>
         <p>I'm Ronaldo Bernasor II, a BSIT student passionate about web development and technology. This website is a portfolio of my work and a window into my world of tech and creativity.</p>
     </div>
-
     <!-- Navigation Links -->
     <div class="footer-grid-item">
         <h4>Quick Links</h4>
@@ -244,7 +250,6 @@ $instagramLink = "https://www.instagram.com/potatolicious.10/";
 <head>
     <script src="https://kit.fontawesome.com/732c08c56d.js" crossorigin="anonymous"></script>
 </head>
-<script src="../js/script.js"></script>
 <script src="../js/resourcesManager.js"></script>
 
 </body>

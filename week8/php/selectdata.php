@@ -20,7 +20,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"] . " - Name: " . $row["full_name"] . " - Email: " . $row["email_address"] . " - Phone: " . $row["phone_number"] . " - Website: " . $row["website"] . " - Gender: " . $row["gender"] . " - Comment: " . $row["comment"] . "<br>";
+        echo "id: " . $row["id"] . " - Name: " . $row["full_name"] . " - Email: " . $row["email_address"] . 
+        " - Gender: " .   $row["gender"] . " - Phone: " . $row["phone_number"] . " - Website: " . $row["website"] . 
+        " - Comment: " . $row["comment"] . " - Registration Date: " . $row["reg_date"] . "<br>";
     }
 } else {
     echo "0 results";
