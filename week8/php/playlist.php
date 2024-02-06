@@ -83,29 +83,38 @@
                 <img src="../images/catjam-cat.gif" alt="Cat Jamming Meme GIF" class="middle-cat-gif"/>
             </div>
         </div>
-        <!-- Grid Container for Playlists -->
-        <div class="playlist-grid">
-            <!-- Non-English Playlist -->
-            <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
-                <h2>Non-English Playlist</h2>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2ydHt73gEEjkTII4a7kTi8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <!-- English Playlist -->
-            <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
-                <h2>English Playlist</h2>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4V5QIbU1nq51Z1h189b3qF?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <!-- Tagalog Playlist (Mostly) -->
-            <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
-                <h2>Tagalog Playlist (Mostly)</h2>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0CH99T13A2ssIdkj4Vw2nN?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            <!-- Study Playlist (Mostly) -->
-            <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
-                <h2>Non-Vocal Playlist</h2>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3bcT701qWdhJCEnZlKhVdY?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
+    <!-- Grid Container for Playlists -->
+    <div class="playlist-grid">
+        <!-- Non-English Playlist -->
+        <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
+            <h2>Non-English Playlist</h2>
+            <iframe title="Non-English Playlist on Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2ydHt73gEEjkTII4a7kTi8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                <p>It seems like Spotify is blocked on your network. You can listen to the Non-English Playlist directly on Spotify when you have access.</p>
+            </iframe>
         </div>
+        <!-- English Playlist -->
+        <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
+            <h2>English Playlist</h2>
+            <iframe title="English Playlist on Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4V5QIbU1nq51Z1h189b3qF?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                <p>It seems like Spotify is blocked on your network. You can listen to the English Playlist directly on Spotify when you have access.</p>
+            </iframe>
+        </div>
+        <!-- Tagalog Playlist (Mostly) -->
+        <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
+            <h2>Tagalog Playlist (Mostly)</h2>
+            <iframe title="Tagalog Playlist on Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0CH99T13A2ssIdkj4Vw2nN?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                <p>It seems like Spotify is blocked on your network. You can listen to the Tagalog Playlist directly on Spotify when you have access.</p>
+            </iframe>
+        </div>
+        <!-- Study Playlist (Mostly) -->
+        <div class="playlist-grid-item" style="--animation-delay: 1.5s;">
+            <h2>Non-Vocal Playlist</h2>
+            <iframe title="Non-Vocal Playlist on Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3bcT701qWdhJCEnZlKhVdY?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                <p>It seems like Spotify is blocked on your network. You can listen to the Non-Vocal Playlist directly on Spotify when you have access.</p>
+            </iframe>
+        </div>
+    </div>
+
     <!-- Footer with Social Links and More -->
     <footer class="social-links-container">
         <!-- About Section -->
