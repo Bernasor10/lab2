@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Update like count in the database
-    $sql = "UPDATE likes SET like_count = like_count + 1 WHERE id = 1";
+    $sql = "UPDATE rsbernasor2_myguests SET like_count = like_count + 1 WHERE id = 1";
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully";
     } else {
