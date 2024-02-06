@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Retrieve like count from the database
-    $sql = "SELECT like_count FROM likes WHERE id = 1";
+    $sql = "SELECT like_count FROM rsbernasor2_myguests WHERE id = 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
