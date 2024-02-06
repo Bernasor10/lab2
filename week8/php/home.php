@@ -106,7 +106,7 @@ function displayFavoriteActivities($activities) {
         echo "or <strong class='highlight-video'>Introduction Video</strong> 😉";
         echo "</p>";            
         echo "<a href='about-me.php' class='button'>Learn More</a>";
-        echo "<a href='$youtubeLink' class='button' target='_blank'>Introduction Video</a>";
+        echo "<a href='$youtubeLink' class='button'>Introduction Video</a>";
         echo "<div id='time'></div>";
         ?>
                 <div id="time"></div>
@@ -122,8 +122,8 @@ function displayFavoriteActivities($activities) {
 <footer class="social-links-container">
     <!-- About Section -->
     <div class="footer-grid-item">
-        <h4>About Me</h4>
-        <p>I'm Ronaldo Bernasor II, a BSIT student passionate about web development and technology. This website is a portfolio of my work and a window into my world of tech and creativity.</p>
+        <h4>Fun fact:</h4>
+        <p>I can maintain a typing speed of 76 words per minute for a straight 5 minutes!</p>
     </div>
 
     <!-- Navigation Links -->

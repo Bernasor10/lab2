@@ -214,8 +214,8 @@
     <footer class="social-links-container">
         <!-- About Section -->
         <div class="footer-grid-item">
-            <h4>About Me</h4>
-            <p>I'm Ronaldo Bernasor II, a BSIT student passionate about web development and technology. This website is a portfolio of my work and a window into my world of tech and creativity.</p>
+            <h4>Fun fact:</h4>
+            <p>My personal best is eating 7 cups of rice at Mang Inasal in one sitting!</p>
         </div>
         <!-- Navigation Links -->
         <div class="footer-grid-item">

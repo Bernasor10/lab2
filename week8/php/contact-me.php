@@ -229,8 +229,8 @@
         <footer class="social-links-container">
             <!-- About Section -->
             <div class="footer-grid-item">
-                <h4>About Me</h4>
-                <p>I'm Ronaldo Bernasor II, a BSIT student passionate about web development and technology. This website is a portfolio of my work and a window into my world of tech and creativity.</p>
+                <h4>Did you know?</h4>
+                <p>1+1 = 2</p>
             </div>
 
             <!-- Navigation Links -->
