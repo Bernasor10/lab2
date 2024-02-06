@@ -1,4 +1,4 @@
-    <?php
+<?php
     $facebookLink = "https://www.facebook.com/maximuslincoln010/";
     $githubLink = "https://github.com/Bernasor10"; // String
     $linkedinLink = "https://www.linkedin.com/in/ronaldo-bernasorii-b987761b3/";
@@ -159,7 +159,7 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">×</span>
-        <p>My Gameplay Throwbacks and Travel Memories</p>
+        <p>My Gameplay Throwbacks, Travels, and Pets</p>
         <!-- Add your videos here -->
         <div class="video-container">
         <div>
@@ -187,11 +187,24 @@
             <p>July 10, 2016</p>
         </div>
         <div>
-            <p>Taiwan Trip</p>
+            <p>Taiwan</p>
             <a href="../images/taiwan.jpg" target="_blank">
                 <img src="../images/taiwan.jpg" alt="Taiwan">
             </a>
             <p>January 29 - February 2, 2020</p>
+        </div>
+        <div>
+            <p>Bohol</p>
+            <a href="../images/bohol.jpg" target="_blank">
+                <img src="../images/bohol.jpg" alt="Bohol">
+            </a>
+            <p>September 27 - September 30, 2023</p>
+        </div>
+        <div>
+            <p>My pets</p>
+            <a href="../images/pets.png" target="_blank">
+                <img src="../images/pets.png" alt="My pets">
+            </a>
         </div>
     </div>
     </div>
