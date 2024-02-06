@@ -14,7 +14,7 @@
         }
 
         // SQL to select all records but limit to 10
-        $sql = "SELECT * FROM MyGuests LIMIT 10";
+        $sql = "SELECT * FROM rsbernasor2_myguests LIMIT 10";
 
         $result = $conn->query($sql);
 
