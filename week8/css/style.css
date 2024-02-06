@@ -829,13 +829,6 @@ section {
     box-sizing: border-box;
 }
 
-.playlist-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto; 
-    justify-content: flex-start;
-}
-
 /* Playlist Section */
 #playlist {
     text-align: center; 
@@ -964,7 +957,7 @@ section {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1268px) {
+@media (max-width: 1568px) {
     .playlist-grid {
         display: flex;
         flex-wrap: nowrap;
@@ -974,23 +967,13 @@ section {
 
     .left-cat-gif, .middle-cat-gif, .right-cat-gif {
         max-width: 100%;
-        height: auto;
+        height: 100%;
     }
 
     .playlist-header {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .gif-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cat-gif-container {
-        margin: 10px auto; 
     }
 
     #playlist .header-text {
@@ -1012,6 +995,15 @@ section {
     justify-content: flex-start;
     align-items: center; 
 }
+}
+
+@media (max-width: 968px) {
+    .gif-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 /* End of Spotify Playlist */
@@ -1717,7 +1709,7 @@ footer.social-links-container {
 
 .quote-text {
     color: #ffffff;
-    font-size: 1.2em;
+    font-size: 1.08em;
     font-family: 'Roboto', sans-serif;
     clip-path: inset(0 100% 0 0); /* Initially hide the content */
     animation: revealFlipCard 2s ease-out forwards;
@@ -1788,20 +1780,6 @@ footer.social-links-container {
 
     .about-list {
         padding-left: 20px;
-    }
-    .quote-container, .quote-container1 {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start; 
-        min-width: 100%; 
-        min-height: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .quote-container1 {
-        margin: 0px;
-        margin-bottom: 0px;
     }
 
 }
