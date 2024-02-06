@@ -72,7 +72,7 @@
             }
 
             if (empty($nameErr) && empty($emailErr) && empty($phoneErr) && empty($websiteErr) && empty($genderErr) && empty($commentErr)) {
-                $sql = "INSERT INTO MyGuests (full_name, email_address, phone_number, website, gender, comment) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO rsbernasor2_myguests (full_name, email_address, phone_number, website, gender, comment) VALUES (?, ?, ?, ?, ?, ?)";
 
                 if ($stmt = $conn->prepare($sql)) {
                     $stmt->bind_param("ssssss", $param_name, $param_email, $param_phone, $param_website, $param_gender, $param_comment);
