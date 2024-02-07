@@ -179,12 +179,12 @@
             <p>March 23, 2015</p>
         </div>
         <div>
-            <p>Area 184 Platinum Mix (Cytus)</p>
+            <p>Call of Duty: Mobile lucky shot</p>
             <video controls>
-            <source src="../images/area184.mp4" type="video/mp4">
+            <source src="../images/tsamba.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
-            <p>July 10, 2016</p>
+            <p>November 21, 2021</p>
         </div>
         <div>
             <p>Taiwan</p>
