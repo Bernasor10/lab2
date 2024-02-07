@@ -14,8 +14,8 @@ Welcome to the GitHub repository of my personal website portfolio, `lab2`. This 
 - HTML
 - CSS
 - JavaScript
-- PHP (soon)
-- MySQL (soon)
+- PHP
+- MySQL
 
 ## Contributing
 This project is primarily a personal project for coursework, suggestions and contributions are welcome. Feel free to fork the project and create a pull request with your changes.
