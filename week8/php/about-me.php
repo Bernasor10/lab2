@@ -179,7 +179,7 @@
             <p>March 23, 2015</p>
         </div>
         <div>
-            <p>Call of Duty: Mobile lucky shot</p>
+            <p>Call of Duty Mobile lucky shot</p>
             <video controls>
             <source src="../images/tsamba.mp4" type="video/mp4">
             Your browser does not support the video tag.
