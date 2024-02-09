@@ -4,6 +4,8 @@ Welcome to the GitHub repository of my personal website portfolio, `lab2`. This 
 ## Project Overview
 `lab2` is a website portfolio that displays my skills in web programming, projects and experiences. It is a showcase of my abilities as I use the web technologies and frameworks to develop this project.
 
+## Features
+
 ### Home
 The welcoming front page of my portfolio, designed to introduce visitors to my world. Key elements include:
 - Dynamic Introduction: A brief greeting against a captivating video background, providing a warm welcome.
@@ -38,6 +40,8 @@ A dedicated page for visitors to reach out, offering various ways to connect and
 ### Resources
 Acknowledges and credits the various sources and inspirations behind the creation of my personal website. Organized into categories such as:
 - Educational Platforms, Social Media Icons, Other Icons, Live Wallpaper Background, Personal Website Inspiration, Text Color Palettes, Typing Animation Tutorial, Social Media Border Color Code, GIFs, and Other Media(s).
+
+Each page of my website not only showcases my technical skills but also offers a glimpse into my personality, making it a comprehensive portfolio.
 
 ## Technologies Used
 - HTML
