@@ -482,6 +482,7 @@ section {
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
     height: 50px;
+    margin: 10px auto;
     box-sizing: border-box;
     padding: 15px 20px;
     resize: none;
