@@ -194,8 +194,8 @@
                     </div>
 
             <div class="gender-section">
-            <p>Gender:</p>
             <div class="gender-options">
+            <p>Gender:</p>
             <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
             <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
             <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="Other">Other

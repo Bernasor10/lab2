@@ -97,13 +97,13 @@ function displayFavoriteActivities($activities) {
         echo "<h1 class='header'><span class='type' data-text='Hi, I'm $title'>$greeting</span></h1>";
         echo "<h2 class='subheader'><span class='type1' data-text='Potato Lover'></span></h2>";
         echo "<p>";
-        echo "And you can call me <strong>$nickname</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>";
-        echo "I am currently pursuing my studies in <strong>$degree</strong> at <em>$college</em>.<br>";
+        echo "My nickname is <strong>$nickname</strong>. I <em>love</em> potatoes and enjoy them in all varieties.<br>";
+        echo "Currently pursuing my studies in <strong>$degree</strong> at <em>$college</em>, and<br>";
         echo "This is my <strong>first time</strong> creating a website, and I am <em>excited</em> about this new learning experience.<br>";
         echo "I chose $degree because I have always been <em>fascinated</em> by computers and the <strong>endless<br>
-        possibilities</strong> they offer. I am $age years old and currently a full-time student<br>";  
+        possibilities</strong> they offer. I am $age years old and currently a full-time student.<br>";  
         echo "If you want to know more about me, just click <strong class='highlight-video'>Learn More</strong class='highlight-video'><br>";
-        echo "or <strong class='highlight-video'>Introduction Video</strong> 😉";
+        echo "or <strong class='highlight-video'>Introduction Video</strong> 😄😄";
         echo "</p>";            
         echo "<a href='about-me.php' class='button'>Learn More</a>";
         echo "<a href='$youtubeLink' class='button'>Introduction Video</a>";
