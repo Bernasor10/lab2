@@ -432,7 +432,7 @@ section {
 }
 
 .age-calculator-form {
-    border-radius: 15px;
+    border-radius: 10px;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -463,7 +463,7 @@ section {
     font-size: 21px;
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
     height: 50px;
@@ -478,7 +478,7 @@ section {
     font-size: 21px;
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
     height: 50px;
@@ -488,19 +488,13 @@ section {
     display: block;
 }
 
-/* Add this new style */
-.comments-section {
-    margin-top: 20px; /* Adjust the value as needed */
-}
-
-
 /* Styling for text inputs, email inputs, and textareas */
 .styled-input {
     width: 100%;
     font-size: 21px;
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
     margin: 10px auto;
@@ -510,6 +504,10 @@ section {
     box-sizing: border-box;
     padding: 0px 20px;
     display: block;
+}
+
+.comments-section {
+    margin-top: 20px; /* Adjust the value as needed */
 }
 
 .form-title {
@@ -536,7 +534,7 @@ section {
     padding: 10px 20px;
     border: none;
     margin-top: 20px;
-    border-radius: 50px; 
+    border-radius: 10px; 
     cursor: pointer;
     width: 70%;
     font-size: 1.2em;
@@ -616,7 +614,7 @@ section {
     font-size: 21px;
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
     height: 100%;
@@ -632,7 +630,7 @@ section {
     font-size: 21px;
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     background-color: #111;
     height: 100%;
@@ -641,14 +639,6 @@ section {
     box-sizing: border-box;
     padding: 0px 20px;
     display: block;
-}
-
-/* Contact Form Styling */
-.age-calculator-form {
-    border-radius: 15px;
-    min-width: 100%; /* Set width to 100% */
-    margin: 0 auto;
-    text-align: center; 
 }
 
     .section-title {
@@ -698,7 +688,7 @@ section {
         font-size: 21px;
         color: #fff;
         border: none;
-        border-radius: 50px;
+        border-radius: 10px;
         box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
         background-color: #111;
         height: 100%;
@@ -712,7 +702,7 @@ section {
 /* Contact Form Styling */
 #suggestion-form {
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     width: 100%;
     margin: 0 auto;
     color: white; 
@@ -733,7 +723,7 @@ section {
     width: 100%; /* Set width to 100% */
     font-size: 21px;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.1);
     color: #fff;
     background-color: #111;
@@ -749,7 +739,7 @@ section {
     padding: 10px 20px;
     border: none;
     margin-top: 20px;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     width: 100%; /* Set width to 100% */
     font-size: 1.2em;
@@ -805,7 +795,7 @@ section {
     }
 
     .form-group {
-        padding: 0 10px; /* Adjust padding if needed */
+        padding: 0 10px;
         margin-bottom: 20px; /* Add space between form groups */
     }
 

@@ -182,13 +182,13 @@
                     <div class="form-row">
                         <div class="form-group">
                             <input type="tel" name="phone" value="<?php echo $phone;?>" class="style-input" placeholder="Phone Number (Optional)">
-                            <small class="format-example">Sample format: 09123456789<br></small>
+                            <small class="format-example">Example: 09123456789<br></small>
                             <span class="error"><?php echo $phoneErr;?></span>
                         </div>
 
                         <div class="form-group">
                             <input type="text" name="website" value="<?php echo $website;?>" class="styled-input" placeholder="Your Website (Required)">
-                            <small class="format-example">Sample format: http:// or https://<br></small>
+                            <small class="format-example">Example: http:// or https://<br></small>
                                 <span class="error"><?php echo $websiteErr;?></span>
                             </div>
                     </div>
