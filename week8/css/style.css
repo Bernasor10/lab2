@@ -985,7 +985,7 @@ section {
 .button {
     display: inline-block;
     padding: 15px 20px;
-    margin: 15px 0px 15px 30px;
+    margin: 15px 20px;
     background-color: #132633;
     color: #D3D3D3;
     text-shadow: 2px 2px 5px #000;
@@ -1307,7 +1307,7 @@ footer.social-links-container {
         padding-left: 20px;
     }
     .button {
-        margin: 15px 0;
+        margin: 20px 7px;
         text-align: center;
         width: calc(90% - 20px);
     }
