@@ -166,7 +166,7 @@
         text-decoration: underline;
         font-size: 22px;
         transition: color 0.3s ease;
-        clip-path: inset(0 100% 0 0); /* Initially hide the content */
+        clip-path: inset(0 100% 0 0);
         animation: revealFlipCard 2s ease-out forwards;
         animation-delay: 2.5s;
     }
