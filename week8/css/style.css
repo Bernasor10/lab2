@@ -455,7 +455,7 @@ section {
 
 /* Styling for text inputs, email inputs, and textareas */
 .styled-input {
-    width: 100%;
+    width: 90%;
     font-size: 21px;
     color: #fff;
     border: none;
@@ -575,7 +575,7 @@ section {
 
     /* Styling for text inputs, email inputs, and textareas */
 .styled-input {
-    width: 100%;
+    width: 90%;
     font-size: 21px;
     color: #fff;
     border: none;

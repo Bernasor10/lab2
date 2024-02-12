@@ -114,7 +114,6 @@ function displayFavoriteActivities($activities) {
             <div class="image-container">
                 <img src="../images/me.jpg" alt="Image of mine" class="right-side-image" />
             </div>
-
         </div>
     </div>
 

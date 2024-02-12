@@ -143,7 +143,7 @@
                         <blockquote class="quote-text">
                             "Do not stop when you are tired, stop when you are done."
                         </blockquote>
-                        <cite>- J.S</cite>
+                        <cite>- Johnny</cite>
                     </div>
                     
                 </div>
